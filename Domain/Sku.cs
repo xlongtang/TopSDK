@@ -10,6 +10,12 @@ namespace Top.Api.Domain
     public class Sku : TopObject
     {
         /// <summary>
+        /// 商品级别的条形码
+        /// </summary>
+        [XmlElement("barcode")]
+        public string Barcode { get; set; }
+
+        /// <summary>
         /// 基础色数据
         /// </summary>
         [XmlElement("change_prop")]

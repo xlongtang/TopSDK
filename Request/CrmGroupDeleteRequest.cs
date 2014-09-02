@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class CrmGroupDeleteRequest : ITopRequest<CrmGroupDeleteResponse>
     {
         /// <summary>
-        /// 要删除的分组id
+        /// 要删除的分组id<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> GroupId { get; set; }
 

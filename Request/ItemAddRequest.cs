@@ -31,27 +31,32 @@ namespace Top.Api.Request
         public string AutoFill { get; set; }
 
         /// <summary>
+        /// 商品条形码
+        /// </summary>
+        public string Barcode { get; set; }
+
+        /// <summary>
         /// 商品基础色，数据格式为：pid:vid:rvid1,rvid2,rvid3;pid:vid:rvid1; 基础色只支持以下14种颜色：28335//绿色 28338//蓝色 90554//桔色 28324//黄色 28341//黑色 28320//白色 28326//红色 28329//紫色 3232480//粉红色 107121//透明 132069//褐色 28332//浅灰色 3232478//深灰色 130164//花色
         /// </summary>
         public string ChangeProp { get; set; }
 
         /// <summary>
-        /// 叶子类目id
+        /// 叶子类目id<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Cid { get; set; }
 
         /// <summary>
-        /// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。
+        /// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。  该字段已经废弃
         /// </summary>
         public Nullable<long> CodPostageId { get; set; }
 
         /// <summary>
-        /// 宝贝描述。字数要大于5个字符，小于25000个字符，受违禁词控制
+        /// 宝贝描述。字数要大于5个字符，小于25000个字符，受违禁词控制<br /> 支持最大长度为：200000<br /> 支持的最大列表长度为：200000
         /// </summary>
         public string Desc { get; set; }
 
         /// <summary>
-        /// 商品描述模块化，模块列表，由List<ItemDescModule>转化成jsonArray存入，后端逻辑验证通过，拼装成模块内容+锚点导航后存入desc中。数据结构具体参见Item_Desc_Module
+        /// 商品描述模块化，模块列表，具体数据结构参见Item_Desc_Module。详细的使用方法可参考下面FAQ中说明。
         /// </summary>
         public string DescModules { get; set; }
 
@@ -146,7 +151,7 @@ namespace Top.Api.Request
         public string FreightPayer { get; set; }
 
         /// <summary>
-        /// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值为（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 澳洲, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾, 其他）
+        /// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值为（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 澳洲, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾, 其他）<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
         /// </summary>
         public string GlobalStockCountry { get; set; }
 
@@ -176,7 +181,7 @@ namespace Top.Api.Request
         public Nullable<bool> HasWarranty { get; set; }
 
         /// <summary>
-        /// 商品主图片。类型:JPG,GIF;最大长度:500K
+        /// 商品主图片。类型:JPG,GIF;最大长度:500K<br /> 支持的文件类型为：gif,jpg,jpeg,png<br /> 支持的最大列表长度为：524288
         /// </summary>
         public FileItem Image { get; set; }
 
@@ -209,6 +214,11 @@ namespace Top.Api.Request
         /// 实物闪电发货
         /// </summary>
         public Nullable<bool> IsLightningConsignment { get; set; }
+
+        /// <summary>
+        /// 是否是线下商品。 1：线上商品（默认值）； 2：线上或线下商品； 3：线下商品。
+        /// </summary>
+        public string IsOffline { get; set; }
 
         /// <summary>
         /// 是否在淘宝上显示（如果传FALSE，则在淘宝主站无法显示该商品）
@@ -281,22 +291,27 @@ namespace Top.Api.Request
         public string LocalityLifeVerification { get; set; }
 
         /// <summary>
-        /// 所在地城市。如杭州 。可以通过http://dl.open.taobao.com/sdk/商品城市列表.rar查询
+        /// 所在地城市。如杭州 。
         /// </summary>
         public string LocationCity { get; set; }
 
         /// <summary>
-        /// 所在地省份。如浙江，具体可以下载http://dl.open.taobao.com/sdk/商品城市列表.rar  取到
+        /// 所在地省份。如浙江
         /// </summary>
         public string LocationState { get; set; }
 
         /// <summary>
-        /// 商品数量，取值范围:0-900000000的整数。且需要等于Sku所有数量的和。  拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
+        /// 该宝贝是否支持【7天无理由退货】，卖家选择的值只是一个因素，最终以类目和选择的属性条件来确定是否支持7天。填入字符0，表示不支持；未填写或填人字符1，表示支持7天无理由退货；
+        /// </summary>
+        public string Newprepay { get; set; }
+
+        /// <summary>
+        /// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。 拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。<br /> 支持最大值为：900000000<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Num { get; set; }
 
         /// <summary>
-        /// 商品外部编码，该字段的最大长度是512个字节
+        /// 商品外部编码，该字段的最大长度是64个字节
         /// </summary>
         public string OuterId { get; set; }
 
@@ -306,12 +321,12 @@ namespace Top.Api.Request
         public Nullable<long> PaimaiInfoDeposit { get; set; }
 
         /// <summary>
-        /// 降价拍宝贝的降价周期(分钟)。降价拍宝贝的价格每隔paimai_info.interval时间会下降一次increment。
+        /// 降价拍宝贝的降价周期(分钟)。降价拍宝贝的价格每隔paimai_info.interval时间会下降一次increment。<br /> 支持最大值为：60<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PaimaiInfoInterval { get; set; }
 
         /// <summary>
-        /// 拍卖商品选择的拍卖类型，拍卖类型包括三种：增价拍(1)，荷兰拍(2)和降价拍(3)。
+        /// 拍卖商品选择的拍卖类型，拍卖类型包括三种：增价拍(1)，荷兰拍(2)和降价拍(3)。<br /> 支持最大值为：3<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PaimaiInfoMode { get; set; }
 
@@ -321,12 +336,12 @@ namespace Top.Api.Request
         public string PaimaiInfoReserve { get; set; }
 
         /// <summary>
-        /// 自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。
+        /// 自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。<br /> 支持最大值为：48<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PaimaiInfoValidHour { get; set; }
 
         /// <summary>
-        /// 自定义销售周期的分钟数。拍卖宝贝可以自定义销售周期，这里是指定销售周期的分钟数。自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。
+        /// 自定义销售周期的分钟数。拍卖宝贝可以自定义销售周期，这里是指定销售周期的分钟数。自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。<br /> 支持最大值为：59<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> PaimaiInfoValidMinute { get; set; }
 
@@ -356,7 +371,7 @@ namespace Top.Api.Request
         public Nullable<long> ProductId { get; set; }
 
         /// <summary>
-        /// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过511字节
+        /// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过800字节<br /> 支持最大长度为：800<br /> 支持的最大列表长度为：800
         /// </summary>
         public string PropertyAlias { get; set; }
 
@@ -376,7 +391,7 @@ namespace Top.Api.Request
         public Nullable<long> ScenicTicketPayWay { get; set; }
 
         /// <summary>
-        /// 商品卖点信息，最长15个字符。仅天猫商家可用。
+        /// 商品卖点信息，最长150个字符。天猫商家和集市卖家都可用。<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
         /// </summary>
         public string SellPoint { get; set; }
 
@@ -391,6 +406,11 @@ namespace Top.Api.Request
         public string SellerCids { get; set; }
 
         /// <summary>
+        /// sku层面的条形码，多个SKU情况，与SKU价格库存格式类似，用逗号分隔
+        /// </summary>
+        public string SkuBarcode { get; set; }
+
+        /// <summary>
         /// Sku的外部id串，结构如：1234,1342,…  sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是","(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
         /// </summary>
         public string SkuOuterIds { get; set; }
@@ -401,7 +421,7 @@ namespace Top.Api.Request
         public string SkuPrices { get; set; }
 
         /// <summary>
-        /// 更新的Sku的属性串，调用taobao.itemprops.get获取类目属性，如果属性是销售属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid;pid:vid,多个sku之间用逗号分隔。该字段内的销售属性（自定义的除外）也需要在props字段填写。sku的销售属性需要一同选取，如:颜色，尺寸。如果新增商品包含了sku，则此字段一定要传入。这个字段的长度要控制在512个字节以内。  如果有自定义销售属性，则格式为pid:vid;pid2:vid2;$pText:vText , 其中$pText:vText为自定义属性。限制：其中$pText的’$’前缀不能少，且pText和vText文本中不可以存在冒号:和分号;以及逗号，
+        /// 更新的Sku的属性串，调用taobao.itemprops.get获取类目属性，如果属性是销售属性，再用taobao.itempropvalues.get取得vid。格式:一个SKU的pid1:vid;pid2:vid,多个sku之间属性用逗号分隔。该字段内的销售属性（自定义的除外）也需要在props字段填写。sku的销售属性需要一同选取，如:颜色，尺寸。如果新增商品包含了sku，则此字段一定要传入。这个字段的长度要控制在512个字节以内。 如果有自定义销售属性，则格式为pid:vid;pid2:vid2;$pText:vText , 其中$pText:vText为自定义属性。限制：其中$pText的’$’前缀不能少，且pText和vText文本中不可以存在冒号:和分号;以及逗号，
         /// </summary>
         public string SkuProperties { get; set; }
 
@@ -426,7 +446,7 @@ namespace Top.Api.Request
         public Nullable<long> SubStock { get; set; }
 
         /// <summary>
-        /// 宝贝标题。不能超过30字符，受违禁词控制。天猫图书管控类目最大允许120字符；
+        /// 宝贝标题。不能超过30字符，受违禁词控制。天猫图书管控类目最大允许120字符；<br /> 支持最大长度为：120<br /> 支持的最大列表长度为：120
         /// </summary>
         public string Title { get; set; }
 
@@ -461,6 +481,7 @@ namespace Top.Api.Request
             parameters.Add("approve_status", this.ApproveStatus);
             parameters.Add("auction_point", this.AuctionPoint);
             parameters.Add("auto_fill", this.AutoFill);
+            parameters.Add("barcode", this.Barcode);
             parameters.Add("change_prop", this.ChangeProp);
             parameters.Add("cid", this.Cid);
             parameters.Add("cod_postage_id", this.CodPostageId);
@@ -496,6 +517,7 @@ namespace Top.Api.Request
             parameters.Add("is_3D", this.Is3D);
             parameters.Add("is_ex", this.IsEx);
             parameters.Add("is_lightning_consignment", this.IsLightningConsignment);
+            parameters.Add("is_offline", this.IsOffline);
             parameters.Add("is_taobao", this.IsTaobao);
             parameters.Add("is_xinpin", this.IsXinpin);
             parameters.Add("item_size", this.ItemSize);
@@ -512,6 +534,7 @@ namespace Top.Api.Request
             parameters.Add("locality_life.verification", this.LocalityLifeVerification);
             parameters.Add("location.city", this.LocationCity);
             parameters.Add("location.state", this.LocationState);
+            parameters.Add("newprepay", this.Newprepay);
             parameters.Add("num", this.Num);
             parameters.Add("outer_id", this.OuterId);
             parameters.Add("paimai_info.deposit", this.PaimaiInfoDeposit);
@@ -532,6 +555,7 @@ namespace Top.Api.Request
             parameters.Add("sell_point", this.SellPoint);
             parameters.Add("sell_promise", this.SellPromise);
             parameters.Add("seller_cids", this.SellerCids);
+            parameters.Add("sku_barcode", this.SkuBarcode);
             parameters.Add("sku_outer_ids", this.SkuOuterIds);
             parameters.Add("sku_prices", this.SkuPrices);
             parameters.Add("sku_properties", this.SkuProperties);
@@ -569,8 +593,8 @@ namespace Top.Api.Request
             RequestValidator.ValidateMaxValue("paimai_info.valid_minute", this.PaimaiInfoValidMinute, 59);
             RequestValidator.ValidateMinValue("paimai_info.valid_minute", this.PaimaiInfoValidMinute, 0);
             RequestValidator.ValidateRequired("price", this.Price);
-            RequestValidator.ValidateMaxLength("property_alias", this.PropertyAlias, 511);
-            RequestValidator.ValidateMaxLength("sell_point", this.SellPoint, 15);
+            RequestValidator.ValidateMaxLength("property_alias", this.PropertyAlias, 800);
+            RequestValidator.ValidateMaxLength("sell_point", this.SellPoint, 150);
             RequestValidator.ValidateMaxListSize("seller_cids", this.SellerCids, 10);
             RequestValidator.ValidateRequired("stuff_status", this.StuffStatus);
             RequestValidator.ValidateRequired("title", this.Title);

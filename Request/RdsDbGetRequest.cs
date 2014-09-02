@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class RdsDbGetRequest : ITopRequest<RdsDbGetResponse>
     {
         /// <summary>
-        /// 数据库状态，默认值1
+        /// 数据库状态，默认值1<br /> 支持最大值为：3<br /> 支持最小值为：0<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> DbStatus { get; set; }
 
         /// <summary>
-        /// rds的实例名
+        /// rds的实例名<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
         /// </summary>
         public string InstanceName { get; set; }
 

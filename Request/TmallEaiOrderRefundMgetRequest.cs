@@ -11,22 +11,22 @@ namespace Top.Api.Request
     public class TmallEaiOrderRefundMgetRequest : ITopRequest<TmallEaiOrderRefundMgetResponse>
     {
         /// <summary>
-        /// 批量查询结束时间
+        /// 批量查询结束时间。注：该字段对应为退款单更新时间，非退款单创建时间。
         /// </summary>
         public Nullable<DateTime> EndTime { get; set; }
 
         /// <summary>
-        /// 页码。取值范围:大于零的整数; 默认值:1
+        /// 页码。取值范围:大于零的整数; 默认值:1<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数。取值范围:大于零的整数; 默认值:10;最大值:40
+        /// 每页条数。取值范围:大于零的整数; 默认值:10;最大值:40<br /> 支持最大值为：100<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 
         /// <summary>
-        /// 批量查询开始时间
+        /// 批量查询开始时间。注：该字段对应为退款单更新时间，非退款单创建时间。
         /// </summary>
         public Nullable<DateTime> StartTime { get; set; }
 

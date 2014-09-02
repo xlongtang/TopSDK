@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TripJipiaoAgentOrderFailRequest : ITopRequest<TripJipiaoAgentOrderFailResponse>
     {
         /// <summary>
-        /// 失败类型为0，说明备注原因
+        /// 失败类型为0，说明备注原因<br /> 支持最大长度为：200<br /> 支持的最大列表长度为：200
         /// </summary>
         public string FailMemo { get; set; }
 

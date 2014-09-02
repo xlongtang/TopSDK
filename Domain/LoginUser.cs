@@ -28,7 +28,7 @@ namespace Top.Api.Domain
         public long UserId { get; set; }
 
         /// <summary>
-        /// 分销用户类型(1:分销商，2:供应商，3:非分销平台用户)
+        /// 分销用户类型(1:分销商，2:供应商，3:品牌商；2、3都表示有供货能力，只是身份不同)
         /// </summary>
         [XmlElement("user_type")]
         public string UserType { get; set; }

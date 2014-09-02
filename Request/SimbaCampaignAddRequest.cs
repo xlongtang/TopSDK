@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
+        /// 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string Title { get; set; }
 

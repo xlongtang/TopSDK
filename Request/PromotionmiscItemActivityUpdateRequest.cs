@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class PromotionmiscItemActivityUpdateRequest : ITopRequest<PromotionmiscItemActivityUpdateResponse>
     {
         /// <summary>
-        /// 活动id。
+        /// 活动id。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> ActivityId { get; set; }
 
         /// <summary>
-        /// 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。
+        /// 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> DecreaseAmount { get; set; }
 
         /// <summary>
-        /// 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
+        /// 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> DiscountRate { get; set; }
 
@@ -46,12 +46,12 @@ namespace Top.Api.Request
         public Nullable<bool> IsUserTag { get; set; }
 
         /// <summary>
-        /// 活动名称。
+        /// 活动名称。<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 活动范围：0表示全部参与； 1表示部分商品参与。
+        /// 活动范围：0表示全部参与； 1表示部分商品参与。<br /> 支持最大值为：1<br /> 支持最小值为：0<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> ParticipateRange { get; set; }
 

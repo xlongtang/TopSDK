@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 退款单号
+        /// 退款单号<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> RefundId { get; set; }
 

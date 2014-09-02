@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmGroupUpdateRequest : ITopRequest<CrmGroupUpdateResponse>
     {
         /// <summary>
-        /// 分组的id
+        /// 分组的id<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> GroupId { get; set; }
 
         /// <summary>
-        /// 新的分组名，分组名称不能包含|或者：
+        /// 新的分组名，分组名称不能包含|或者：<br /> 支持最大长度为：15<br /> 支持的最大列表长度为：15
         /// </summary>
         public string NewGroupName { get; set; }
 

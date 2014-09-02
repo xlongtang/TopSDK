@@ -11,17 +11,22 @@ namespace Top.Api.Request
     public class PictureUploadRequest : ITopUploadRequest<PictureUploadResponse>
     {
         /// <summary>
+        /// 图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布  client:computer电脑版本宝贝使用  client:phone手机版本宝贝使用
+        /// </summary>
+        public string ClientType { get; set; }
+
+        /// <summary>
         /// 包括后缀名的图片标题,不能为空，如Bule.jpg,有些卖家希望图片上传后取图片文件的默认名
         /// </summary>
         public string ImageInputTitle { get; set; }
 
         /// <summary>
-        /// 图片二进制文件流,不能为空,允许png、jpg、gif图片格式,2M以内。
+        /// 图片二进制文件流,不能为空,允许png、jpg、gif图片格式,3M以内。
         /// </summary>
         public FileItem Img { get; set; }
 
         /// <summary>
-        /// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类
+        /// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> PictureCategoryId { get; set; }
 
@@ -42,6 +47,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("client_type", this.ClientType);
             parameters.Add("image_input_title", this.ImageInputTitle);
             parameters.Add("picture_category_id", this.PictureCategoryId);
             parameters.Add("title", this.Title);

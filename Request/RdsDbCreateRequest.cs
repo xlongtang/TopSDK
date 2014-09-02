@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class RdsDbCreateRequest : ITopRequest<RdsDbCreateResponse>
     {
         /// <summary>
-        /// 数据库名
+        /// 数据库名<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
         /// </summary>
         public string DbName { get; set; }
 
         /// <summary>
-        /// rds的实例名
+        /// rds的实例名<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
         /// </summary>
         public string InstanceName { get; set; }
 

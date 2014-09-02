@@ -40,10 +40,34 @@ namespace Top.Api.Domain
         public long StakeCount { get; set; }
 
         /// <summary>
+        /// 订单状态
+        /// </summary>
+        [XmlElement("status")]
+        public long Status { get; set; }
+
+        /// <summary>
+        /// 订单状态描述
+        /// </summary>
+        [XmlElement("status_desc")]
+        public string StatusDesc { get; set; }
+
+        /// <summary>
+        /// 赠言
+        /// </summary>
+        [XmlElement("sweety_words")]
+        public string SweetyWords { get; set; }
+
+        /// <summary>
         /// 用户昵称
         /// </summary>
         [XmlElement("user_nick")]
         public string UserNick { get; set; }
+
+        /// <summary>
+        /// 用户数字id
+        /// </summary>
+        [XmlElement("user_num_id")]
+        public long UserNumId { get; set; }
 
         /// <summary>
         /// 中奖金额，以分为单位

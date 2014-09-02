@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public string AutoFill { get; set; }
 
         /// <summary>
-        /// 叶子类目id
+        /// 叶子类目id<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Cid { get; set; }
 
@@ -41,7 +41,7 @@ namespace Top.Api.Request
         public Nullable<long> CodPostageId { get; set; }
 
         /// <summary>
-        /// 商品描述. 字数要大于5个字符，小于25000个字符 ，受违禁词控制
+        /// 商品描述. 字数要大于5个字符，小于25000个字符 ，受违禁词控制<br /> 支持最大长度为：200000<br /> 支持的最大列表长度为：200000
         /// </summary>
         public string Desc { get; set; }
 
@@ -81,7 +81,7 @@ namespace Top.Api.Request
         public Nullable<bool> HasWarranty { get; set; }
 
         /// <summary>
-        /// 商品图片。类型:JPG,GIF;最大长度:500k
+        /// 商品图片。类型:JPG,GIF;最大长度:500k<br /> 支持的文件类型为：gif,jpg,jpeg,png<br /> 支持的最大列表长度为：524288
         /// </summary>
         public FileItem Image { get; set; }
 
@@ -151,12 +151,12 @@ namespace Top.Api.Request
         public string LocationState { get; set; }
 
         /// <summary>
-        /// 商品数量，取值范围:0-999999的整数。且需要等于Sku所有数量的和
+        /// 商品数量，取值范围:0-999999的整数。且需要等于Sku所有数量的和<br /> 支持最大值为：999999<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Num { get; set; }
 
         /// <summary>
-        /// 商品数字ID，该参数必须
+        /// 商品数字ID，该参数必须<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 
@@ -241,7 +241,7 @@ namespace Top.Api.Request
         public Nullable<long> SubStock { get; set; }
 
         /// <summary>
-        /// 宝贝标题. 不能超过60字符,受违禁词控制
+        /// 宝贝标题. 不能超过60字符,受违禁词控制<br /> 支持最大长度为：60<br /> 支持的最大列表长度为：60
         /// </summary>
         public string Title { get; set; }
 

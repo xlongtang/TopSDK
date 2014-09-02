@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class PromotionmiscActivityRangeRemoveRequest : ITopRequest<PromotionmiscActivityRangeRemoveResponse>
     {
         /// <summary>
-        /// 活动id。
+        /// 活动id。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> ActivityId { get; set; }
 

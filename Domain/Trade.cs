@@ -29,6 +29,12 @@ namespace Top.Api.Domain
         public string AlipayNo { get; set; }
 
         /// <summary>
+        /// 付款时使用的支付宝积分的额度,单位分，比如返回1，则为1分钱
+        /// </summary>
+        [XmlElement("alipay_point")]
+        public long AlipayPoint { get; set; }
+
+        /// <summary>
         /// 创建交易接口成功后，返回的支付url
         /// </summary>
         [XmlElement("alipay_url")]
@@ -45,6 +51,24 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("area_id")]
         public string AreaId { get; set; }
+
+        /// <summary>
+        /// 物流到货时效截单时间，格式 HH:mm
+        /// </summary>
+        [XmlElement("arrive_cut_time")]
+        public string ArriveCutTime { get; set; }
+
+        /// <summary>
+        /// 物流到货时效，单位天
+        /// </summary>
+        [XmlElement("arrive_interval")]
+        public long ArriveInterval { get; set; }
+
+        /// <summary>
+        /// 同步到卖家库的时间，taobao.trades.sold.incrementv.get接口返回此字段
+        /// </summary>
+        [XmlElement("async_modified")]
+        public string AsyncModified { get; set; }
 
         /// <summary>
         /// 交易中剩余的确认收货金额（这个金额会随着子订单确认收货而不断减少，交易成功后会变为零）。精确到2位小数;单位:元。如:200.07，表示:200 元7分
@@ -137,6 +161,12 @@ namespace Top.Api.Domain
         public string CommissionFee { get; set; }
 
         /// <summary>
+        /// 物流发货时效，单位小时
+        /// </summary>
+        [XmlElement("consign_interval")]
+        public long ConsignInterval { get; set; }
+
+        /// <summary>
         /// 卖家发货时间。格式:yyyy-MM-dd HH:mm:ss
         /// </summary>
         [XmlElement("consign_time")]
@@ -207,6 +237,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("invoice_name")]
         public string InvoiceName { get; set; }
+
+        /// <summary>
+        /// 发票类型
+        /// </summary>
+        [XmlElement("invoice_type")]
+        public string InvoiceType { get; set; }
 
         /// <summary>
         /// 是否是3D淘宝交易
@@ -293,6 +329,48 @@ namespace Top.Api.Domain
         public string NutFeature { get; set; }
 
         /// <summary>
+        /// 导购宝=crm
+        /// </summary>
+        [XmlElement("o2o")]
+        public string O2o { get; set; }
+
+        /// <summary>
+        /// 导购宝提货方式，inshop：店内提货，online：线上发货
+        /// </summary>
+        [XmlElement("o2o_delivery")]
+        public string O2oDelivery { get; set; }
+
+        /// <summary>
+        /// 导购员id
+        /// </summary>
+        [XmlElement("o2o_guide_id")]
+        public string O2oGuideId { get; set; }
+
+        /// <summary>
+        /// 导购员名称
+        /// </summary>
+        [XmlElement("o2o_guide_name")]
+        public string O2oGuideName { get; set; }
+
+        /// <summary>
+        /// 外部订单号
+        /// </summary>
+        [XmlElement("o2o_out_trade_id")]
+        public string O2oOutTradeId { get; set; }
+
+        /// <summary>
+        /// 导购员门店id
+        /// </summary>
+        [XmlElement("o2o_shop_id")]
+        public string O2oShopId { get; set; }
+
+        /// <summary>
+        /// 导购门店名称
+        /// </summary>
+        [XmlElement("o2o_shop_name")]
+        public string O2oShopName { get; set; }
+
+        /// <summary>
         /// 订单列表
         /// </summary>
         [XmlArray("orders")]
@@ -310,6 +388,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("payment")]
         public string Payment { get; set; }
+
+        /// <summary>
+        /// 天猫点券卡实付款金额,单位分
+        /// </summary>
+        [XmlElement("pcc_af")]
+        public long PccAf { get; set; }
 
         /// <summary>
         /// 商品图片绝对途径
@@ -488,6 +572,13 @@ namespace Top.Api.Domain
         public List<ServiceOrder> ServiceOrders { get; set; }
 
         /// <summary>
+        /// 物流标签
+        /// </summary>
+        [XmlArray("service_tags")]
+        [XmlArrayItem("logistics_tag")]
+        public List<LogisticsTag> ServiceTags { get; set; }
+
+        /// <summary>
         /// 创建交易时的物流方式（交易完成前，物流方式有可能改变，但系统里的这个字段一直不变）。可选值：free(卖家包邮),post(平邮),express(快递),ems(EMS),virtual(虚拟发货)，25(次日必达)，26(预约配送)。
         /// </summary>
         [XmlElement("shipping_type")]
@@ -506,7 +597,7 @@ namespace Top.Api.Domain
         public string SnapshotUrl { get; set; }
 
         /// <summary>
-        /// 交易状态。可选值:      * TRADE_NO_CREATE_PAY(没有创建支付宝交易)      * WAIT_BUYER_PAY(等待买家付款)      * SELLER_CONSIGNED_PART(卖家部分发货)      * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)      * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)      * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)      * TRADE_FINISHED(交易成功)      * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)      * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)
+        /// 交易状态。可选值:      * TRADE_NO_CREATE_PAY(没有创建支付宝交易)      * WAIT_BUYER_PAY(等待买家付款)      * SELLER_CONSIGNED_PART(卖家部分发货)      * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)      * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)      * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)      * TRADE_FINISHED(交易成功)      * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)      * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)      * PAY_PENDING(国际信用卡支付付款确认中)      * WAIT_PRE_AUTH_CONFIRM(0元购合约中)
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }
@@ -566,7 +657,7 @@ namespace Top.Api.Domain
         public string TradeSource { get; set; }
 
         /// <summary>
-        /// 交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据  可选值  fixed(一口价)  auction(拍卖)  guarantee_trade(一口价、拍卖)  auto_delivery(自动发货)  independent_simple_trade(旺店入门版交易)  independent_shop_trade(旺店标准版交易)  ec(直冲)  cod(货到付款)  fenxiao(分销)  game_equipment(游戏装备)  shopex_trade(ShopEX交易)  netcn_trade(万网交易)  external_trade(统一外部交易) step (万人团)
+        /// 交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据  可选值  fixed(一口价)  auction(拍卖)  guarantee_trade(一口价、拍卖)  auto_delivery(自动发货)  independent_simple_trade(旺店入门版交易)  independent_shop_trade(旺店标准版交易)  ec(直冲)  cod(货到付款)  fenxiao(分销)  game_equipment(游戏装备)  shopex_trade(ShopEX交易)  netcn_trade(万网交易)  external_trade(统一外部交易) step (万人团) nopaid(无付款订单) pre_auth_type(预授权0元购机交易)
         /// </summary>
         [XmlElement("type")]
         public string Type { get; set; }
@@ -588,5 +679,11 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("yfx_type")]
         public string YfxType { get; set; }
+
+        /// <summary>
+        /// 在返回的trade对象上专门增加一个字段zero_purchase来区分，这个为true的就是0元购机预授权交易
+        /// </summary>
+        [XmlElement("zero_purchase")]
+        public bool ZeroPurchase { get; set; }
     }
 }

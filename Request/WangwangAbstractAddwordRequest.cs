@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Charset { get; set; }
 
         /// <summary>
-        /// 关键词，长度大于0
+        /// 关键词，长度大于0<br /> 支持最大长度为：12<br /> 支持的最大列表长度为：12
         /// </summary>
         public string Word { get; set; }
 

@@ -150,6 +150,13 @@ namespace Top.Api.Domain
         public long Payment { get; set; }
 
         /// <summary>
+        /// 下单时每间夜的价格（分）
+        /// </summary>
+        [XmlArray("prices")]
+        [XmlArrayItem("number")]
+        public List<long> Prices { get; set; }
+
+        /// <summary>
         /// 退款状态。STATUS_WAIT_SELLER_AGREE：买家已经申请退款，等待卖家同意。STATUS_WAIT_BUYER_RETURN_GOODS：卖家已经同意退款，等待买家退货。STATUS_WAIT_SELLER_CONFIRM_GOODS：买家已经退货，等待卖家确认收货。STATUS_CLOSED：退款关闭。STATUS_SUCCESS：退款成功->买家取消预定。STATUS_SELLER_REFUSE_BUYER：卖家拒绝退款。STATUS_WAIT_OUT_PAY_SYSTEM_REFUND：等待外部交易系统退款。STATUS_NO_REFUND：没有申请退款。STATUS_ACTIVE_REFUND：有活动退款。STATUS_END_REFUND：退款结束。
         /// </summary>
         [XmlElement("refund_status")]

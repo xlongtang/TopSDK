@@ -70,7 +70,7 @@ namespace Top.Api.Domain
         public bool HasShop { get; set; }
 
         /// <summary>
-        /// 表示用户是否具备修改商品减库存逻辑的权限（一共有拍下减库存和付款减库存两种逻辑）  值含义：  1）true：是  2）false：否。
+        /// 表示用户是否具备修改商品减库存逻辑的权限（一共有拍下减库存和付款减库存两种逻辑） 值含义： 1）true：是 2）false：否。
         /// </summary>
         [XmlElement("has_sub_stock")]
         public bool HasSubStock { get; set; }
@@ -106,7 +106,7 @@ namespace Top.Api.Domain
         public string LastVisit { get; set; }
 
         /// <summary>
-        /// 是否是无名良品用户，true or  false
+        /// 是否是无名良品用户，true or false
         /// </summary>
         [XmlElement("liangpin")]
         public bool Liangpin { get; set; }
@@ -130,7 +130,7 @@ namespace Top.Api.Domain
         public string Nick { get; set; }
 
         /// <summary>
-        /// 用户是否为网游用户，属于隐私信息，需要登陆才能查看自己的。  目前仅供taobao.user.get使用
+        /// 用户是否为网游用户，属于隐私信息，需要登陆才能查看自己的。 目前仅供taobao.user.get使用
         /// </summary>
         [XmlElement("online_gaming")]
         public bool OnlineGaming { get; set; }

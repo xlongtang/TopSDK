@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class PromotionmiscItemActivityListGetRequest : ITopRequest<PromotionmiscItemActivityListGetResponse>
     {
         /// <summary>
-        /// 页码。
+        /// 页码。<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页记录数，最大支持50 。
+        /// 每页记录数，最大支持50 。<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

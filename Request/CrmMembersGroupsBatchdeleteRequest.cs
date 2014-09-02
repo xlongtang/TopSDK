@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmMembersGroupsBatchdeleteRequest : ITopRequest<CrmMembersGroupsBatchdeleteResponse>
     {
         /// <summary>
-        /// 买家的Id集合
+        /// 买家的Id集合<br /> 支持最小值为：1
         /// </summary>
         public string BuyerIds { get; set; }
 
         /// <summary>
-        /// 会员需要删除的分组
+        /// 会员需要删除的分组<br /> 支持最小值为：1
         /// </summary>
         public string GroupIds { get; set; }
 

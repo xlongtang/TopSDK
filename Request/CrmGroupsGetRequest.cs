@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmGroupsGetRequest : ITopRequest<CrmGroupsGetResponse>
     {
         /// <summary>
-        /// 显示第几页的分组，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页码为1
+        /// 显示第几页的分组，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页码为1<br /> 支持最大值为：1000000<br /> 支持最小值为：1<br /> 支持的最大列表长度为：3
         /// </summary>
         public Nullable<long> CurrentPage { get; set; }
 
         /// <summary>
-        /// 每页显示的记录数，其最大值不能超过100条，最小值为1，默认20条
+        /// 每页显示的记录数，其最大值不能超过100条，最小值为1，默认20条<br /> 支持最大值为：100<br /> 支持最小值为：1<br /> 支持的最大列表长度为：3
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

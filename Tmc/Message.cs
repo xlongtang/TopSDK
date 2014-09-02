@@ -16,6 +16,8 @@ namespace Top.Tmc
         public string PubAppKey { get; set; }
         /// <summary>发布时间</summary>
         public DateTime PubTime { get; set; }
+        /// <summary>从服务器发送时间</summary>
+        public DateTime OutgoingTime { get; set; }
         /// <summary>消息所属的用户ID，若不是用户相关消息则为空</summary>
         public Nullable<long> UserId { get; set; }
         /// <summary>消息所属的用户昵称，若不是用户相关消息则为空</summary>

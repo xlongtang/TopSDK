@@ -26,12 +26,12 @@ namespace Top.Api.Request
         public string OrderField { get; set; }
 
         /// <summary>
-        /// 页码，从1开始,最大50。最大只能获取1W个宝贝
+        /// 页码，从1开始,最大50。最大只能获取1W个宝贝<br /> 支持最大值为：50
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 页尺寸，最大200
+        /// 页尺寸，最大200<br /> 支持最大值为：200
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

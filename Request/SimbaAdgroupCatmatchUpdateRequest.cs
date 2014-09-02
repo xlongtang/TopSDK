@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<long> CatmatchId { get; set; }
 
         /// <summary>
-        /// 类目出价，单位为分，不能小于5。如果use_default_price字段为使用默认出价，则此max_price字段所传入的值不起作用。商品将会使用默认出价。
+        /// 类目出价，单位为分，不能小于5。如果use_default_price字段为使用默认出价，则此max_price字段所传入的值不起作用。商品将会使用默认出价。<br /> 支持最小值为：5
         /// </summary>
         public Nullable<long> MaxPrice { get; set; }
 

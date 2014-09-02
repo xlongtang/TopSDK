@@ -41,7 +41,7 @@ namespace Top.Api.Request
         public Nullable<bool> GetDef { get; set; }
 
         /// <summary>
-        /// 备注,<br><font color='red'>备注不能超过256字节</font>
+        /// 备注,<br><font color='red'>备注不能超过256字节</font><br /> 支持最大长度为：256<br /> 支持的最大列表长度为：256
         /// </summary>
         public string Memo { get; set; }
 
@@ -61,7 +61,7 @@ namespace Top.Api.Request
         public string Province { get; set; }
 
         /// <summary>
-        /// 公司名称,<br><font color="red">公司名称长能不能超过20字节</font>
+        /// 公司名称,<br><font color="red">公司名称长能不能超过20字节</font><br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string SellerCompany { get; set; }
 

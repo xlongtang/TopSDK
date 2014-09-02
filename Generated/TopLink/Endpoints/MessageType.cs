@@ -30,6 +30,7 @@ namespace Taobao.Top.Link.Endpoints
             public const byte Int32 = 4;
             public const byte Int64 = 5;
             public const byte Date = 6;
+            public const byte ByteArray = 7;
         }
     }
 }

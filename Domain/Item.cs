@@ -35,6 +35,12 @@ namespace Top.Api.Domain
         public string AutoFill { get; set; }
 
         /// <summary>
+        /// 商品级别的条形码
+        /// </summary>
+        [XmlElement("barcode")]
+        public string Barcode { get; set; }
+
+        /// <summary>
         /// 基础色数据
         /// </summary>
         [XmlElement("change_prop")]
@@ -197,6 +203,12 @@ namespace Top.Api.Domain
         public bool Is3D { get; set; }
 
         /// <summary>
+        /// 是否为达尔文挂接成功了的商品
+        /// </summary>
+        [XmlElement("is_cspu")]
+        public bool IsCspu { get; set; }
+
+        /// <summary>
         /// 是否在外部网店显示
         /// </summary>
         [XmlElement("is_ex")]
@@ -213,6 +225,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("is_lightning_consignment")]
         public bool IsLightningConsignment { get; set; }
+
+        /// <summary>
+        /// 是否是线下商品。  1：线上商品（默认值）；  2：线上或线下商品；  3：线下商品。
+        /// </summary>
+        [XmlElement("is_offline")]
+        public string IsOffline { get; set; }
 
         /// <summary>
         /// 商品是否为先行赔付  taobao.items.search和taobao.items.vip.search专用
@@ -286,6 +304,18 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("modified")]
         public string Modified { get; set; }
+
+        /// <summary>
+        /// 宝贝主图视频的数据信息，包括：视频ID，视频缩略图URL，视频时长，视频状态等信息。
+        /// </summary>
+        [XmlElement("mpic_video")]
+        public MpicVideo MpicVideo { get; set; }
+
+        /// <summary>
+        /// 是否为新消保法中的7天无理由退货
+        /// </summary>
+        [XmlElement("newprepay")]
+        public string Newprepay { get; set; }
 
         /// <summary>
         /// 卖家昵称
@@ -403,7 +433,13 @@ namespace Top.Api.Domain
         public string SecondKill { get; set; }
 
         /// <summary>
-        /// 商品卖点信息，天猫商家使用字段，最长15个字符。
+        /// 达尔文数据挂接，第二步保存结果
+        /// </summary>
+        [XmlElement("second_result")]
+        public bool SecondResult { get; set; }
+
+        /// <summary>
+        /// 商品卖点信息，天猫商家使用字段，最长150个字符。
         /// </summary>
         [XmlElement("sell_point")]
         public string SellPoint { get; set; }
@@ -428,6 +464,12 @@ namespace Top.Api.Domain
         public List<Sku> Skus { get; set; }
 
         /// <summary>
+        /// 商品销量
+        /// </summary>
+        [XmlElement("sold_quantity")]
+        public long SoldQuantity { get; set; }
+
+        /// <summary>
         /// 商品新旧程度(全新:new，闲置:unused，二手：second)
         /// </summary>
         [XmlElement("stuff_status")]
@@ -438,6 +480,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("sub_stock")]
         public long SubStock { get; set; }
+
+        /// <summary>
+        /// 商品的子标题，给商品增加卖点等描述
+        /// </summary>
+        [XmlElement("sub_title")]
+        public string SubTitle { get; set; }
 
         /// <summary>
         /// 页面模板id
@@ -464,6 +512,12 @@ namespace Top.Api.Domain
         public long ValidThru { get; set; }
 
         /// <summary>
+        /// 该字段废弃，请勿使用。
+        /// </summary>
+        [XmlElement("video_id")]
+        public long VideoId { get; set; }
+
+        /// <summary>
         /// 商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、  video.url等形式就只会返回相应的字段
         /// </summary>
         [XmlArray("videos")]
@@ -487,6 +541,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("wap_detail_url")]
         public string WapDetailUrl { get; set; }
+
+        /// <summary>
+        /// 无线的宝贝描述
+        /// </summary>
+        [XmlElement("wireless_desc")]
+        public string WirelessDesc { get; set; }
 
         /// <summary>
         /// 预扣库存，即付款减库存的商品现在有多少处于未付款状态的订单

@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class FavoriteSearchRequest : ITopRequest<FavoriteSearchResponse>
     {
         /// <summary>
-        /// ITEM表示宝贝，SHOP表示商铺，collect_type只能为这两者之一
+        /// ITEM表示宝贝，SHOP表示商铺，collect_type只能为这两者之一<br /> 支持最大长度为：4<br /> 支持的最大列表长度为：4
         /// </summary>
         public string CollectType { get; set; }
 
         /// <summary>
-        /// 页码。取值范围:大于零的整数; 默认值:1。一页20条记录。
+        /// 页码。取值范围:大于零的整数; 默认值:1。一页20条记录。<br /> 支持最大值为：100<br /> 支持最小值为：1<br /> 支持的最大列表长度为：20
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 

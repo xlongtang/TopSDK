@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class CrmGroupAddRequest : ITopRequest<CrmGroupAddResponse>
     {
         /// <summary>
-        /// 分组名称，每个卖家最多可以拥有100个分组
+        /// 分组名称，每个卖家最多可以拥有100个分组<br /> 支持最大长度为：15<br /> 支持的最大列表长度为：15
         /// </summary>
         public string GroupName { get; set; }
 

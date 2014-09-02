@@ -52,6 +52,18 @@ namespace Top.Api.Domain
         public long Quantity { get; set; }
 
         /// <summary>
+        /// 配额可用库存
+        /// </summary>
+        [XmlElement("quota_quantity")]
+        public long QuotaQuantity { get; set; }
+
+        /// <summary>
+        /// 预扣库存
+        /// </summary>
+        [XmlElement("reserved_quantity")]
+        public long ReservedQuantity { get; set; }
+
+        /// <summary>
         /// 关联的后端商品id
         /// </summary>
         [XmlElement("scitem_id")]

@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class TripJipiaoAgentItinerarySendRequest : ITopRequest<TripJipiaoAgentItinerarySendResponse>
     {
         /// <summary>
-        /// 物流公司代码CODE，如不清楚，请找运营提供
+        /// 物流公司代码CODE，如不清楚，请找运营提供<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string CompanyCode { get; set; }
 
         /// <summary>
-        /// 邮寄单号，长度不能超过32字节
+        /// 邮寄单号，长度不能超过32字节<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string ExpressCode { get; set; }
 
@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public Nullable<long> ItineraryId { get; set; }
 
         /// <summary>
-        /// 行程单号
+        /// 行程单号<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string ItineraryNo { get; set; }
 

@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页获取条数。默认值40，最小值1，最大值150。
+        /// 每页获取条数。默认值40，最小值1，最大值150。<br /> 支持最大值为：150<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

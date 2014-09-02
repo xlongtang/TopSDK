@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 商品图片内容类型:JPG,GIF;最大:500KB 。支持的文件类型：gif,jpg,jpeg,png
+        /// 商品图片内容类型:JPG,GIF;最大:500KB 。支持的文件类型：gif,jpg,jpeg,png<br /> 支持的文件类型为：gif,jpg,jpeg,png,bmp<br /> 支持的最大列表长度为：1048576
         /// </summary>
         public FileItem Image { get; set; }
 
@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public Nullable<bool> IsMajor { get; set; }
 
         /// <summary>
-        /// 商品数字ID，该参数必须
+        /// 商品数字ID，该参数必须<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

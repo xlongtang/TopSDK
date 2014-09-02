@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> CouponId { get; set; }
 
         /// <summary>
-        /// 优惠券的面额，必须是3，5，10，20，50,100
+        /// 优惠券的面额，必须是3，5，10，20，50,100<br /> 支持最大值为：100<br /> 支持最小值为：3
         /// </summary>
         public Nullable<long> Denominations { get; set; }
 
@@ -26,12 +26,12 @@ namespace Top.Api.Request
         public Nullable<DateTime> EndTime { get; set; }
 
         /// <summary>
-        /// 查询的页号，结果集是分页返回的，每页20条
+        /// 查询的页号，结果集是分页返回的，每页20条<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数
+        /// 每页条数<br /> 支持的最大列表长度为：20
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

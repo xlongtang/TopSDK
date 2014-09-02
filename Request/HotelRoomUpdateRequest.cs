@@ -11,37 +11,37 @@ namespace Top.Api.Request
     public class HotelRoomUpdateRequest : ITopUploadRequest<HotelRoomUpdateResponse>
     {
         /// <summary>
-        /// 面积。可选值：A,B,C,D。分别代表：  A：15平米以下，B：16－30平米，C：31－50平米，D：50平米以上
+        /// 面积。可选值：A,B,C,D。分别代表：  A：15平米以下，B：16－30平米，C：31－50平米，D：50平米以上<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string Area { get; set; }
 
         /// <summary>
-        /// 宽带服务。A,B,C,D。分别代表：  A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带
+        /// 宽带服务。A,B,C,D。分别代表：  A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string Bbn { get; set; }
 
         /// <summary>
-        /// 床型。可选值：A,B,C,D,E,F,G,H,I。分别代表：A：单人床，B：大床，C：双床，D：双床/大床，E：子母床，F：上下床，G：圆形床，H：多床，I：其他床型
+        /// 床型。可选值：A,B,C,D,E,F,G,H,I。分别代表：A：单人床，B：大床，C：双床，D：双床/大床，E：子母床，F：上下床，G：圆形床，H：多床，I：其他床型<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string BedType { get; set; }
 
         /// <summary>
-        /// 早餐。A,B,C,D,E。分别代表：  A：无早，B：单早，C：双早，D：三早，E：多早
+        /// 早餐。A,B,C,D,E。分别代表：  A：无早，B：单早，C：双早，D：三早，E：多早<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string Breakfast { get; set; }
 
         /// <summary>
-        /// 订金。0～99999900的正整数。在payment_type为订金时必须输入，存储的单位是分。不能带角分。
+        /// 订金。0～99999900的正整数。在payment_type为订金时必须输入，存储的单位是分。不能带角分。<br /> 支持最大值为：99999900<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Deposit { get; set; }
 
         /// <summary>
-        /// 商品描述。不能超过25000个汉字（50000个字符）。
+        /// 商品描述。不能超过25000个汉字（50000个字符）。<br /> 支持最大长度为：50000<br /> 支持的最大列表长度为：50000
         /// </summary>
         public string Desc { get; set; }
 
         /// <summary>
-        /// 手续费。0～99999900的正整数。在payment_type为手续费或手续费/间夜时必须输入，存储的单位是分。不能带角分。
+        /// 手续费。0～99999900的正整数。在payment_type为手续费或手续费/间夜时必须输入，存储的单位是分。不能带角分。<br /> 支持最大值为：99999900<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Fee { get; set; }
 
@@ -51,7 +51,7 @@ namespace Top.Api.Request
         public Nullable<long> Gid { get; set; }
 
         /// <summary>
-        /// 购买须知。不能超过300个字。
+        /// 购买须知。不能超过300个字。<br /> 支持最大长度为：300<br /> 支持的最大列表长度为：300
         /// </summary>
         public string Guide { get; set; }
 
@@ -66,12 +66,12 @@ namespace Top.Api.Request
         public string MultiRoomQuotas { get; set; }
 
         /// <summary>
-        /// 支付类型。可选值：A,B,C,D,E。分别代表：  A：全额支付，B：手续费，C：订金，D：手续费/间夜，E：前台面付
+        /// 支付类型。可选值：A,B,C,D,E。分别代表：  A：全额支付，B：手续费，C：订金，D：手续费/间夜，E：前台面付<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string PaymentType { get; set; }
 
         /// <summary>
-        /// 酒店商品图片。类型:JPG,GIF;最大长度:500K。支持的文件类型：gif,jpg,jpeg,png。更新的时候只能更新一张图片，此图片覆盖原有所有图片。如果不传则使用原有所有图片。  如需再发图片，需要调用商品图片上传接口，1个商品最多5张图片。
+        /// 酒店商品图片。类型:JPG,GIF;最大长度:500K。支持的文件类型：gif,jpg,jpeg,png。更新的时候只能更新一张图片，此图片覆盖原有所有图片。如果不传则使用原有所有图片。  如需再发图片，需要调用商品图片上传接口，1个商品最多5张图片。<br /> 支持的文件类型为：jpg,png,gif<br /> 支持的最大列表长度为：512000
         /// </summary>
         public FileItem Pic { get; set; }
 
@@ -81,7 +81,7 @@ namespace Top.Api.Request
         public string PicPath { get; set; }
 
         /// <summary>
-        /// 价格类型。可选值：A,B。分别代表：A：参考预订价，B实时预订价 。未选该参数默认为参考预订价。选择实时预订价的情况下，支付类型必须选择为A(全额支付)
+        /// 价格类型。可选值：A,B。分别代表：A：参考预订价，B实时预订价 。未选该参数默认为参考预订价。选择实时预订价的情况下，支付类型必须选择为A(全额支付)<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string PriceType { get; set; }
 
@@ -121,22 +121,22 @@ namespace Top.Api.Request
         public string SiteParam { get; set; }
 
         /// <summary>
-        /// 床宽。可选值：A,B,C,D,E,F,G,H。分别代表：A：1米及以下，B：1.1米，C：1.2米，D：1.35米，E：1.5米，F：1.8米，G：2米，H：2.2米及以上
+        /// 床宽。可选值：A,B,C,D,E,F,G,H。分别代表：A：1米及以下，B：1.1米，C：1.2米，D：1.35米，E：1.5米，F：1.8米，G：2米，H：2.2米及以上<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string Size { get; set; }
 
         /// <summary>
-        /// 状态。可选值1，2，3。1：上架。2：下架。3：删除。传入相应状态代表去执行相应的操作。
+        /// 状态。可选值1，2，3。1：上架。2：下架。3：删除。传入相应状态代表去执行相应的操作。<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> Status { get; set; }
 
         /// <summary>
-        /// 楼层。长度不超过8
+        /// 楼层。长度不超过8<br /> 支持最大长度为：8<br /> 支持的最大列表长度为：8
         /// </summary>
         public string Storey { get; set; }
 
         /// <summary>
-        /// 酒店商品名称。不能超过60字节
+        /// 酒店商品名称。不能超过60字节<br /> 支持最大长度为：90<br /> 支持的最大列表长度为：90
         /// </summary>
         public string Title { get; set; }
 

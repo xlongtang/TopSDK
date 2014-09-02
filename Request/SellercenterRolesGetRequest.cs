@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class SellercenterRolesGetRequest : ITopRequest<SellercenterRolesGetResponse>
     {
         /// <summary>
-        /// 卖家昵称(只允许查询自己的信息：当前登陆者)
+        /// 卖家昵称(只允许查询自己的信息：当前登陆者)<br /> 支持最大长度为：500<br /> 支持的最大列表长度为：500
         /// </summary>
         public string Nick { get; set; }
 

@@ -22,6 +22,12 @@ namespace Top.Api.Domain
         public string MessageContent { get; set; }
 
         /// <summary>
+        /// 退款留言
+        /// </summary>
+        [XmlElement("message_id")]
+        public long MessageId { get; set; }
+
+        /// <summary>
         /// 退款单编号
         /// </summary>
         [XmlElement("refund_id")]

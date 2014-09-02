@@ -94,7 +94,7 @@ namespace Taobao.Top.Link.Endpoints
         /// <returns></returns>
         public IDictionary<string, object> SendAndWait(IDictionary<string, object> message)
         {
-            return this.SendAndWait(message, Endpoint.TIMOUT);
+            return this.SendAndWait(message, Endpoint.TIMEOUT);
         }
         /// <summary>send message and wait reply
         /// </summary>

@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class FenxiaoProductSkusGetRequest : ITopRequest<FenxiaoProductSkusGetResponse>
     {
         /// <summary>
-        /// 产品ID
+        /// 产品ID<br /> 支持的最大列表长度为：64
         /// </summary>
         public Nullable<long> ProductId { get; set; }
 

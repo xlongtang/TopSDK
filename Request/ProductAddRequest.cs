@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ProductAddRequest : ITopUploadRequest<ProductAddResponse>
     {
         /// <summary>
-        /// 非关键属性结构:pid:vid;pid:vid.<br> 非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性; <br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font>
+        /// 非关键属性结构:pid:vid;pid:vid.<br> 非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性; <br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font><br /> 支持最大长度为：512<br /> 支持的最大列表长度为：512
         /// </summary>
         public string Binds { get; set; }
 
@@ -31,14 +31,19 @@ namespace Top.Api.Request
         public string Desc { get; set; }
 
         /// <summary>
-        /// 存放产品扩展信息，由List(ProductExtraInfo)转化成jsonArray存入.
+        /// 存放产品扩展信息，由List(ProductExtraInfo)转化成jsonArray存入.<br /> 支持最大长度为：25000<br /> 支持的最大列表长度为：25000
         /// </summary>
         public string ExtraInfo { get; set; }
 
         /// <summary>
-        /// 产品主图片.最大1M,目前仅支持GIF,JPG.
+        /// 产品主图片.最大1M,目前仅支持GIF,JPG.<br /> 支持的文件类型为：gif,jpg,png,jpeg<br /> 支持的最大列表长度为：1048576
         /// </summary>
         public FileItem Image { get; set; }
+
+        /// <summary>
+        /// 是否发布套装产品，和suite_items_str配合使用，is_pub_suite=true走套装SPU发布逻辑，达尔文体系下不需要再走tmall.product.spec.add发布产品规格
+        /// </summary>
+        public Nullable<bool> IsPubSuite { get; set; }
 
         /// <summary>
         /// 是不是主图
@@ -95,6 +100,16 @@ namespace Top.Api.Request
         /// </summary>
         public string SellPt { get; set; }
 
+        /// <summary>
+        /// 发布套装产品时，套装关联的产品规格+数量的字符串，格式：specsId:number。
+        /// </summary>
+        public string SuiteItemsStr { get; set; }
+
+        /// <summary>
+        /// 在天猫，无关键属性发布产品，必须指定模板ID,模板ID通过tmall.product.template.get获取
+        /// </summary>
+        public Nullable<long> TemplateId { get; set; }
+
         private IDictionary<string, string> otherParameters;
 
         #region ITopRequest Members
@@ -112,6 +127,7 @@ namespace Top.Api.Request
             parameters.Add("customer_props", this.CustomerProps);
             parameters.Add("desc", this.Desc);
             parameters.Add("extra_info", this.ExtraInfo);
+            parameters.Add("is_pub_suite", this.IsPubSuite);
             parameters.Add("major", this.Major);
             parameters.Add("market_id", this.MarketId);
             parameters.Add("market_time", this.MarketTime);
@@ -123,6 +139,8 @@ namespace Top.Api.Request
             parameters.Add("props", this.Props);
             parameters.Add("sale_props", this.SaleProps);
             parameters.Add("sell_pt", this.SellPt);
+            parameters.Add("suite_items_str", this.SuiteItemsStr);
+            parameters.Add("template_id", this.TemplateId);
             parameters.AddAll(this.otherParameters);
             return parameters;
         }

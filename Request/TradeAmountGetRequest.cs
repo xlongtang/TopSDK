@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 订单交易编号
+        /// 订单交易编号<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：-9223372036854775808
         /// </summary>
         public Nullable<long> Tid { get; set; }
 

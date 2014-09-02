@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace Top.Api.Domain
 {
@@ -26,5 +27,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("parent_id")]
         public long ParentId { get; set; }
+
+        /// <summary>
+        /// 部门下关联的子账号id列表
+        /// </summary>
+        [XmlArray("sub_user_ids")]
+        [XmlArrayItem("number")]
+        public List<long> SubUserIds { get; set; }
     }
 }

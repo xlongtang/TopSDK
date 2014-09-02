@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace Top.Api.Domain
 {
@@ -34,10 +35,23 @@ namespace Top.Api.Domain
         public string Created { get; set; }
 
         /// <summary>
+        /// 优惠活动的折扣金额
+        /// </summary>
+        [XmlElement("discount_fee")]
+        public string DiscountFee { get; set; }
+
+        /// <summary>
         /// 分销商实付金额=total_fee（分销商应付金额）+改价-优惠。（精确到2位小数;单位:元。如:200.07，表示:200元7分）
         /// </summary>
         [XmlElement("distributor_payment")]
         public string DistributorPayment { get; set; }
+
+        /// <summary>
+        /// Feature对象列表  目前已有的属性：  attr_key为 www，attr_value为1 表示是www子订单  attr_key为 wwwStoreCode，attr_value 是www子订单发货的仓库编码  attr_key为isWt,attr_value为1 表示是网厅子订单  attr_key为wtInfo,attr_value为网厅相关合约信息
+        /// </summary>
+        [XmlArray("features")]
+        [XmlArrayItem("feature")]
+        public List<Feature> Features { get; set; }
 
         /// <summary>
         /// 分销平台的子采购单主键
@@ -86,6 +100,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("price")]
         public string Price { get; set; }
+
+        /// <summary>
+        /// 优惠活动类型  0=无优惠  1=限时折
+        /// </summary>
+        [XmlElement("promotion_type")]
+        public string PromotionType { get; set; }
 
         /// <summary>
         /// 退款金额

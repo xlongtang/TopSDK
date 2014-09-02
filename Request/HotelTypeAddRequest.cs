@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class HotelTypeAddRequest : ITopRequest<HotelTypeAddResponse>
     {
         /// <summary>
-        /// 酒店id。必须为数字
+        /// 酒店id。必须为数字<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Hid { get; set; }
 
         /// <summary>
-        /// 房型名称。长度不能超过30
+        /// 房型名称。长度不能超过30<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 接入卖家数据主键,格式为“接入方酒店id-接入方房型id”
+        /// 接入卖家数据主键,格式为“接入方酒店id-接入方房型id”<br /> 支持最大长度为：100<br /> 支持的最大列表长度为：100
         /// </summary>
         public string SiteParam { get; set; }
 

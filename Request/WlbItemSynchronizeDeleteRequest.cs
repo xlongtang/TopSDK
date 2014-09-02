@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WlbItemSynchronizeDeleteRequest : ITopRequest<WlbItemSynchronizeDeleteResponse>
     {
         /// <summary>
-        /// 外部实体ID
+        /// 外部实体ID<br /> 支持的最大列表长度为：64
         /// </summary>
         public Nullable<long> ExtEntityId { get; set; }
 
@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string ExtEntityType { get; set; }
 
         /// <summary>
-        /// 物流宝商品ID
+        /// 物流宝商品ID<br /> 支持的最大列表长度为：20
         /// </summary>
         public Nullable<long> ItemId { get; set; }
 

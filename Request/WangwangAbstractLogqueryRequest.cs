@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Charset { get; set; }
 
         /// <summary>
-        /// 获取记录条数，默认值是1000
+        /// 获取记录条数，默认值是1000<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> Count { get; set; }
 

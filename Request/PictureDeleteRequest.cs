@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class PictureDeleteRequest : ITopRequest<PictureDeleteResponse>
     {
         /// <summary>
-        /// 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155
+        /// 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
         /// </summary>
         public string PictureIds { get; set; }
 
@@ -35,6 +35,7 @@ namespace Top.Api.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("picture_ids", this.PictureIds);
+            RequestValidator.ValidateMaxListSize("picture_ids", this.PictureIds, 100);
         }
 
         #endregion

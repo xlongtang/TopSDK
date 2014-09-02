@@ -76,7 +76,7 @@ namespace Top.Api.Request
         public string Rids { get; set; }
 
         /// <summary>
-        /// 订单状态。A：等待买家付款。B：买家已付款待卖家发货。C：卖家已发货待买家确认。D：交易成功。E：交易关闭
+        /// 订单状态。A：等待买家付款。B：买家已付款待卖家发货。C：卖家已发货待买家确认。D：交易成功。E：交易关闭<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public string Status { get; set; }
 

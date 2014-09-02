@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class PromotionmiscMjsActivityAddRequest : ITopRequest<PromotionmiscMjsActivityAddResponse>
     {
         /// <summary>
-        /// 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。
+        /// 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> DecreaseAmount { get; set; }
 
         /// <summary>
-        /// 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
+        /// 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> DiscountRate { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public Nullable<long> GiftId { get; set; }
 
         /// <summary>
-        /// 礼品名称。当is_send_gift为true时，该值才有意义。
+        /// 礼品名称。当is_send_gift为true时，该值才有意义。<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string GiftName { get; set; }
 
@@ -96,22 +96,22 @@ namespace Top.Api.Request
         public Nullable<bool> IsUserTag { get; set; }
 
         /// <summary>
-        /// 满多少件。当is_item_count_over为true时，该值才有意义。
+        /// 满多少件。当is_item_count_over为true时，该值才有意义。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> ItemCount { get; set; }
 
         /// <summary>
-        /// 活动名称。
+        /// 活动名称。<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 活动范围：0表示全部参与； 1表示部分商品参与。
+        /// 活动范围：0表示全部参与； 1表示部分商品参与。<br /> 支持最大值为：1<br /> 支持最小值为：0<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> ParticipateRange { get; set; }
 
         /// <summary>
-        /// 店铺会员等级，当is_shop_member为true时，该值才有意义。0：店铺客户；1：普通客户；2：高级会员；3：VIP会员； 4：至尊VIP会员。
+        /// 店铺会员等级，当is_shop_member为true时，该值才有意义。0：店铺客户；1：普通客户；2：高级会员；3：VIP会员； 4：至尊VIP会员。<br /> 支持最大值为：9<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> ShopMemberLevel { get; set; }
 
@@ -121,12 +121,12 @@ namespace Top.Api.Request
         public Nullable<DateTime> StartTime { get; set; }
 
         /// <summary>
-        /// 满多少元。当is_amount_over为true时，该才字段有意义。注意：单位是分，即10000表示100元。
+        /// 满多少元。当is_amount_over为true时，该才字段有意义。注意：单位是分，即10000表示100元。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> TotalPrice { get; set; }
 
         /// <summary>
-        /// 活动类型： 1表示商品级别的活动；2表示店铺级别的活动
+        /// 活动类型： 1表示商品级别的活动；2表示店铺级别的活动<br /> 支持最大值为：2<br /> 支持最小值为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> Type { get; set; }
 

@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> CampaignId { get; set; }
 
         /// <summary>
-        /// 推广组默认出价，单位为分，不能小于5 不能大于日最高限额
+        /// 推广组默认出价，单位为分，不能小于5 不能大于日最高限额<br /> 支持最小值为：5
         /// </summary>
         public Nullable<long> DefaultPrice { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 创意标题，最多20个汉字
+        /// 创意标题，最多20个汉字<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
         /// </summary>
         public string Title { get; set; }
 

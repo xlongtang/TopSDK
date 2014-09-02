@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TmallItemDescModulesGetRequest : ITopRequest<TmallItemDescModulesGetResponse>
     {
         /// <summary>
-        /// 叶子类目id
+        /// 淘宝后台发布商品的叶子类目id，可通过taobao.itemcats.get查到。api 访问地址http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.CFhhk4&path=cid:3-apiId:122
         /// </summary>
         public Nullable<long> CatId { get; set; }
 

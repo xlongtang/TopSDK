@@ -217,6 +217,18 @@ namespace Top.Api.Domain
         public long QueryItemId { get; set; }
 
         /// <summary>
+        /// 配额可用库存
+        /// </summary>
+        [XmlElement("quota_quantity")]
+        public long QuotaQuantity { get; set; }
+
+        /// <summary>
+        /// 预扣库存
+        /// </summary>
+        [XmlElement("reserved_quantity")]
+        public long ReservedQuantity { get; set; }
+
+        /// <summary>
         /// 最高零售价，单位：分。
         /// </summary>
         [XmlElement("retail_price_high")]
@@ -240,6 +252,12 @@ namespace Top.Api.Domain
         [XmlArray("skus")]
         [XmlArrayItem("fenxiao_sku")]
         public List<FenxiaoSku> Skus { get; set; }
+
+        /// <summary>
+        /// 产品spu id
+        /// </summary>
+        [XmlElement("spu_id")]
+        public long SpuId { get; set; }
 
         /// <summary>
         /// 采购基准价，单位：元。

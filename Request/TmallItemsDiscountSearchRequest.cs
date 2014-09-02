@@ -46,7 +46,7 @@ namespace Top.Api.Request
         public string Sort { get; set; }
 
         /// <summary>
-        /// 可以用该字段来实现分页功能。表示查询起始位置，默认从第0条开始，start=10,表示从第10条数据开始查询，start不得大于1000。
+        /// 可以用该字段来实现分页功能。表示查询起始位置，默认从第0条开始，start=10,表示从第10条数据开始查询，start不得大于1000。<br /> 支持最大值为：1000
         /// </summary>
         public Nullable<long> Start { get; set; }
 

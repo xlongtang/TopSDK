@@ -61,6 +61,12 @@ namespace Top.Api.Domain
         public string MarketTime { get; set; }
 
         /// <summary>
+        /// 规格的数量，仅当通过组合产品获取时有值
+        /// </summary>
+        [XmlElement("number")]
+        public long Number { get; set; }
+
+        /// <summary>
         /// 产品的主图片地址。绝对地址，格式：http://host/image_path。
         /// </summary>
         [XmlElement("pic_url")]

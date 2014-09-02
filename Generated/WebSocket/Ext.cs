@@ -641,6 +641,14 @@ namespace WebSocketSharp
 
             var buffer = new byte[length];
             var readLen = stream.Read(buffer, 0, length);
+            var temp = 0;
+            while (readLen < length)
+            {
+                temp = stream.Read(buffer, readLen, length - readLen);
+                if (temp < 1)
+                    break;
+                readLen += temp;
+            }
 
             return readLen == length
                    ? buffer

@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmGroupAppendRequest : ITopRequest<CrmGroupAppendResponse>
     {
         /// <summary>
-        /// 添加的来源分组
+        /// 添加的来源分组<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> FromGroupId { get; set; }
 
         /// <summary>
-        /// 添加的目标分组
+        /// 添加的目标分组<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> ToGroupId { get; set; }
 

@@ -6,6 +6,7 @@ using Jayrock.Json.Conversion;
 using Top.Api.Parser;
 using Top.Api.Request;
 using Top.Api.Util;
+using System.Text;
 
 namespace Top.Api
 {
@@ -23,6 +24,7 @@ namespace Top.Api
         public const string PARTNER_ID = "partner_id";
         public const string SESSION = "session";
         public const string FORMAT_XML = "xml";
+        public const string SDK_VERSION = "top-sdk-net-20140901"; // SDK自动生成会替换成真实的版本
 
         private string serverUrl;
         private string appKey;
@@ -94,22 +96,7 @@ namespace Top.Api
 
         public T Execute<T>(ITopRequest<T> request, string session, DateTime timestamp) where T : TopResponse
         {
-            if (disableTrace)
-            {
-                return DoExecute<T>(request, session, timestamp);
-            }
-            else
-            {
-                try
-                {
-                    return DoExecute<T>(request, session, timestamp);
-                }
-                catch (Exception e)
-                {
-                    topLogger.Error(this.serverUrl + "\r\n" + e.StackTrace);
-                    throw e;
-                }
-            }
+            return DoExecute<T>(request, session, timestamp);
         }
 
         #endregion
@@ -123,7 +110,7 @@ namespace Top.Api
             }
             catch (TopException e)
             {
-                return createErrorResponse<T>(e.ErrorCode, e.ErrorMsg);
+                return CreateErrorResponse<T>(e.ErrorCode, e.ErrorMsg);
             }
 
             // 添加协议级请求参数
@@ -132,7 +119,7 @@ namespace Top.Api
             txtParams.Add(VERSION, "2.0");
             txtParams.Add(APP_KEY, appKey);
             txtParams.Add(FORMAT, format);
-            txtParams.Add(PARTNER_ID, "top-sdk-net-20131008");
+            txtParams.Add(PARTNER_ID, SDK_VERSION);
             txtParams.Add(TIMESTAMP, timestamp);
             txtParams.Add(SESSION, session);
             txtParams.AddAll(this.systemParameters);
@@ -140,54 +127,62 @@ namespace Top.Api
             // 添加签名参数
             txtParams.Add(SIGN, TopUtils.SignTopRequest(txtParams, appSecret));
 
-            // 是否需要上传文件
-            string body;
-            if (request is ITopUploadRequest<T>)
+            string reqUrl = webUtils.BuildGetUrl(this.serverUrl, txtParams);
+            try
             {
-                ITopUploadRequest<T> uRequest = (ITopUploadRequest<T>)request;
-                IDictionary<string, FileItem> fileParams = TopUtils.CleanupDictionary(uRequest.GetFileParameters());
-                body = webUtils.DoPost(this.serverUrl, txtParams, fileParams);
-            }
-            else
-            {
-                body = webUtils.DoPost(this.serverUrl, txtParams);
-            }
-
-            // 解释响应结果
-            T rsp;
-            if (disableParser)
-            {
-                rsp = Activator.CreateInstance<T>();
-                rsp.Body = body;
-            }
-            else
-            {
-                if (FORMAT_XML.Equals(format))
+                string body;
+                if (request is ITopUploadRequest<T>) // 是否需要上传文件
                 {
-                    ITopParser tp = new TopXmlParser();
-                    rsp = tp.Parse<T>(body);
+                    ITopUploadRequest<T> uRequest = (ITopUploadRequest<T>)request;
+                    IDictionary<string, FileItem> fileParams = TopUtils.CleanupDictionary(uRequest.GetFileParameters());
+                    body = webUtils.DoPost(this.serverUrl, txtParams, fileParams);
                 }
                 else
                 {
-                    ITopParser tp = new TopJsonParser();
-                    rsp = tp.Parse<T>(body);
+                    body = webUtils.DoPost(this.serverUrl, txtParams);
                 }
-            }
 
-            // 追踪错误的请求
-            if (!disableTrace)
-            {
-                rsp.ReqUrl = webUtils.BuildGetUrl(this.serverUrl, txtParams);
-                if (rsp.IsError)
+                // 解释响应结果
+                T rsp;
+                if (disableParser)
                 {
-                    topLogger.Warn(rsp.ReqUrl + "\r\n" + rsp.Body);
+                    rsp = Activator.CreateInstance<T>();
+                    rsp.Body = body;
                 }
-            }
+                else
+                {
+                    if (FORMAT_XML.Equals(format))
+                    {
+                        ITopParser tp = new TopXmlParser();
+                        rsp = tp.Parse<T>(body);
+                    }
+                    else
+                    {
+                        ITopParser tp = new TopJsonParser();
+                        rsp = tp.Parse<T>(body);
+                    }
+                }
 
-            return rsp;
+                // 追踪错误的请求
+                if (!disableTrace && rsp.IsError)
+                {
+                    StringBuilder sb = new StringBuilder(reqUrl).Append(" response error!\r\n").Append(rsp.Body);
+                    topLogger.Warn(sb.ToString());
+                }
+                return rsp;
+            }
+            catch (Exception e)
+            {
+                if (!disableTrace)
+                {
+                    StringBuilder sb = new StringBuilder(reqUrl).Append(" request error!\r\n").Append(e.StackTrace);
+                    topLogger.Error(sb.ToString());
+                }
+                throw e;
+            }
         }
 
-        private T createErrorResponse<T>(string errCode, string errMsg) where T : TopResponse
+        private T CreateErrorResponse<T>(string errCode, string errMsg) where T : TopResponse
         {
             T rsp = Activator.CreateInstance<T>();
             rsp.ErrCode = errCode;

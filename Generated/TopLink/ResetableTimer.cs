@@ -31,6 +31,8 @@ namespace Taobao.Top.Link
         /// </summary>
         public void Cancel()
         {
+            if (this._timer == null)
+                return;
             this._timer.Dispose();
             this._timer = null;
         }

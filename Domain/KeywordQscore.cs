@@ -22,6 +22,24 @@ namespace Top.Api.Domain
         public long CampaignId { get; set; }
 
         /// <summary>
+        /// 创意得分
+        /// </summary>
+        [XmlElement("creative_score")]
+        public string CreativeScore { get; set; }
+
+        /// <summary>
+        /// 基础分
+        /// </summary>
+        [XmlElement("cust_score")]
+        public string CustScore { get; set; }
+
+        /// <summary>
+        /// 买家体验分
+        /// </summary>
+        [XmlElement("cvr_score")]
+        public string CvrScore { get; set; }
+
+        /// <summary>
         /// 关键词id
         /// </summary>
         [XmlElement("keyword_id")]
@@ -34,10 +52,16 @@ namespace Top.Api.Domain
         public string Nick { get; set; }
 
         /// <summary>
-        /// 质量得分
+        /// 质量总分
         /// </summary>
         [XmlElement("qscore")]
         public string Qscore { get; set; }
+
+        /// <summary>
+        /// 相关性
+        /// </summary>
+        [XmlElement("rele_score")]
+        public string ReleScore { get; set; }
 
         /// <summary>
         /// 关键词

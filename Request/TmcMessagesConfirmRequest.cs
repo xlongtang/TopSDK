@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 处理成功的消息ID列表
+        /// 处理成功的消息ID列表 最大 200个ID
         /// </summary>
         public string SMessageIds { get; set; }
 

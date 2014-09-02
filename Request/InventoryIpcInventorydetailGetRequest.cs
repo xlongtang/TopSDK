@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class InventoryIpcInventorydetailGetRequest : ITopRequest<InventoryIpcInventorydetailGetResponse>
     {
         /// <summary>
-        /// 主订单号，可选
+        /// 主订单号，可选<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> BizOrderId { get; set; }
 
         /// <summary>
-        /// 子订单号，可选
+        /// 子订单号，可选<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> BizSubOrderId { get; set; }
 
         /// <summary>
-        /// 当前页数
+        /// 当前页数<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> PageIndex { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public Nullable<long> ScItemId { get; set; }
 
         /// <summary>
-        /// 1:查询预扣  4：查询占用
+        /// 1:查询预扣  4：查询占用<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> StatusQuery { get; set; }
 

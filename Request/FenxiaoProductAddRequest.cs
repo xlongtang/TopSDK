@@ -181,6 +181,11 @@ namespace Top.Api.Request
         public string SkuStandardPrices { get; set; }
 
         /// <summary>
+        /// 产品spuID，达尔文产品必须要传spuID，否则不能发布。其他非达尔文产品，看情况传
+        /// </summary>
+        public Nullable<long> SpuId { get; set; }
+
+        /// <summary>
         /// 采购基准价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
         /// </summary>
         public string StandardPrice { get; set; }
@@ -240,6 +245,7 @@ namespace Top.Api.Request
             parameters.Add("sku_properties", this.SkuProperties);
             parameters.Add("sku_quantitys", this.SkuQuantitys);
             parameters.Add("sku_standard_prices", this.SkuStandardPrices);
+            parameters.Add("spu_id", this.SpuId);
             parameters.Add("standard_price", this.StandardPrice);
             parameters.Add("standard_retail_price", this.StandardRetailPrice);
             parameters.Add("trade_type", this.TradeType);

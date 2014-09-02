@@ -8,6 +8,8 @@ using Taobao.Top.Link;
 using Taobao.Top.Link.Channel;
 using Taobao.Top.Link.Endpoints;
 using Top.Api.Util;
+using Taobao.Top.Link.Util;
+using Top.Api;
 
 namespace Top.Tmc
 {
@@ -19,12 +21,15 @@ namespace Top.Tmc
         private const string APP_KEY = "app_key";
         private const string GROUP_NAME = "group_name";
         private const string SIGN = "sign";
+        private const string SDK = "sdk";
 
         private TmcClientIdentity _id;
         private string _appSecret;
         private string _uri;
         private Endpoint _endpoint;
         private EndpointProxy _serverProxy;
+
+        private bool running;
 
         private int _heartbeatInterval = 60000; // 心跳频率（单位：毫秒）
         private int _reconnectIntervalSeconds = 30; // 重连周期（单位：秒）
@@ -78,6 +83,7 @@ namespace Top.Tmc
         /// <param name="uri">TMC server address, eg: ws://mc.api.taobao.com/</param>
         public void Connect(string uri)
         {
+            this.running = true;
             doConnect(uri);
             this.StartReconnect();
             this.StartPullRequest();
@@ -85,16 +91,18 @@ namespace Top.Tmc
 
         private void doConnect(string uri)
         {
-            var headers = new Dictionary<string, string>();
-            var headers2 = new Dictionary<string, object>();
-            headers.Add(APP_KEY, this._id.AppKey);
-            headers2.Add(APP_KEY, headers[APP_KEY]);
-            headers.Add(GROUP_NAME, this._id.GroupName);
-            headers2.Add(GROUP_NAME, headers[GROUP_NAME]);
-            headers.Add(TIMESTAMP, DateTime.Now.Ticks.ToString());
-            headers2.Add(TIMESTAMP, headers[TIMESTAMP]);
-            headers2.Add(SIGN, TopUtils.SignTopRequest(headers, this._appSecret, true));
-            this._serverProxy = this._endpoint.GetEndpoint(new TmcServerIdentity(), uri, headers2);
+            var signHeader = new Dictionary<string, string>();
+            var connHeader = new Dictionary<string, object>();
+            signHeader.Add(APP_KEY, this._id.AppKey);
+            connHeader.Add(APP_KEY, signHeader[APP_KEY]);
+            signHeader.Add(GROUP_NAME, this._id.GroupName);
+            connHeader.Add(GROUP_NAME, signHeader[GROUP_NAME]);
+            signHeader.Add(TIMESTAMP, DateTime.Now.Ticks.ToString());
+            connHeader.Add(TIMESTAMP, signHeader[TIMESTAMP]);
+            connHeader.Add(SIGN, TopUtils.SignTopRequest(signHeader, this._appSecret, true));
+            //extra fields
+            connHeader.Add(SDK, DefaultTopClient.SDK_VERSION);
+            this._serverProxy = this._endpoint.GetEndpoint(new TmcServerIdentity(), uri, connHeader);
             this._uri = uri;
             this.Log.InfoFormat("connected to tmc server: {0}", uri);
         }
@@ -173,8 +181,15 @@ namespace Top.Tmc
 
             ThreadPool.QueueUserWorkItem(o =>
             {
+                if (!this.running)
+                {
+                    if (this.Log.IsDebugEnabled)
+                        this.Log.Debug(string.Format("message dropped as client closed: {0}", this.Dump(context.Message)));
+                    return;
+                }
+
                 Message msg = this.ParseMessage(context.Message);
-                var args = new MessageArgs(msg);
+                var args = new MessageArgs(msg, m => this.Confirm(m));
                 var sw = new Stopwatch();
                 try
                 {
@@ -202,6 +217,8 @@ namespace Top.Tmc
                     Thread.Sleep(10);
                 }
 
+                if (args._isConfirmed)
+                    return;
                 try
                 {
                     this.Confirm(msg);
@@ -275,7 +292,14 @@ namespace Top.Tmc
             msg.PubTime = this.GetValue<DateTime>(raw, MessageFields.DATA_PUBLISH_TIME);
             msg.UserId = this.GetValue<long>(raw, MessageFields.DATA_OUTGOING_USER_ID);
             msg.UserNick = this.GetValue<string>(raw, MessageFields.DATA_OUTGOING_USER_NICK);
-            msg.Content = this.GetValue<string>(raw, MessageFields.DATA_CONTENT);
+            msg.OutgoingTime = this.GetValue<DateTime>(raw, MessageFields.DATA_ATTACH_OUTGOING_TIME);
+
+            if (!raw.ContainsKey(MessageFields.DATA_CONTENT))
+                return msg;
+            msg.Content = raw[MessageFields.DATA_CONTENT] is byte[]
+                ? Encoding.UTF8.GetString(GZIPHelper.Unzip(raw[MessageFields.DATA_CONTENT] as byte[]))
+                : (string)raw[MessageFields.DATA_CONTENT];
+
             return msg;
         }
 
@@ -294,16 +318,27 @@ namespace Top.Tmc
 
         public void Close()
         {
+            this.running = false;
             if (this._pullRequestTimer != null)
             {
                 this._pullRequestTimer.Dispose();
+                this._pullRequestTimer = null;
             }
             if (this._reconnectTimer != null)
             {
                 this._reconnectTimer.Dispose();
+                this._reconnectTimer = null;
             }
             this._serverProxy.Close(this._uri, "client closed");
             this.Log.Warn("tmc client closed");
+        }
+
+        public bool Online
+        {
+            get
+            {
+                return this._serverProxy != null && this._serverProxy.hasValidSender();
+            }
         }
     }
 }

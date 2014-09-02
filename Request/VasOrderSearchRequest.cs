@@ -51,7 +51,7 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 一页包含的记录数
+        /// 一页包含的记录数<br /> 支持最大值为：200
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

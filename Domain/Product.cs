@@ -11,6 +11,12 @@ namespace Top.Api.Domain
     public class Product : TopObject
     {
         /// <summary>
+        /// 产品条码信息，仅在taobao.products.search接口且商城可用
+        /// </summary>
+        [XmlElement("barcode_str")]
+        public string BarcodeStr { get; set; }
+
+        /// <summary>
         /// 产品的非关键属性列表.格式:pid:vid;pid:vid.
         /// </summary>
         [XmlElement("binds")]
@@ -41,6 +47,12 @@ namespace Top.Api.Domain
         public long CollectNum { get; set; }
 
         /// <summary>
+        /// 品类ID
+        /// </summary>
+        [XmlElement("commodity_id")]
+        public long CommodityId { get; set; }
+
+        /// <summary>
         /// 创建时间.格式:yyyy-mm-dd hh:mm:ss
         /// </summary>
         [XmlElement("created")]
@@ -63,6 +75,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("desc")]
         public string Desc { get; set; }
+
+        /// <summary>
+        /// 标识套装产品是否有效，无效的套装产品需要重新发布
+        /// </summary>
+        [XmlElement("is_suite_effective")]
+        public bool IsSuiteEffective { get; set; }
 
         /// <summary>
         /// 产品的级别level
@@ -198,6 +216,18 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("status")]
         public long Status { get; set; }
+
+        /// <summary>
+        /// 套装产品关联的子规格,同时该字段不为空标识该产品是套装产品
+        /// </summary>
+        [XmlElement("suite_items_str")]
+        public string SuiteItemsStr { get; set; }
+
+        /// <summary>
+        /// 模板ID
+        /// </summary>
+        [XmlElement("template_id")]
+        public long TemplateId { get; set; }
 
         /// <summary>
         /// 淘宝标准产品编码

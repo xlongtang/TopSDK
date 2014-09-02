@@ -11,6 +11,11 @@ namespace Top.Api.Request
     public class PictureGetRequest : ITopRequest<PictureGetResponse>
     {
         /// <summary>
+        /// 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的  如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
+        /// </summary>
+        public string ClientType { get; set; }
+
+        /// <summary>
         /// 是否删除,unfroze代表没有删除
         /// </summary>
         public string Deleted { get; set; }
@@ -60,6 +65,11 @@ namespace Top.Api.Request
         /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// 图片url查询接口
+        /// </summary>
+        public string Urls { get; set; }
+
         private IDictionary<string, string> otherParameters;
 
         #region ITopRequest Members
@@ -72,6 +82,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("client_type", this.ClientType);
             parameters.Add("deleted", this.Deleted);
             parameters.Add("end_date", this.EndDate);
             parameters.Add("modified_time", this.ModifiedTime);
@@ -82,6 +93,7 @@ namespace Top.Api.Request
             parameters.Add("picture_id", this.PictureId);
             parameters.Add("start_date", this.StartDate);
             parameters.Add("title", this.Title);
+            parameters.Add("urls", this.Urls);
             parameters.AddAll(this.otherParameters);
             return parameters;
         }

@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 商品数字ID，必选
+        /// 商品数字ID，必选<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

@@ -16,22 +16,27 @@ namespace Top.Api.Request
         public Nullable<long> CampaignId { get; set; }
 
         /// <summary>
+        /// 站内无线频道折扣。百分比，数值必须是大于等于 1小于等于200的整数
+        /// </summary>
+        public Nullable<long> MobileDiscount { get; set; }
+
+        /// <summary>
         /// 主人昵称
         /// </summary>
         public string Nick { get; set; }
 
         /// <summary>
-        /// 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。
+        /// 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。<br /> 支持最大值为：128<br /> 支持最小值为：0
         /// </summary>
         public string NonsearchChannels { get; set; }
 
         /// <summary>
-        /// 溢价的百分比，必须是大于等于 1小于等于200的整数
+        /// 溢价的百分比，必须是大于等于 1小于等于200的整数<br /> 支持最大值为：200<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> OutsideDiscount { get; set; }
 
         /// <summary>
-        /// 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值，必须包含淘宝内网。
+        /// 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值，必须包含淘宝内网。<br /> 支持最大值为：128<br /> 支持最小值为：0
         /// </summary>
         public string SearchChannels { get; set; }
 
@@ -48,6 +53,7 @@ namespace Top.Api.Request
         {
             TopDictionary parameters = new TopDictionary();
             parameters.Add("campaign_id", this.CampaignId);
+            parameters.Add("mobile_discount", this.MobileDiscount);
             parameters.Add("nick", this.Nick);
             parameters.Add("nonsearch_channels", this.NonsearchChannels);
             parameters.Add("outside_discount", this.OutsideDiscount);
@@ -59,6 +65,7 @@ namespace Top.Api.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("campaign_id", this.CampaignId);
+            RequestValidator.ValidateRequired("mobile_discount", this.MobileDiscount);
             RequestValidator.ValidateMaxListSize("nonsearch_channels", this.NonsearchChannels, 10);
             RequestValidator.ValidateRequired("outside_discount", this.OutsideDiscount);
             RequestValidator.ValidateMaxValue("outside_discount", this.OutsideDiscount, 200);

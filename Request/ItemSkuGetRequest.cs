@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。
+        /// 商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

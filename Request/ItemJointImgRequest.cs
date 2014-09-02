@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 上传的图片是否关联为商品主图
+        /// 上传的图片是否关联为商品主图（如果需更新主图，则需要传人true）
         /// </summary>
         public Nullable<bool> IsMajor { get; set; }
 
         /// <summary>
-        /// 商品数字ID，必选
+        /// 商品数字ID，必选<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

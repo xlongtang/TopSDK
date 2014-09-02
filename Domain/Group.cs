@@ -34,7 +34,7 @@ namespace Top.Api.Domain
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 分组所拥有的会员数量,如果返回值为-1，表示当前服务忙。
+        /// 分组所拥有的会员数量,如果返回值为-1，表示当前服务忙或数据在初始化。
         /// </summary>
         [XmlElement("member_count")]
         public long MemberCount { get; set; }

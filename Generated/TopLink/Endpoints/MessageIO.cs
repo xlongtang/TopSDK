@@ -111,6 +111,8 @@ namespace Taobao.Top.Link.Endpoints
                     return buffer.ReadInt64();
                 case MessageType.ValueFormat.Date:
                     return TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1).AddMilliseconds(buffer.ReadInt64()));
+                case MessageType.ValueFormat.ByteArray:
+                    return buffer.ReadBytes(buffer.ReadInt32());
                 default:
                     return ReadCountedString(buffer);
             }
@@ -147,6 +149,13 @@ namespace Taobao.Top.Link.Endpoints
             {
                 buffer.Write(MessageType.ValueFormat.Date);
                 buffer.Write(((DateTime)value).Ticks);
+            }
+            else if (typeof(byte[]).Equals(type))
+            {
+                buffer.Write(MessageType.ValueFormat.ByteArray);
+                var data = value as byte[];
+                buffer.Write(data.Length);
+                buffer.Write(data);
             }
             else
             {

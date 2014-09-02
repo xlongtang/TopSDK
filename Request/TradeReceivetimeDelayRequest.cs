@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TradeReceivetimeDelayRequest : ITopRequest<TradeReceivetimeDelayResponse>
     {
         /// <summary>
-        /// 延长收货的天数，可选值为：3, 5, 7, 10。
+        /// 延长收货的天数，可选值为：3, 5, 7, 10。<br /> 支持最大值为：10<br /> 支持最小值为：3
         /// </summary>
         public Nullable<long> Days { get; set; }
 

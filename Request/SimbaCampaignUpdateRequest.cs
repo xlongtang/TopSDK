@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public string OnlineStatus { get; set; }
 
         /// <summary>
-        /// 推广计划名称，不能多余20个字符，不能和客户其他推广计划同名。
+        /// 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
         /// </summary>
         public string Title { get; set; }
 
@@ -55,7 +55,7 @@ namespace Top.Api.Request
             RequestValidator.ValidateRequired("campaign_id", this.CampaignId);
             RequestValidator.ValidateRequired("online_status", this.OnlineStatus);
             RequestValidator.ValidateRequired("title", this.Title);
-            RequestValidator.ValidateMaxLength("title", this.Title, 20);
+            RequestValidator.ValidateMaxLength("title", this.Title, 40);
         }
 
         #endregion

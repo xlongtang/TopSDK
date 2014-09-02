@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string IsSku { get; set; }
 
         /// <summary>
-        /// 商家编码
+        /// 商家编码<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
         /// </summary>
         public string ItemCode { get; set; }
 
@@ -31,12 +31,12 @@ namespace Top.Api.Request
         public string Name { get; set; }
 
         /// <summary>
-        /// 当前页
+        /// 当前页<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
+        /// 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录<br /> 支持最大值为：50<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 
@@ -51,7 +51,7 @@ namespace Top.Api.Request
         public string Status { get; set; }
 
         /// <summary>
-        /// 商品前台销售名字
+        /// 商品前台销售名字<br /> 支持最大长度为：255<br /> 支持的最大列表长度为：255
         /// </summary>
         public string Title { get; set; }
 

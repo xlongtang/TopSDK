@@ -21,17 +21,17 @@ namespace Top.Api.Request
         public Nullable<DateTime> OccureTime { get; set; }
 
         /// <summary>
-        /// 仓内操作描述
+        /// 仓内操作描述<br /> 支持最大长度为：200<br /> 支持的最大列表长度为：200
         /// </summary>
         public string OperateDetail { get; set; }
 
         /// <summary>
-        /// 快递业务员联系方式
+        /// 快递业务员联系方式<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string OperatorContact { get; set; }
 
         /// <summary>
-        /// 快递业务员名称
+        /// 快递业务员名称<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string OperatorName { get; set; }
 

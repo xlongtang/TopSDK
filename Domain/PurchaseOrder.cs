@@ -71,6 +71,13 @@ namespace Top.Api.Domain
         public string EndTime { get; set; }
 
         /// <summary>
+        /// 主订单属性信息，key-value形式：  orderNovice ：订单发票抬头；  orderNoviceContent ：代表发票明细
+        /// </summary>
+        [XmlArray("features")]
+        [XmlArrayItem("feature")]
+        public List<Feature> Features { get; set; }
+
+        /// <summary>
         /// 分销流水号，分销平台产生的主键
         /// </summary>
         [XmlElement("fenxiao_id")]
@@ -164,7 +171,7 @@ namespace Top.Api.Domain
         public string SnapshotUrl { get; set; }
 
         /// <summary>
-        /// 采购单交易状态。可选值：<br> WAIT_BUYER_PAY(等待付款)<br> WAIT_SELLER_SEND_GOODS(已付款，待发货）<br> WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)<br> TRADE_FINISHED(交易成功)<br> TRADE_CLOSED(交易关闭)<br> WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持)<br> WAIT_SELLER_SEND_GOODS_ACOUNTED(已付款（已分账），待发货。只对代销分账支持)<br> PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功）<br> PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）
+        /// 采购单交易状态。可选值：<br> WAIT_BUYER_PAY(等待付款)<br> WAIT_SELLER_SEND_GOODS(已付款，待发货）<br> WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)<br> TRADE_FINISHED(交易成功)<br> TRADE_CLOSED(交易关闭)<br> WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持)<br> PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功）<br> PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }

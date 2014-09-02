@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> AdgroupId { get; set; }
 
         /// <summary>
-        /// 默认出价，单位是分，不能小于5
+        /// 默认出价，单位是分，不能小于5<br /> 支持最小值为：5
         /// </summary>
         public Nullable<long> DefaultPrice { get; set; }
 
@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价
+        /// 非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价<br /> 支持最小值为：5
         /// </summary>
         public Nullable<long> NonsearchMaxPrice { get; set; }
 

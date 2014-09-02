@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class VasSubscribeGetRequest : ITopRequest<VasSubscribeGetResponse>
     {
         /// <summary>
-        /// 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码
+        /// 商品编码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的商品代码
         /// </summary>
         public string ArticleCode { get; set; }
 

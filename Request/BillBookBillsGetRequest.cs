@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<DateTime> EndTime { get; set; }
 
         /// <summary>
-        /// 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略
+        /// 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略<br /> 支持的最大列表长度为：300
         /// </summary>
         public string Fields { get; set; }
 

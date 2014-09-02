@@ -10,7 +10,7 @@ namespace Top.Api.Domain
     public class BasicMember : TopObject
     {
         /// <summary>
-        /// 最后一次交易的订单号
+        /// 最后一次交易的订单号.  注:该字段从2014.4.23之后不再返回.
         /// </summary>
         [XmlElement("biz_order_id")]
         public long BizOrderId { get; set; }
@@ -70,7 +70,7 @@ namespace Top.Api.Domain
         public long RelationSource { get; set; }
 
         /// <summary>
-        /// 显示会员的状态，normal正常，delete被买家删除，blacklist黑名单
+        /// 显示会员的状态，normal正常，blacklist黑名单
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }

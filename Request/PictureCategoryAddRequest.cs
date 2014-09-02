@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> ParentId { get; set; }
 
         /// <summary>
-        /// 图片分类名称，最大长度20字符，中英文都算一字符，不能为空
+        /// 图片分类名称，最大长度20字符，中文字符算2个字符，不能为空
         /// </summary>
         public string PictureCategoryName { get; set; }
 

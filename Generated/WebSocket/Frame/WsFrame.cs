@@ -239,9 +239,10 @@ namespace WebSocketSharp.Frame
             if (frame.PayloadLen > 126 && length > PayloadData.MaxLength)
                 throw new WsReceivedTooBigMessageException();
 
-            var buffer = length <= (ulong)_readBufferLen
-                       ? Ext.ReadBytes(stream, (int)length)
-                       : Ext.ReadBytes(stream, (long)length, _readBufferLen);
+            var buffer = Ext.ReadBytes(stream, (int)length);
+            //var buffer = length <= (ulong)_readBufferLen
+            //           ? Ext.ReadBytes(stream, (int)length)
+            //           : Ext.ReadBytes(stream, (long)length, _readBufferLen);
 
             if (buffer.LongLength != (long)length)
                 throw new IOException();

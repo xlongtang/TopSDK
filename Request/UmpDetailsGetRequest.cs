@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public Nullable<long> ActId { get; set; }
 
         /// <summary>
-        /// 分页的页码
+        /// 分页的页码<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页的最大条数
+        /// 每页的最大条数<br /> 支持最大值为：50<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

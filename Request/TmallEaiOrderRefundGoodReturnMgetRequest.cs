@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public Nullable<DateTime> EndTime { get; set; }
 
         /// <summary>
-        /// 页码。取值范围:大于零的整数; 默认值:1
+        /// 页码。取值范围:大于零的整数; 默认值:1<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数。取值范围:大于零的整数; 默认值:10;最大值:40
+        /// 每页条数。取值范围:大于零的整数; 默认值:10;最大值:40<br /> 支持最大值为：40<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

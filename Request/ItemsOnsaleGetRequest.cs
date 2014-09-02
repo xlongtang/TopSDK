@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ItemsOnsaleGetRequest : ITopRequest<ItemsOnsaleGetResponse>
     {
         /// <summary>
-        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
+        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Cid { get; set; }
 
@@ -36,6 +36,11 @@ namespace Top.Api.Request
         public Nullable<bool> HasShowcase { get; set; }
 
         /// <summary>
+        /// 是否挂接了达尔文标准产品体系。
+        /// </summary>
+        public Nullable<bool> IsCspu { get; set; }
+
+        /// <summary>
         /// 商品是否在外部网店显示
         /// </summary>
         public Nullable<bool> IsEx { get; set; }
@@ -46,7 +51,7 @@ namespace Top.Api.Request
         public Nullable<bool> IsTaobao { get; set; }
 
         /// <summary>
-        /// 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间);默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
+        /// 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间)，sold_quantity（商品销量）,;默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
         /// </summary>
         public string OrderBy { get; set; }
 
@@ -92,6 +97,7 @@ namespace Top.Api.Request
             parameters.Add("fields", this.Fields);
             parameters.Add("has_discount", this.HasDiscount);
             parameters.Add("has_showcase", this.HasShowcase);
+            parameters.Add("is_cspu", this.IsCspu);
             parameters.Add("is_ex", this.IsEx);
             parameters.Add("is_taobao", this.IsTaobao);
             parameters.Add("order_by", this.OrderBy);

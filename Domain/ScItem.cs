@@ -94,6 +94,12 @@ namespace Top.Api.Domain
         public string MatterStatus { get; set; }
 
         /// <summary>
+        /// 后端商品options字段
+        /// </summary>
+        [XmlElement("options")]
+        public long Options { get; set; }
+
+        /// <summary>
         /// 商家编码
         /// </summary>
         [XmlElement("outer_code")]

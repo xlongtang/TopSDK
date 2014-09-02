@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WlbOrderConsignRequest : ITopRequest<WlbOrderConsignResponse>
     {
         /// <summary>
-        /// 物流宝订单编号
+        /// 物流宝订单编号<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
         /// </summary>
         public string WlbOrderCode { get; set; }
 

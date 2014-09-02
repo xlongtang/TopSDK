@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string Lang { get; set; }
 
         /// <summary>
-        /// Sku所属商品数字id，可通过 taobao.item.get 获取。必选
+        /// Sku所属商品数字id，可通过 taobao.item.get 获取。必选<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 
@@ -41,7 +41,7 @@ namespace Top.Api.Request
         public string Properties { get; set; }
 
         /// <summary>
-        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数
+        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Quantity { get; set; }
 

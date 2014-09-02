@@ -10,7 +10,7 @@ namespace Taobao.Top.Link.Endpoints
     // https://docs.google.com/drawings/d/1PRfzMVNGE4NKkpD9A_-QlH2PV47MFumZX8LbCwhzpQg/edit
     public sealed class Endpoint
     {
-        internal static int TIMOUT = 5000;
+        internal static int TIMEOUT = 10000; // connect timeout in 10 seconds
         private ILog _log;
         // in/out endpoints
         private IList<EndpointProxy> _connected;
@@ -81,7 +81,6 @@ namespace Taobao.Top.Link.Endpoints
             e.Remove(uri);
             // always reget channel, make sure it's valid
             IClientChannel channel = this.ChannelSelector.GetChannel(new Uri(uri));
-            e.Add(channel);
             // connect message
             Message msg = new Message();
             msg.MessageType = MessageType.CONNECT;
@@ -92,7 +91,8 @@ namespace Taobao.Top.Link.Endpoints
                 foreach (var p in extras)
                     content.Add(p);
             msg.Content = content;
-            this._handler.SendAndWait(e, channel, msg, TIMOUT);
+            this._handler.SendAndWait(e, channel, msg, TIMEOUT);
+            e.Add(channel);
             return e;
         }
 

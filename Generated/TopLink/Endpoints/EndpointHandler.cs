@@ -79,7 +79,7 @@ namespace Taobao.Top.Link.Endpoints
                 return;
             }
 
-            Identity msgFrom = this._idByToken.ContainsKey(msg.Token)
+            Identity msgFrom = msg.Token != null && this._idByToken.ContainsKey(msg.Token)
                 ? this._idByToken[msg.Token]
                 : null;
             // must CONNECT/CONNECTACK for got token before SEND

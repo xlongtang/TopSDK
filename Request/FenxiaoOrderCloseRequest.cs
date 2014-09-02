@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class FenxiaoOrderCloseRequest : ITopRequest<FenxiaoOrderCloseResponse>
     {
         /// <summary>
-        /// 关闭理由,特殊字符会被转义，会改变长度，有特殊字符是请注意
+        /// 关闭理由,特殊字符会被转义，会改变长度，有特殊字符是请注意<br /> 支持最大长度为：200<br /> 支持的最大列表长度为：200
         /// </summary>
         public string Message { get; set; }
 

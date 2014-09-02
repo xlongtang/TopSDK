@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Condition { get; set; }
 
         /// <summary>
-        /// 优惠券的面额，必须是3，5，10，20，50，100
+        /// 优惠券的面额，必须是3，5，10，20，50，100<br /> 支持最大值为：100<br /> 支持最小值为：3
         /// </summary>
         public Nullable<long> Denominations { get; set; }
 

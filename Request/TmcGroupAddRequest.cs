@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TmcGroupAddRequest : ITopRequest<TmcGroupAddResponse>
     {
         /// <summary>
-        /// 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
+        /// 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
         /// </summary>
         public string GroupName { get; set; }
 

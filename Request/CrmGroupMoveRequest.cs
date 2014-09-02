@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmGroupMoveRequest : ITopRequest<CrmGroupMoveResponse>
     {
         /// <summary>
-        /// 需要移动的分组
+        /// 需要移动的分组<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> FromGroupId { get; set; }
 
         /// <summary>
-        /// 目的分组
+        /// 目的分组<br /> 支持最小值为：1<br /> 支持的最大列表长度为：19
         /// </summary>
         public Nullable<long> ToGroupId { get; set; }
 

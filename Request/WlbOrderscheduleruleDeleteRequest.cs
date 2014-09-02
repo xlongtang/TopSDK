@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class WlbOrderscheduleruleDeleteRequest : ITopRequest<WlbOrderscheduleruleDeleteResponse>
     {
         /// <summary>
-        /// 订单调度规则ID
+        /// 订单调度规则ID<br /> 支持的最大列表长度为：20
         /// </summary>
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 商品userNick
+        /// 商品userNick<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
         /// </summary>
         public string UserNick { get; set; }
 

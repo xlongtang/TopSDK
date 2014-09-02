@@ -23,6 +23,12 @@ namespace Top.Api.Domain
         public string CreateTime { get; set; }
 
         /// <summary>
+        /// 无线折扣百分比。必须大于等于1，小于等于200的整数
+        /// </summary>
+        [XmlElement("mobile_discount")]
+        public long MobileDiscount { get; set; }
+
+        /// <summary>
         /// 最后修改时间
         /// </summary>
         [XmlElement("modified_time")]

@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 分页每页页数，默认20，最大50
+        /// 分页每页页数，默认20，最大50<br /> 支持最大值为：50
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ItemRecommendAddRequest : ITopRequest<ItemRecommendAddResponse>
     {
         /// <summary>
-        /// 商品数字ID，该参数必须
+        /// 商品数字ID，该参数必须<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

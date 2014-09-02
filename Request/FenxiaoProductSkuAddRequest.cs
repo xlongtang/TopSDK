@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string DealerCostPrice { get; set; }
 
         /// <summary>
-        /// 产品ID
+        /// 产品ID<br /> 支持的最大列表长度为：64
         /// </summary>
         public Nullable<long> ProductId { get; set; }
 
@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public string Properties { get; set; }
 
         /// <summary>
-        /// sku产品库存，在0到1000000之间，如果不传，则库存为0
+        /// sku产品库存，在0到1000000之间，如果不传，则库存为0<br /> 支持最大值为：1000000<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> Quantity { get; set; }
 

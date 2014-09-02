@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string DbName { get; set; }
 
         /// <summary>
-        /// rds的实例名
+        /// rds的实例名<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
         /// </summary>
         public string InstanceName { get; set; }
 

@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class CrmMembersGroupBatchaddRequest : ITopRequest<CrmMembersGroupBatchaddResponse>
     {
         /// <summary>
-        /// 会员的id（一次最多传入10个）
+        /// 会员的id（一次最多传入10个）<br /> 支持最小值为：1
         /// </summary>
         public string BuyerIds { get; set; }
 
         /// <summary>
-        /// 分组id
+        /// 分组id<br /> 支持最小值为：1
         /// </summary>
         public string GroupIds { get; set; }
 

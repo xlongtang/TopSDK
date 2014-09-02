@@ -17,7 +17,7 @@ namespace Top.Api.Domain
         public string Address { get; set; }
 
         /// <summary>
-        /// 可选值：0,1   说明  0:表示买家承担服务费;  1:表示卖家承担服务费
+        /// 可选值：0,1,2,3<br>,说明如下<br> 1)买家承担运费的模版<br> 0：买家承担服务费<br> 1: 卖家承担服务费<br> 2)卖家承担运费的模版<br> 2:卖家承担运费的模版（集市），卖家承担服务费<br> 3:卖家承担运费的模版（天猫），卖家承担服务费<br>
         /// </summary>
         [XmlElement("assumer")]
         public long Assumer { get; set; }

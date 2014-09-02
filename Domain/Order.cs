@@ -46,7 +46,7 @@ namespace Top.Api.Domain
         public string ConsignTime { get; set; }
 
         /// <summary>
-        /// 订单优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分
+        /// 子订单级订单优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分
         /// </summary>
         [XmlElement("discount_fee")]
         public string DiscountFee { get; set; }
@@ -92,6 +92,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("is_service_order")]
         public bool IsServiceOrder { get; set; }
+
+        /// <summary>
+        /// 子订单是否是www订单
+        /// </summary>
+        [XmlElement("is_www")]
+        public bool IsWww { get; set; }
 
         /// <summary>
         /// 套餐ID
@@ -160,7 +166,7 @@ namespace Top.Api.Domain
         public string PartMjzDiscount { get; set; }
 
         /// <summary>
-        /// 子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。计算公式如下：payment = price * num + adjust_fee - discount_fee + post_fee(邮费，单笔子订单时子订单实付金额包含邮费，多笔子订单时不包含邮费)；对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。
+        /// 子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。对于多子订单的交易，计算公式如下：payment = price * num + adjust_fee - discount_fee ；单子订单交易，payment与主订单的payment一致，对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。
         /// </summary>
         [XmlElement("payment")]
         public string Payment { get; set; }
@@ -238,10 +244,28 @@ namespace Top.Api.Domain
         public string SnapshotUrl { get; set; }
 
         /// <summary>
-        /// 订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值:   <ul>  <li>TRADE_NO_CREATE_PAY(没有创建支付宝交易)   <li>WAIT_BUYER_PAY(等待买家付款)   <li>WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)   <li>WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)   <li>TRADE_BUYER_SIGNED(买家已签收,货到付款专用)   <li>TRADE_FINISHED(交易成功)   <li>TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)   <li>TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)
+        /// 订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值:   <ul>  <li>TRADE_NO_CREATE_PAY(没有创建支付宝交易)   <li>WAIT_BUYER_PAY(等待买家付款)   <li>WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)   <li>WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)   <li>TRADE_BUYER_SIGNED(买家已签收,货到付款专用)   <li>TRADE_FINISHED(交易成功)   <li>TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)   <li>TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)  <li>PAY_PENDING(国际信用卡支付付款确认中)
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 发货的仓库编码
+        /// </summary>
+        [XmlElement("store_code")]
+        public string StoreCode { get; set; }
+
+        /// <summary>
+        /// 门票有效期的key
+        /// </summary>
+        [XmlElement("ticket_expdate_key")]
+        public string TicketExpdateKey { get; set; }
+
+        /// <summary>
+        /// 对应门票有效期的外部id
+        /// </summary>
+        [XmlElement("ticket_outer_id")]
+        public string TicketOuterId { get; set; }
 
         /// <summary>
         /// 订单超时到期时间。格式:yyyy-MM-dd HH:mm:ss
@@ -256,7 +280,7 @@ namespace Top.Api.Domain
         public string Title { get; set; }
 
         /// <summary>
-        /// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
+        /// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
         /// </summary>
         [XmlElement("total_fee")]
         public string TotalFee { get; set; }

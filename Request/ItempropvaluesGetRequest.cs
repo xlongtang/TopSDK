@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public string Pvs { get; set; }
 
         /// <summary>
-        /// 获取类目的类型：1代表集市、2代表天猫
+        /// 获取类目的类型：1代表集市、2代表天猫<br /> 支持最大值为：2<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> Type { get; set; }
 

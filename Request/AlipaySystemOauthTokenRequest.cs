@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class AlipaySystemOauthTokenRequest : ITopRequest<AlipaySystemOauthTokenResponse>
     {
         /// <summary>
-        /// 授权码，用户对应用授权后得到。
+        /// 授权码，用户对应用授权后得到。<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
         /// </summary>
         public string Code { get; set; }
 
         /// <summary>
-        /// 获取访问令牌的类型，authorization_code表示用授权码换，refresh_token表示用刷新令牌来换。
+        /// 获取访问令牌的类型，authorization_code表示用授权码换，refresh_token表示用刷新令牌来换。<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string GrantType { get; set; }
 
         /// <summary>
-        /// 刷新令牌，上次换取访问令牌是得到。
+        /// 刷新令牌，上次换取访问令牌是得到。<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
         /// </summary>
         public string RefreshToken { get; set; }
 

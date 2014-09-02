@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> CatId { get; set; }
 
         /// <summary>
-        /// 宝贝模板类型是人工打标还是自动打标：人工打标为1，自动打标为0.人工和自动打标为-1.
+        /// 宝贝模板类型是人工打标还是自动打标：人工打标为1，自动打标为0.人工和自动打标为-1.<br /> 支持最大值为：1<br /> 支持最小值为：-1
         /// </summary>
         public Nullable<long> Type { get; set; }
 

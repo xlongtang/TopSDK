@@ -191,7 +191,7 @@ namespace Top.Api.Request
         public string SecondKill { get; set; }
 
         /// <summary>
-        /// 关联商品与店铺类目，结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。
+        /// 关联商品与店铺类目，结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。<br /> 支持最大长度为：256<br /> 支持的最大列表长度为：256
         /// </summary>
         public string SellerCids { get; set; }
 

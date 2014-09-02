@@ -54,7 +54,7 @@ namespace Top.Api.Domain
         public List<DealerOrderDetail> DealerOrderDetails { get; set; }
 
         /// <summary>
-        /// 经销采购单编号
+        /// 经销采购单编号，API发货使用此字段
         /// </summary>
         [XmlElement("dealer_order_id")]
         public long DealerOrderId { get; set; }
@@ -124,6 +124,18 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("refuse_reason_supplier")]
         public string RefuseReasonSupplier { get; set; }
+
+        /// <summary>
+        /// 供应商备注。  仅供应商可见。
+        /// </summary>
+        [XmlElement("supplier_memo")]
+        public string SupplierMemo { get; set; }
+
+        /// <summary>
+        /// 供应商备注旗帜。  1:红色 2:黄色 3:绿色 4:蓝色 5:粉红色。  仅供应商可见。
+        /// </summary>
+        [XmlElement("supplier_memo_flag")]
+        public long SupplierMemoFlag { get; set; }
 
         /// <summary>
         /// 供应商nick

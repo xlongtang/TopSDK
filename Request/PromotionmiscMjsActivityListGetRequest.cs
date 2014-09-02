@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class PromotionmiscMjsActivityListGetRequest : ITopRequest<PromotionmiscMjsActivityListGetResponse>
     {
         /// <summary>
-        /// 活动类型： 1表示商品级别的活动；2表示店铺级别的活动。
+        /// 活动类型： 1表示商品级别的活动；2表示店铺级别的活动。<br /> 支持最大值为：2<br /> 支持最小值为：1<br /> 支持的最大列表长度为：1
         /// </summary>
         public Nullable<long> ActivityType { get; set; }
 
         /// <summary>
-        /// 页码。
+        /// 页码。<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页记录数，最大支持50 。
+        /// 每页记录数，最大支持50 。<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

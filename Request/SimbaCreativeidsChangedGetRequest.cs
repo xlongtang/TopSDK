@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 返回的每页数据量大小,默认200最大1000
+        /// 返回的每页数据量大小,默认200最大1000<br /> 支持最大值为：1000<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

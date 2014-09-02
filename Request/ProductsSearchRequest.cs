@@ -11,6 +11,11 @@ namespace Top.Api.Request
     public class ProductsSearchRequest : ITopRequest<ProductsSearchResponse>
     {
         /// <summary>
+        /// 按条码搜索产品信息,多个逗号隔开，不支持条码为全零的方式
+        /// </summary>
+        public string BarcodeStr { get; set; }
+
+        /// <summary>
         /// 商品类目ID.调用taobao.itemcats.get获取.
         /// </summary>
         public Nullable<long> Cid { get; set; }
@@ -51,12 +56,17 @@ namespace Top.Api.Request
         public string Q { get; set; }
 
         /// <summary>
-        /// 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。
+        /// 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
         /// </summary>
         public string Status { get; set; }
 
         /// <summary>
-        /// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
+        /// 按关联产品规格specs搜索套装产品
+        /// </summary>
+        public string SuiteItemsStr { get; set; }
+
+        /// <summary>
+        /// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> VerticalMarket { get; set; }
 
@@ -72,6 +82,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("barcode_str", this.BarcodeStr);
             parameters.Add("cid", this.Cid);
             parameters.Add("customer_props", this.CustomerProps);
             parameters.Add("fields", this.Fields);
@@ -81,6 +92,7 @@ namespace Top.Api.Request
             parameters.Add("props", this.Props);
             parameters.Add("q", this.Q);
             parameters.Add("status", this.Status);
+            parameters.Add("suite_items_str", this.SuiteItemsStr);
             parameters.Add("vertical_market", this.VerticalMarket);
             parameters.AddAll(this.otherParameters);
             return parameters;

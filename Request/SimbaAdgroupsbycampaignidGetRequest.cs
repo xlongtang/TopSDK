@@ -21,12 +21,12 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 页码，从1开始
+        /// 页码，从1开始<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
+        /// 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码<br /> 支持最大值为：200<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

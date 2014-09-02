@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class SimbaCampaignBudgetUpdateRequest : ITopRequest<SimbaCampaignBudgetUpdateResponse>
     {
         /// <summary>
-        /// 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
+        /// 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；<br /> 支持最大值为：99999<br /> 支持最小值为：30
         /// </summary>
         public Nullable<long> Budget { get; set; }
 

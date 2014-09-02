@@ -30,18 +30,6 @@ namespace Top.Api.Domain
         public bool IsParent { get; set; }
 
         /// <summary>
-        /// 增量类目：修改时间
-        /// </summary>
-        [XmlElement("modified_time")]
-        public string ModifiedTime { get; set; }
-
-        /// <summary>
-        /// 三种枚举类型：modify，add，delete（增量类目api使用）
-        /// </summary>
-        [XmlElement("modified_type")]
-        public string ModifiedType { get; set; }
-
-        /// <summary>
         /// 类目名称
         /// </summary>
         [XmlElement("name")]

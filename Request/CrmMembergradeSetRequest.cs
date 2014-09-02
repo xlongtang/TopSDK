@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string BuyerNick { get; set; }
 
         /// <summary>
-        /// 买家会员级别有四种1：普通会员。2：高级会员。 3VIP会员。 4：至尊VIP
+        /// 买家会员级别有四种1：普通会员。2：高级会员。 3VIP会员。 4：至尊VIP<br /> 支持最大值为：4<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> Grade { get; set; }
 

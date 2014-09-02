@@ -11,7 +11,7 @@ namespace Top.Api.Response
     public class ItemcatsGetResponse : TopResponse
     {
         /// <summary>
-        /// 增量类目信息,根据fields传入的参数返回相应的结果
+        /// 增量类目信息,根据fields传入的参数返回相应的结果；增量类目信息,根据fields传入的参数返回相应的结果。 features字段： 1、如果存在attr_key=freeze表示该类目被冻结了，attr_value=0,5，value可能存在2个值（也可能只有1个），用逗号分割，0表示禁编辑，5表示禁止发布
         /// </summary>
         [XmlArray("item_cats")]
         [XmlArrayItem("item_cat")]

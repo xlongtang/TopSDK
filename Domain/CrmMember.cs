@@ -16,12 +16,6 @@ namespace Top.Api.Domain
         public string AvgPrice { get; set; }
 
         /// <summary>
-        /// 最后一次交易的订单号
-        /// </summary>
-        [XmlElement("biz_order_id")]
-        public long BizOrderId { get; set; }
-
-        /// <summary>
         /// 会员买家id
         /// </summary>
         [XmlElement("buyer_id")]
@@ -34,7 +28,7 @@ namespace Top.Api.Domain
         public string BuyerNick { get; set; }
 
         /// <summary>
-        /// 城市
+        /// 城市.  请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g&path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线.
         /// </summary>
         [XmlElement("city")]
         public string City { get; set; }
@@ -82,7 +76,7 @@ namespace Top.Api.Domain
         public string LastTradeTime { get; set; }
 
         /// <summary>
-        /// 北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35
+        /// 北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35.  注:请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g&path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线.
         /// </summary>
         [XmlElement("province")]
         public long Province { get; set; }
@@ -94,7 +88,7 @@ namespace Top.Api.Domain
         public long RelationSource { get; set; }
 
         /// <summary>
-        /// 显示会员的状态，normal正常，delete被买家删除，blacklist黑名单
+        /// 显示会员的状态，normal正常，blacklist黑名单
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }

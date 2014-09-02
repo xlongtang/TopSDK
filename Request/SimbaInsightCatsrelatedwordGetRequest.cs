@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 最大返回数量(1-10)
+        /// 最大返回数量(1-10)<br /> 支持最大值为：10<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> ResultNum { get; set; }
 

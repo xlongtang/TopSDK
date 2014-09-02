@@ -10,6 +10,12 @@ namespace Top.Api.Domain
     public class Picture : TopObject
     {
         /// <summary>
+        /// 图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布
+        /// </summary>
+        [XmlElement("client_type")]
+        public string ClientType { get; set; }
+
+        /// <summary>
         /// 图片的创建时间
         /// </summary>
         [XmlElement("created")]

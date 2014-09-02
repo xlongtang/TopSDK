@@ -10,7 +10,7 @@ namespace Top.Api.Response
     public class TopatsResultGetResponse : TopResponse
     {
         /// <summary>
-        /// 返回任务处理信息
+        /// 任务结果信息
         /// </summary>
         [XmlElement("task")]
         public Task Task { get; set; }

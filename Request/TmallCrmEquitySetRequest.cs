@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string ExcludeArea { get; set; }
 
         /// <summary>
-        /// 会员等级，用逗号分隔。买家会员级别0：店铺客户 1：普通会员 2 ：高级会员 3：VIP会员 4：至尊VIP
+        /// 会员等级，用逗号分隔。买家会员级别0：店铺客户 1：普通会员 2 ：高级会员 3：VIP会员 4：至尊VIP<br /> 支持最大值为：4<br /> 支持最小值为：1
         /// </summary>
         public string Grade { get; set; }
 

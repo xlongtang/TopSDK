@@ -35,7 +35,7 @@ namespace Top.Api.Domain
         public string Time { get; set; }
 
         /// <summary>
-        /// type & 1  ：自动回复  type & 2  : 陌生人消息（等于0是好友消息）  type & 4  : 广播消息  type & 8  : 最近联系人陌生人消息  type & 16 : 离线消息  type & 32 : 子账号转发系统消息
+        /// type & 1  ：自动回复<br> type & 2  : 陌生人消息（等于0是好友消息）<br> type & 4  : 广播消息<br> type & 8  : 最近联系人陌生人消息<br> type & 16 : 离线消息<br> type & 32 : 子账号转发系统消息
         /// </summary>
         [XmlElement("type")]
         public long Type { get; set; }

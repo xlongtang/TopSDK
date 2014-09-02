@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class CrmMembersGetRequest : ITopRequest<CrmMembersGetResponse>
     {
         /// <summary>
-        /// 买家的昵称
+        /// 买家的昵称<br /> 支持最大长度为：1000<br /> 支持的最大列表长度为：1000
         /// </summary>
         public string BuyerNick { get; set; }
 
         /// <summary>
-        /// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000
+        /// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000<br /> 支持最大值为：1000<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> CurrentPage { get; set; }
 
         /// <summary>
-        /// 会员等级，0：店铺客户，1：普通会员，2：高级会员，3：VIP会员， 4：至尊VIP会员。如果不传入值则默认为全部等级。
+        /// 会员等级，0：店铺客户，1：普通会员，2：高级会员，3：VIP会员， 4：至尊VIP会员。如果不传入值则默认为全部等级。<br /> 支持最大值为：4<br /> 支持最小值为：-1<br /> 支持的最大列表长度为：32
         /// </summary>
         public Nullable<long> Grade { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public string MaxTradeAmount { get; set; }
 
         /// <summary>
-        /// 最大交易量
+        /// 最大交易量<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> MaxTradeCount { get; set; }
 
@@ -51,12 +51,12 @@ namespace Top.Api.Request
         public string MinTradeAmount { get; set; }
 
         /// <summary>
-        /// 最小交易量
+        /// 最小交易量<br /> 支持最小值为：0
         /// </summary>
         public Nullable<long> MinTradeCount { get; set; }
 
         /// <summary>
-        /// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
+        /// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，<br /> 支持最大值为：100<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 
@@ -88,7 +88,7 @@ namespace Top.Api.Request
 
         public void Validate()
         {
-            RequestValidator.ValidateMaxLength("buyer_nick", this.BuyerNick, 32);
+            RequestValidator.ValidateMaxLength("buyer_nick", this.BuyerNick, 1000);
             RequestValidator.ValidateRequired("current_page", this.CurrentPage);
             RequestValidator.ValidateMaxValue("current_page", this.CurrentPage, 1000);
             RequestValidator.ValidateMinValue("current_page", this.CurrentPage, 1);

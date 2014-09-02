@@ -26,7 +26,7 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 页尺寸，最大200
+        /// 页尺寸，最大200<br /> 支持的最大列表长度为：200
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

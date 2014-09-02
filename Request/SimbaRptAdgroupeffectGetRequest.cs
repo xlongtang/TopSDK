@@ -31,12 +31,12 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 页码
+        /// 页码<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页大小
+        /// 每页大小<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

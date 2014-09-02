@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string ItemJsonString { get; set; }
 
         /// <summary>
-        /// 物流订单物流类型，值固定选择：30
+        /// 物流订单物流类型，值固定选择：2
         /// </summary>
         public Nullable<long> LogisType { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public Nullable<long> OrderSource { get; set; }
 
         /// <summary>
-        /// 订单类型，值固定选择：2
+        /// 订单类型，值固定选择：30
         /// </summary>
         public Nullable<long> OrderType { get; set; }
 
@@ -198,14 +198,12 @@ namespace Top.Api.Request
             RequestValidator.ValidateRequired("r_address", this.RAddress);
             RequestValidator.ValidateRequired("r_area_id", this.RAreaId);
             RequestValidator.ValidateRequired("r_city_name", this.RCityName);
-            RequestValidator.ValidateRequired("r_dist_name", this.RDistName);
             RequestValidator.ValidateRequired("r_name", this.RName);
             RequestValidator.ValidateRequired("r_prov_name", this.RProvName);
             RequestValidator.ValidateRequired("r_zip_code", this.RZipCode);
             RequestValidator.ValidateRequired("s_address", this.SAddress);
             RequestValidator.ValidateRequired("s_area_id", this.SAreaId);
             RequestValidator.ValidateRequired("s_city_name", this.SCityName);
-            RequestValidator.ValidateRequired("s_dist_name", this.SDistName);
             RequestValidator.ValidateRequired("s_name", this.SName);
             RequestValidator.ValidateRequired("s_prov_name", this.SProvName);
             RequestValidator.ValidateRequired("s_zip_code", this.SZipCode);

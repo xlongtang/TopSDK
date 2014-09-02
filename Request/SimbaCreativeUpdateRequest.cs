@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public string Nick { get; set; }
 
         /// <summary>
-        /// 创意标题，最多20个汉字
+        /// 创意标题，最多20个汉字<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
         /// </summary>
         public string Title { get; set; }
 

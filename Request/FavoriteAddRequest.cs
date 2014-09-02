@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string CollectType { get; set; }
 
         /// <summary>
-        /// 如果收藏的是商品，就传num_iid，如果是店铺，就传入sid
+        /// 如果收藏的是商品，就传num_iid，如果是店铺，就传入sid<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：1
         /// </summary>
         public Nullable<long> ItemNumid { get; set; }
 
@@ -48,6 +48,7 @@ namespace Top.Api.Request
         {
             RequestValidator.ValidateRequired("collect_type", this.CollectType);
             RequestValidator.ValidateRequired("item_numid", this.ItemNumid);
+            RequestValidator.ValidateMaxValue("item_numid", this.ItemNumid, 9223372036854775807);
             RequestValidator.ValidateMinValue("item_numid", this.ItemNumid, 1);
         }
 

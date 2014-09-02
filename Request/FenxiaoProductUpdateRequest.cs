@@ -56,7 +56,7 @@ namespace Top.Api.Request
         public string HaveInvoice { get; set; }
 
         /// <summary>
-        /// 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数
+        /// 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数<br /> 支持的文件类型为：gif,jpg,jpeg,png,bmp<br /> 支持的最大列表长度为：512000
         /// </summary>
         public FileItem Image { get; set; }
 
