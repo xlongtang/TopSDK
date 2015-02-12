@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -371,7 +371,6 @@
     <Compile Include="TopException.cs" />
     <Compile Include="ITopRequest.cs" />
     <Compile Include="Domain\Receiver.cs" />
-    <Compile Include="Domain\WaybillAddress.cs" />
     <Compile Include="Domain\Ticket.cs" />
     <Compile Include="Domain\Refund.cs" />
     <Compile Include="Domain\RefundDetail.cs" />
@@ -379,7 +378,6 @@
     <Compile Include="Domain\ProductExtraInfo.cs" />
     <Compile Include="Domain\TradeMonitor.cs" />
     <Compile Include="Domain\ScoreResult.cs" />
-    <Compile Include="Domain\ProductPropImg.cs" />
     <Compile Include="Domain\TmcProduceResult.cs" />
     <Compile Include="Domain\ShopScore.cs" />
     <Compile Include="Domain\ServiceOrder.cs" />
@@ -395,7 +393,6 @@
     <Compile Include="Domain\SpuTemplateDO.cs" />
     <Compile Include="Domain\JzPartner.cs" />
     <Compile Include="Domain\Meal.cs" />
-    <Compile Include="Domain\TradeOrderInfo.cs" />
     <Compile Include="Domain\Promotion.cs" />
     <Compile Include="Domain\SuiteConfDO.cs" />
     <Compile Include="Domain\TradeOrderInfo.cs" />
@@ -433,7 +430,6 @@
     <Compile Include="Domain\Department.cs" />
     <Compile Include="Domain\IpcInventoryDetailDo.cs" />
     <Compile Include="Domain\WaybillApplyPrintCheckRequest.cs" />
-    <Compile Include="Domain\LogisticsService.cs" />
     <Compile Include="Domain\ItemTemplate.cs" />
     <Compile Include="Domain\AccountStat.cs" />
     <Compile Include="Domain\WaybillApplyNewRequest.cs" />
@@ -442,8 +438,6 @@
     <Compile Include="Domain\FoodSecurity.cs" />
     <Compile Include="Domain\PromotionMjs.cs" />
     <Compile Include="Domain\ProductPropImg.cs" />
-    <Compile Include="Domain\WaybillAddress.cs" />
-    <Compile Include="Domain\WaybillApplyNewInfo.cs" />
     <Compile Include="Domain\LimitDiscountDetail.cs" />
     <Compile Include="Domain\Subtask.cs" />
     <Compile Include="Domain\WaybillApplyRequest.cs" />
@@ -539,17 +533,14 @@
     <Compile Include="Domain\JzConsignArgs.cs" />
     <Compile Include="Domain\PrintCheckInfo.cs" />
     <Compile Include="Domain\WaybillApplySubscriptionInfo.cs" />
-    <Compile Include="Domain\WaybillApplyUpdateInfo.cs" />
     <Compile Include="Domain\WaybillBranchAccount.cs" />
     <Compile Include="Domain\WaybillAddress.cs" />
     <Compile Include="Domain\WaybillApplyUpdateInfo.cs" />
     <Compile Include="Domain\PictureCategory.cs" />
     <Compile Include="Domain\Picture.cs" />
-    <Compile Include="Domain\WaybillApplySubscriptionInfo.cs" />
     <Compile Include="Domain\WaybillApplyFullUpdateRequest.cs" />
     <Compile Include="Domain\PromotionInShop.cs" />
     <Compile Include="Domain\PromotionInItem.cs" />
-    <Compile Include="Domain\WaybillBranchAccount.cs" />
     <Compile Include="Domain\OrderMessage.cs" />
     <Compile Include="Domain\LogisticsService.cs" />
     <Compile Include="Domain\BuyerRefund.cs" />
@@ -562,7 +553,6 @@
     <Compile Include="Domain\Cooperation.cs" />
     <Compile Include="Domain\WlbProcessStatus.cs" />
     <Compile Include="Domain\WlbOrder.cs" />
-    <Compile Include="Domain\PackageItem.cs" />
     <Compile Include="Domain\TradeExt.cs" />
     <Compile Include="Domain\UserSubscribe.cs" />
     <Compile Include="Domain\TmcGroup.cs" />
