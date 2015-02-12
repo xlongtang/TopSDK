@@ -10,7 +10,7 @@ namespace Top.Api.Response
     public class RefundGetResponse : TopResponse
     {
         /// <summary>
-        /// 搜索到的交易信息列表
+        /// 退款详情
         /// </summary>
         [XmlElement("refund")]
         public Refund Refund { get; set; }

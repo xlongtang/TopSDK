@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class SellercenterRoleAddRequest : ITopRequest<SellercenterRoleAddResponse>
     {
         /// <summary>
-        /// 角色描述<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 角色描述
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// 角色名<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 角色名
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 表示卖家昵称<br /> 支持最大长度为：500<br /> 支持的最大列表长度为：500
+        /// 表示卖家昵称
         /// </summary>
         public string Nick { get; set; }
 

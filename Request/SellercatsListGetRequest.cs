@@ -11,6 +11,11 @@ namespace Top.Api.Request
     public class SellercatsListGetRequest : ITopRequest<SellercatsListGetResponse>
     {
         /// <summary>
+        /// fields参数
+        /// </summary>
+        public string Fields { get; set; }
+
+        /// <summary>
         /// 卖家昵称
         /// </summary>
         public string Nick { get; set; }
@@ -27,6 +32,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("fields", this.Fields);
             parameters.Add("nick", this.Nick);
             parameters.AddAll(this.otherParameters);
             return parameters;

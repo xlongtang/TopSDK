@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class HotelMatchFeedbackRequest : ITopRequest<HotelMatchFeedbackResponse>
     {
         /// <summary>
-        /// 需进行匹配的酒店id<br /> 支持最小值为：1
+        /// 需进行匹配的酒店id
         /// </summary>
         public Nullable<long> Haid { get; set; }
 
         /// <summary>
-        /// 匹配命中的酒店id<br /> 支持最小值为：0
+        /// 匹配命中的酒店id
         /// </summary>
         public Nullable<long> Hid { get; set; }
 
         /// <summary>
-        /// 匹配结果 0:未匹配，1:匹配<br /> 支持最大值为：1<br /> 支持最小值为：0
+        /// 匹配结果 0:未匹配，1:匹配
         /// </summary>
         public Nullable<long> MatchResult { get; set; }
 

@@ -11,6 +11,16 @@ namespace Top.Api.Request
     public class ItemSkuUpdateRequest : ITopRequest<ItemSkuUpdateResponse>
     {
         /// <summary>
+        /// SKU条形码
+        /// </summary>
+        public string Barcode { get; set; }
+
+        /// <summary>
+        /// 忽略警告提示.
+        /// </summary>
+        public string Ignorewarning { get; set; }
+
+        /// <summary>
         /// sku所属商品的价格。当用户更新sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够更新成功
         /// </summary>
         public string ItemPrice { get; set; }
@@ -21,7 +31,7 @@ namespace Top.Api.Request
         public string Lang { get; set; }
 
         /// <summary>
-        /// Sku所属商品数字id，可通过 taobao.item.get 获取<br /> 支持最小值为：0
+        /// Sku所属商品数字id，可通过 taobao.item.get 获取
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 
@@ -41,7 +51,7 @@ namespace Top.Api.Request
         public string Properties { get; set; }
 
         /// <summary>
-        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数<br /> 支持最小值为：0
+        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数
         /// </summary>
         public Nullable<long> Quantity { get; set; }
 
@@ -62,6 +72,8 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("barcode", this.Barcode);
+            parameters.Add("ignorewarning", this.Ignorewarning);
             parameters.Add("item_price", this.ItemPrice);
             parameters.Add("lang", this.Lang);
             parameters.Add("num_iid", this.NumIid);

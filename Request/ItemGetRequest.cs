@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 商品数字ID<br /> 支持最小值为：1
+        /// 商品数字ID
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

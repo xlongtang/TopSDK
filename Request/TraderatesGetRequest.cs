@@ -31,9 +31,14 @@ namespace Top.Api.Request
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页获取条数。默认值40，最小值1，最大值150。<br /> 支持最大值为：150<br /> 支持最小值为：1
+        /// 每页获取条数。默认值40，最小值1，最大值150。
         /// </summary>
         public Nullable<long> PageSize { get; set; }
+
+        /// <summary>
+        /// 评价对方昵称
+        /// </summary>
+        public string PeerNick { get; set; }
 
         /// <summary>
         /// 评价类型。可选值:get(得到),give(给出)
@@ -82,6 +87,7 @@ namespace Top.Api.Request
             parameters.Add("num_iid", this.NumIid);
             parameters.Add("page_no", this.PageNo);
             parameters.Add("page_size", this.PageSize);
+            parameters.Add("peer_nick", this.PeerNick);
             parameters.Add("rate_type", this.RateType);
             parameters.Add("result", this.Result);
             parameters.Add("role", this.Role);
@@ -97,6 +103,7 @@ namespace Top.Api.Request
             RequestValidator.ValidateRequired("fields", this.Fields);
             RequestValidator.ValidateMaxValue("page_size", this.PageSize, 150);
             RequestValidator.ValidateMinValue("page_size", this.PageSize, 1);
+            RequestValidator.ValidateMaxLength("peer_nick", this.PeerNick, 32);
             RequestValidator.ValidateRequired("rate_type", this.RateType);
             RequestValidator.ValidateRequired("role", this.Role);
         }

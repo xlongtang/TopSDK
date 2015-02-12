@@ -31,6 +31,11 @@ namespace Top.Api.Request
         public string AutoFill { get; set; }
 
         /// <summary>
+        /// 自动重发。可选值:true,false;默认值:false(不重发)
+        /// </summary>
+        public Nullable<bool> AutoRepost { get; set; }
+
+        /// <summary>
         /// 商品条形码
         /// </summary>
         public string Barcode { get; set; }
@@ -41,7 +46,12 @@ namespace Top.Api.Request
         public string ChangeProp { get; set; }
 
         /// <summary>
-        /// 叶子类目id<br /> 支持最小值为：0
+        /// 天猫超市扩展字段，天猫超市专用。
+        /// </summary>
+        public string ChaoshiExtendsInfo { get; set; }
+
+        /// <summary>
+        /// 叶子类目id
         /// </summary>
         public Nullable<long> Cid { get; set; }
 
@@ -51,7 +61,7 @@ namespace Top.Api.Request
         public Nullable<long> CodPostageId { get; set; }
 
         /// <summary>
-        /// 宝贝描述。字数要大于5个字符，小于25000个字符，受违禁词控制<br /> 支持最大长度为：200000<br /> 支持的最大列表长度为：200000
+        /// 宝贝描述。字数要大于5个字符，小于25000个字符，受违禁词控制
         /// </summary>
         public string Desc { get; set; }
 
@@ -151,7 +161,7 @@ namespace Top.Api.Request
         public string FreightPayer { get; set; }
 
         /// <summary>
-        /// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值为（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 澳洲, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾, 其他）<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
+        /// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值为（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 澳洲, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾, 其他）
         /// </summary>
         public string GlobalStockCountry { get; set; }
 
@@ -181,7 +191,7 @@ namespace Top.Api.Request
         public Nullable<bool> HasWarranty { get; set; }
 
         /// <summary>
-        /// 商品主图片。类型:JPG,GIF;最大长度:500K<br /> 支持的文件类型为：gif,jpg,jpeg,png<br /> 支持的最大列表长度为：524288
+        /// 商品主图片。类型:JPG,GIF;最大长度:500K
         /// </summary>
         public FileItem Image { get; set; }
 
@@ -306,9 +316,14 @@ namespace Top.Api.Request
         public string Newprepay { get; set; }
 
         /// <summary>
-        /// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。 拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。<br /> 支持最大值为：900000000<br /> 支持最小值为：0
+        /// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。 拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
         /// </summary>
         public Nullable<long> Num { get; set; }
+
+        /// <summary>
+        /// 汽车O2O绑定线下服务标记，如不为空，表示关联服务，否则，不关联服务。
+        /// </summary>
+        public Nullable<bool> O2oBindService { get; set; }
 
         /// <summary>
         /// 商品外部编码，该字段的最大长度是64个字节
@@ -321,12 +336,12 @@ namespace Top.Api.Request
         public Nullable<long> PaimaiInfoDeposit { get; set; }
 
         /// <summary>
-        /// 降价拍宝贝的降价周期(分钟)。降价拍宝贝的价格每隔paimai_info.interval时间会下降一次increment。<br /> 支持最大值为：60<br /> 支持最小值为：1
+        /// 降价拍宝贝的降价周期(分钟)。降价拍宝贝的价格每隔paimai_info.interval时间会下降一次increment。
         /// </summary>
         public Nullable<long> PaimaiInfoInterval { get; set; }
 
         /// <summary>
-        /// 拍卖商品选择的拍卖类型，拍卖类型包括三种：增价拍(1)，荷兰拍(2)和降价拍(3)。<br /> 支持最大值为：3<br /> 支持最小值为：1
+        /// 拍卖商品选择的拍卖类型，拍卖类型包括三种：增价拍(1)，荷兰拍(2)和降价拍(3)。
         /// </summary>
         public Nullable<long> PaimaiInfoMode { get; set; }
 
@@ -336,12 +351,12 @@ namespace Top.Api.Request
         public string PaimaiInfoReserve { get; set; }
 
         /// <summary>
-        /// 自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。<br /> 支持最大值为：48<br /> 支持最小值为：1
+        /// 自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。
         /// </summary>
         public Nullable<long> PaimaiInfoValidHour { get; set; }
 
         /// <summary>
-        /// 自定义销售周期的分钟数。拍卖宝贝可以自定义销售周期，这里是指定销售周期的分钟数。自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。<br /> 支持最大值为：59<br /> 支持最小值为：0
+        /// 自定义销售周期的分钟数。拍卖宝贝可以自定义销售周期，这里是指定销售周期的分钟数。自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。
         /// </summary>
         public Nullable<long> PaimaiInfoValidMinute { get; set; }
 
@@ -371,7 +386,7 @@ namespace Top.Api.Request
         public Nullable<long> ProductId { get; set; }
 
         /// <summary>
-        /// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过800字节<br /> 支持最大长度为：800<br /> 支持的最大列表长度为：800
+        /// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过512字节
         /// </summary>
         public string PropertyAlias { get; set; }
 
@@ -379,6 +394,11 @@ namespace Top.Api.Request
         /// 商品属性列表。格式:pid:vid;pid:vid。属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。 如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。所有属性加起来包括分割符不能超过549字节，单个属性没有限制。 如果有属性是可输入的话，则用字段input_str填入属性的值
         /// </summary>
         public string Props { get; set; }
+
+        /// <summary>
+        /// 商品资质信息
+        /// </summary>
+        public string Qualification { get; set; }
 
         /// <summary>
         /// 景区门票在选择订金支付时候，需要交的预订费。传入的值是1到20之间的数值，小数点后最多可以保留两位（多余的部分将做四舍五入的处理）。这个数值表示的是预订费的比例，最终的预订费为 scenic_ticket_book_cost乘一口价除以100
@@ -391,7 +411,7 @@ namespace Top.Api.Request
         public Nullable<long> ScenicTicketPayWay { get; set; }
 
         /// <summary>
-        /// 商品卖点信息，最长150个字符。天猫商家和集市卖家都可用。<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
+        /// 商品卖点信息，最长150个字符。天猫商家和集市卖家都可用。
         /// </summary>
         public string SellPoint { get; set; }
 
@@ -406,9 +426,29 @@ namespace Top.Api.Request
         public string SellerCids { get; set; }
 
         /// <summary>
+        /// 宝贝形态:  1代表电子券;0或其他代表实物
+        /// </summary>
+        public string Shape { get; set; }
+
+        /// <summary>
         /// sku层面的条形码，多个SKU情况，与SKU价格库存格式类似，用逗号分隔
         /// </summary>
         public string SkuBarcode { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的高度，单位为cm，部分类目必选。天猫商家专用。  可选值为："0-15", "15-25", "25-50", "50-60", "60-80", "80-120", "120-160", "160-200"。  数据和SKU一一对应，用,分隔，如：15-25,25-50,25-50
+        /// </summary>
+        public string SkuHdHeight { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的灯头数量，正整数，大于等于3，部分类目必选。天猫商家专用。  数据和SKU一一对应，用,分隔，如：3,5,7
+        /// </summary>
+        public string SkuHdLampQuantity { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的长度，正整数，单位为cm，部分类目必选。天猫商家专用。  数据和SKU一一对应，用,分隔，如：20,30,30
+        /// </summary>
+        public string SkuHdLength { get; set; }
 
         /// <summary>
         /// Sku的外部id串，结构如：1234,1342,…  sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是","(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
@@ -446,7 +486,7 @@ namespace Top.Api.Request
         public Nullable<long> SubStock { get; set; }
 
         /// <summary>
-        /// 宝贝标题。不能超过30字符，受违禁词控制。天猫图书管控类目最大允许120字符；<br /> 支持最大长度为：120<br /> 支持的最大列表长度为：120
+        /// 宝贝标题。不能超过30字符，受违禁词控制。天猫图书管控类目最大允许120字符；
         /// </summary>
         public string Title { get; set; }
 
@@ -465,6 +505,11 @@ namespace Top.Api.Request
         /// </summary>
         public Nullable<long> Weight { get; set; }
 
+        /// <summary>
+        /// 测试字段，无法生效，请误使用<br> 无线的宝贝描述 格式： <wapDesc>    <voice size="" time="">add</voice>    <img>adde</img>    <txt>crf</txt> </wapDesc>
+        /// </summary>
+        public string WirelessDesc { get; set; }
+
         private IDictionary<string, string> otherParameters;
 
         #region ITopRequest Members
@@ -481,8 +526,10 @@ namespace Top.Api.Request
             parameters.Add("approve_status", this.ApproveStatus);
             parameters.Add("auction_point", this.AuctionPoint);
             parameters.Add("auto_fill", this.AutoFill);
+            parameters.Add("auto_repost", this.AutoRepost);
             parameters.Add("barcode", this.Barcode);
             parameters.Add("change_prop", this.ChangeProp);
+            parameters.Add("chaoshi_extends_info", this.ChaoshiExtendsInfo);
             parameters.Add("cid", this.Cid);
             parameters.Add("cod_postage_id", this.CodPostageId);
             parameters.Add("desc", this.Desc);
@@ -536,6 +583,7 @@ namespace Top.Api.Request
             parameters.Add("location.state", this.LocationState);
             parameters.Add("newprepay", this.Newprepay);
             parameters.Add("num", this.Num);
+            parameters.Add("o2o_bind_service", this.O2oBindService);
             parameters.Add("outer_id", this.OuterId);
             parameters.Add("paimai_info.deposit", this.PaimaiInfoDeposit);
             parameters.Add("paimai_info.interval", this.PaimaiInfoInterval);
@@ -550,12 +598,17 @@ namespace Top.Api.Request
             parameters.Add("product_id", this.ProductId);
             parameters.Add("property_alias", this.PropertyAlias);
             parameters.Add("props", this.Props);
+            parameters.Add("qualification", this.Qualification);
             parameters.Add("scenic_ticket_book_cost", this.ScenicTicketBookCost);
             parameters.Add("scenic_ticket_pay_way", this.ScenicTicketPayWay);
             parameters.Add("sell_point", this.SellPoint);
             parameters.Add("sell_promise", this.SellPromise);
             parameters.Add("seller_cids", this.SellerCids);
+            parameters.Add("shape", this.Shape);
             parameters.Add("sku_barcode", this.SkuBarcode);
+            parameters.Add("sku_hd_height", this.SkuHdHeight);
+            parameters.Add("sku_hd_lamp_quantity", this.SkuHdLampQuantity);
+            parameters.Add("sku_hd_length", this.SkuHdLength);
             parameters.Add("sku_outer_ids", this.SkuOuterIds);
             parameters.Add("sku_prices", this.SkuPrices);
             parameters.Add("sku_properties", this.SkuProperties);
@@ -567,12 +620,14 @@ namespace Top.Api.Request
             parameters.Add("type", this.Type);
             parameters.Add("valid_thru", this.ValidThru);
             parameters.Add("weight", this.Weight);
+            parameters.Add("wireless_desc", this.WirelessDesc);
             parameters.AddAll(this.otherParameters);
             return parameters;
         }
 
         public void Validate()
         {
+            RequestValidator.ValidateMaxLength("chaoshi_extends_info", this.ChaoshiExtendsInfo, 1000);
             RequestValidator.ValidateRequired("cid", this.Cid);
             RequestValidator.ValidateMinValue("cid", this.Cid, 0);
             RequestValidator.ValidateRequired("desc", this.Desc);

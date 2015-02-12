@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Hid { get; set; }
 
         /// <summary>
-        /// 房型全部名称/别名。不能超过60字节<br /> 支持最大长度为：60<br /> 支持的最大列表长度为：60
+        /// 房型全部名称/别名。不能超过60字节
         /// </summary>
         public string Name { get; set; }
 

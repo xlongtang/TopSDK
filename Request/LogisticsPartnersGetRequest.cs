@@ -26,12 +26,12 @@ namespace Top.Api.Request
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// 物流公司揽货地地区码（必须是区、县一级的）.参考:http://www.stats.gov.cn/tjbz/xzqhdm/t20100623_402652267.htm  或者调用 taobao.areas.get 获取
+        /// 物流公司揽货地地区码（必须是区、县一级的）.参考:<a href="http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html">http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html</a>或者调用 taobao.areas.get 获取
         /// </summary>
         public string SourceId { get; set; }
 
         /// <summary>
-        /// 物流公司派送地地区码（必须是区、县一级的）.参考:http://www.stats.gov.cn/tjbz/xzqhdm/t20100623_402652267.htm  或者调用 taobao.areas.get 获取
+        /// 物流公司派送地地区码（必须是区、县一级的）.参考:<a href="http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html">http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html</a>或者调用 taobao.areas.get 获取
         /// </summary>
         public string TargetId { get; set; }
 

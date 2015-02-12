@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string SupplierMemo { get; set; }
 
         /// <summary>
-        /// 旗子的标记，必选。  1-5之间的数字。  非1-5之间，都采用1作为默认。  1:红色  2:黄色  3:绿色  4:蓝色  5:粉红色<br /> 支持最大值为：5<br /> 支持最小值为：1
+        /// 旗子的标记，必选。  1-5之间的数字。  非1-5之间，都采用1作为默认。  1:红色  2:黄色  3:绿色  4:蓝色  5:粉红色
         /// </summary>
         public Nullable<long> SupplierMemoFlag { get; set; }
 

@@ -41,7 +41,7 @@ namespace Top.Api.Request
         public Nullable<bool> GetDef { get; set; }
 
         /// <summary>
-        /// 备注,<br><font color='red'>备注不能超过256字节</font><br /> 支持最大长度为：256<br /> 支持的最大列表长度为：256
+        /// 备注,<br><font color='red'>备注不能超过256字节</font>
         /// </summary>
         public string Memo { get; set; }
 
@@ -61,9 +61,14 @@ namespace Top.Api.Request
         public string Province { get; set; }
 
         /// <summary>
-        /// 公司名称,<br><font color="red">公司名称长能不能超过20字节</font><br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 公司名称,<br><font color="red">公司名称长能不能超过20字节</font>
         /// </summary>
         public string SellerCompany { get; set; }
+
+        /// <summary>
+        /// 默认发货地址。<br> <font color='red'>选择此项(true)，将当前地址设为默认发货地址，撤消原默认发货地址</font>
+        /// </summary>
+        public Nullable<bool> SendDef { get; set; }
 
         /// <summary>
         /// 地区邮政编码  <br><font color='red'>如果所在地区是海外的可以为空，否则为必参</font>
@@ -93,6 +98,7 @@ namespace Top.Api.Request
             parameters.Add("phone", this.Phone);
             parameters.Add("province", this.Province);
             parameters.Add("seller_company", this.SellerCompany);
+            parameters.Add("send_def", this.SendDef);
             parameters.Add("zip_code", this.ZipCode);
             parameters.AddAll(this.otherParameters);
             return parameters;

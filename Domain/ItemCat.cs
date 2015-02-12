@@ -52,5 +52,11 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 是否度量衡类目
+        /// </summary>
+        [XmlElement("taosir_cat")]
+        public bool TaosirCat { get; set; }
     }
 }

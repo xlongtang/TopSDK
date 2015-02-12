@@ -11,7 +11,7 @@ namespace Top.Api.Response
     public class WlbItemMapGetResponse : TopResponse
     {
         /// <summary>
-        /// 外部商品实体列表
+        /// 外部商品实体
         /// </summary>
         [XmlArray("out_entity_item_list")]
         [XmlArrayItem("out_entity_item")]

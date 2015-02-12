@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class PictureUpdateRequest : ITopRequest<PictureUpdateResponse>
     {
         /// <summary>
-        /// 新的图片名，最大长度50字符，不能为空<br /> 支持最大长度为：50<br /> 支持的最大列表长度为：50
+        /// 新的图片名，最大长度50字符，不能为空
         /// </summary>
         public string NewName { get; set; }
 

@@ -47,7 +47,7 @@ namespace Top.Api.Domain
         public string OwnerNick { get; set; }
 
         /// <summary>
-        /// 留言者身份 1代表买家，2代表卖家，3代表小二
+        /// 留言者身份1代表买家，2代表卖家，3代表小二
         /// </summary>
         [XmlElement("owner_role")]
         public string OwnerRole { get; set; }
@@ -64,5 +64,11 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("refund_id")]
         public long RefundId { get; set; }
+
+        /// <summary>
+        /// 退款阶段，可选值：onsale（售中）, aftersale（售后）
+        /// </summary>
+        [XmlElement("refund_phase")]
+        public string RefundPhase { get; set; }
     }
 }

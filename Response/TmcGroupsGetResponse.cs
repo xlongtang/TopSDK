@@ -11,7 +11,7 @@ namespace Top.Api.Response
     public class TmcGroupsGetResponse : TopResponse
     {
         /// <summary>
-        /// 分组列表
+        /// dasdasd
         /// </summary>
         [XmlArray("groups")]
         [XmlArrayItem("tmc_group")]

@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ItemsOnsaleGetRequest : ITopRequest<ItemsOnsaleGetResponse>
     {
         /// <summary>
-        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到<br /> 支持最小值为：0
+        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
         /// </summary>
         public Nullable<long> Cid { get; set; }
 

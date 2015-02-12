@@ -52,7 +52,7 @@ namespace Top.Api.Domain
         public long SpecId { get; set; }
 
         /// <summary>
-        /// 1, "商家确认"  2, "商家拒绝"  3, "小二确认"  4, "小二拒绝"  5, "待商家处理"  6, "商家审核超时"  7, "待小二审核"
+        /// 1, "商家确认"  2, "商家拒绝"  3, "小二确认"  4, "小二拒绝"  5, "待商家处理"  6, "商家审核超时"  7, "待小二审核"  9, "品牌商确认"  10, "免审通过"  14, "免审拒绝"
         /// </summary>
         [XmlElement("status")]
         public long Status { get; set; }

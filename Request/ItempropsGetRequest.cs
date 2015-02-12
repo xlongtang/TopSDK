@@ -26,6 +26,11 @@ namespace Top.Api.Request
         public Nullable<long> Cid { get; set; }
 
         /// <summary>
+        /// 增量时间戳。格式:yyyy-MM-dd HH:mm:ss 假如传2005-01-01 00:00:00，则取所有的属性和子属性ID(如果传了pid会忽略datetime)
+        /// </summary>
+        public Nullable<DateTime> Datetime { get; set; }
+
+        /// <summary>
         /// 需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values
         /// </summary>
         public string Fields { get; set; }
@@ -71,7 +76,7 @@ namespace Top.Api.Request
         public Nullable<long> Pid { get; set; }
 
         /// <summary>
-        /// 获取类目的类型：1代表集市、2代表天猫<br /> 支持最大值为：2<br /> 支持最小值为：1
+        /// 获取类目的类型：1代表集市、2代表天猫
         /// </summary>
         public Nullable<long> Type { get; set; }
 
@@ -90,6 +95,7 @@ namespace Top.Api.Request
             parameters.Add("attr_keys", this.AttrKeys);
             parameters.Add("child_path", this.ChildPath);
             parameters.Add("cid", this.Cid);
+            parameters.Add("datetime", this.Datetime);
             parameters.Add("fields", this.Fields);
             parameters.Add("is_color_prop", this.IsColorProp);
             parameters.Add("is_enum_prop", this.IsEnumProp);

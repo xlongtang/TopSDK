@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WangwangEserviceGroupmemberGetRequest : ITopRequest<WangwangEserviceGroupmemberGetResponse>
     {
         /// <summary>
-        /// 主帐号ID：cntaobao+淘宝nick，例如cntaobaotest<br /> 支持最大长度为：128<br /> 支持的最大列表长度为：128
+        /// 主帐号ID：cntaobao+淘宝nick，例如cntaobaotest
         /// </summary>
         public string ManagerId { get; set; }
 

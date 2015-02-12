@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class TmallProductSpecsGetRequest : ITopRequest<TmallProductSpecsGetResponse>
     {
         /// <summary>
-        /// 类目的ID号，该id必须和properties同时传入。  而且只有当product_id不传入的时候才起效果。
+        /// 类目的ID号，该id必须和properties同时传入。 而且只有当product_id不传入的时候才起效果。<br> product_id不传时，该参数必传
         /// </summary>
         public Nullable<long> CatId { get; set; }
 
         /// <summary>
-        /// 产品的ID。这个不能和properties和cat_id同时起效果
+        /// 产品的ID。这个不能和properties和cat_id同时起效果<br> properties 和cat_id 均不传时，该参数必传。
         /// </summary>
         public Nullable<long> ProductId { get; set; }
 
         /// <summary>
-        /// 关键属性的字符串，pid:vid;pid:vid  该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。
+        /// 关键属性的字符串，pid:vid;pid:vid 该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。<br>product_id 不传时该参数必传
         /// </summary>
         public string Properties { get; set; }
 

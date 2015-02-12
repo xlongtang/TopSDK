@@ -16,27 +16,27 @@ namespace Top.Api.Request
         public string AbstractMsg { get; set; }
 
         /// <summary>
-        /// 用户的Id,需要确定自己id的可以联系接口负责人<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 用户的Id,需要确定自己id的可以联系接口负责人
         /// </summary>
         public string AppInfo { get; set; }
 
         /// <summary>
-        /// 作者/著者，最多填写三个人名，超出三个人的以“等”结束<br /> 支持最大长度为：80<br /> 支持的最大列表长度为：80
+        /// 作者/著者，最多填写三个人名，超出三个人的以“等”结束
         /// </summary>
         public string Author { get; set; }
 
         /// <summary>
-        /// 作者国别/地区，到国家级别<br /> 支持最大长度为：80<br /> 支持的最大列表长度为：80
+        /// 作者国别/地区，到国家级别
         /// </summary>
         public string AuthorArea { get; set; }
 
         /// <summary>
-        /// 条形码，数字，共13位，9787开头<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 条形码，数字，共13位，9787开头
         /// </summary>
         public string BarCode { get; set; }
 
         /// <summary>
-        /// 装帧<br /> 支持最大长度为：10<br /> 支持的最大列表长度为：10
+        /// 装帧
         /// </summary>
         public string BookBind { get; set; }
 
@@ -46,12 +46,12 @@ namespace Top.Api.Request
         public Nullable<long> BookSize { get; set; }
 
         /// <summary>
-        /// 版本<br /> 支持的最大列表长度为：10
+        /// 版本
         /// </summary>
         public Nullable<long> BookVersion { get; set; }
 
         /// <summary>
-        /// 目录，不支持HTML代码，长度限制为8000<br /> 支持最大长度为：8000<br /> 支持的最大列表长度为：8000
+        /// 目录，不支持HTML代码，长度限制为8000
         /// </summary>
         public string Catalog { get; set; }
 
@@ -61,17 +61,17 @@ namespace Top.Api.Request
         public string CategoryId { get; set; }
 
         /// <summary>
-        /// 中图分类号，英文字母加数字组成<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
+        /// 中图分类号，英文字母加数字组成
         /// </summary>
         public string ChinaClassifyNo { get; set; }
 
         /// <summary>
-        /// cip数据编号，真实格式：（XXX）第***号，  导入时，格式为XXX-***<br /> 支持最大长度为：50<br /> 支持的最大列表长度为：50
+        /// cip数据编号，真实格式：（XXX）第***号，  导入时，格式为XXX-***
         /// </summary>
         public string Cip { get; set; }
 
         /// <summary>
-        /// 点评者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 点评者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Commentator { get; set; }
 
@@ -81,22 +81,22 @@ namespace Top.Api.Request
         public string CustomId { get; set; }
 
         /// <summary>
-        /// 图书名称(正副书名)<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
+        /// 图书名称(正副书名)
         /// </summary>
         public string DeputyName { get; set; }
 
         /// <summary>
-        /// 绘图者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 绘图者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Drawor { get; set; }
 
         /// <summary>
-        /// 编者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 编者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Editor { get; set; }
 
         /// <summary>
-        /// 摄影者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 摄影者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Graphor { get; set; }
 
@@ -106,7 +106,7 @@ namespace Top.Api.Request
         public FileItem Image { get; set; }
 
         /// <summary>
-        /// 不带‘-’的图书ISBN号  1. 位数限定：10位 末尾校验,7开头  2. 位数限定：13位、开头数字限定： 9787开头<br /> 支持最大长度为：13<br /> 支持的最大列表长度为：13
+        /// 不带‘-’的图书ISBN号  1. 位数限定：10位 末尾校验,7开头  2. 位数限定：13位、开头数字限定： 9787开头
         /// </summary>
         public string Isbn { get; set; }
 
@@ -116,32 +116,32 @@ namespace Top.Api.Request
         public string ItemIds { get; set; }
 
         /// <summary>
-        /// 口述者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 口述者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Narrator { get; set; }
 
         /// <summary>
-        /// 分册名<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
+        /// 分册名
         /// </summary>
         public string PartName { get; set; }
 
         /// <summary>
-        /// 分册号<br /> 支持的最大列表长度为：10
+        /// 分册号
         /// </summary>
         public Nullable<long> PartNo { get; set; }
 
         /// <summary>
-        /// 策划者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 策划者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Plottor { get; set; }
 
         /// <summary>
-        /// 价格支持整数和小数，小数保留小数点后两位，若有多个价格，价格之间通过','号分隔<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 价格支持整数和小数，小数保留小数点后两位，若有多个价格，价格之间通过','号分隔
         /// </summary>
         public string Price { get; set; }
 
         /// <summary>
-        /// 出版社名称<br /> 支持最大长度为：80<br /> 支持的最大列表长度为：80
+        /// 出版社名称
         /// </summary>
         public string PublishCompany { get; set; }
 
@@ -151,32 +151,32 @@ namespace Top.Api.Request
         public string PublishYm { get; set; }
 
         /// <summary>
-        /// 年号，必须是完整的年份，如：2013，当输入的值不是四位或者首位大于2时，调接口失败<br /> 支持最大长度为：10<br /> 支持的最大列表长度为：10
+        /// 年号，必须是完整的年份，如：2013，当输入的值不是四位或者首位大于2时，调接口失败
         /// </summary>
         public string ReginYear { get; set; }
 
         /// <summary>
-        /// 注释者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 注释者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Scholisat { get; set; }
 
         /// <summary>
-        /// 丛书名<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
+        /// 丛书名
         /// </summary>
         public string SeriesBooksName { get; set; }
 
         /// <summary>
-        /// 此字段废弃<br /> 支持最大长度为：150<br /> 支持的最大列表长度为：150
+        /// 此字段废弃
         /// </summary>
         public string SpuImg { get; set; }
 
         /// <summary>
-        /// 简介，不支持HTML代码，长度不能超过5000<br /> 支持最大长度为：5000<br /> 支持的最大列表长度为：5000
+        /// 简介，不支持HTML代码，长度不能超过5000
         /// </summary>
         public string Summary { get; set; }
 
         /// <summary>
-        /// 译者，只写一个人的名字，超出的以“等”结束<br /> 支持最大长度为：40<br /> 支持的最大列表长度为：40
+        /// 译者，只写一个人的名字，超出的以“等”结束
         /// </summary>
         public string Translator { get; set; }
 

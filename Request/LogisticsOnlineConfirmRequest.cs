@@ -31,7 +31,7 @@ namespace Top.Api.Request
         public string SubTid { get; set; }
 
         /// <summary>
-        /// 淘宝交易ID<br /> 支持最小值为：1000
+        /// 淘宝交易ID
         /// </summary>
         public Nullable<long> Tid { get; set; }
 

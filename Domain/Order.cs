@@ -280,6 +280,12 @@ namespace Top.Api.Domain
         public string Title { get; set; }
 
         /// <summary>
+        /// 支持家装类物流的类型
+        /// </summary>
+        [XmlElement("tmser_spu_code")]
+        public string TmserSpuCode { get; set; }
+
+        /// <summary>
         /// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
         /// </summary>
         [XmlElement("total_fee")]

@@ -11,6 +11,11 @@ namespace Top.Api.Request
     public class ItemSkuDeleteRequest : ITopRequest<ItemSkuDeleteResponse>
     {
         /// <summary>
+        /// 忽略警告提示.
+        /// </summary>
+        public string Ignorewarning { get; set; }
+
+        /// <summary>
         /// sku所属商品的数量,大于0的整数。当用户删除sku，使商品数量不等于sku数量之和时候，用于修改商品的数量，使sku能够删除成功。特别是删除最后一个sku的时候，一定要设置商品数量到正常的值，否则删除失败
         /// </summary>
         public Nullable<long> ItemNum { get; set; }
@@ -47,6 +52,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("ignorewarning", this.Ignorewarning);
             parameters.Add("item_num", this.ItemNum);
             parameters.Add("item_price", this.ItemPrice);
             parameters.Add("lang", this.Lang);

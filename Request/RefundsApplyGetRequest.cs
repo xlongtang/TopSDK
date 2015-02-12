@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 页码。传入值为 1 代表第一页，传入值为 2 代表第二页，依此类推。默认返回的数据是从第一页开始<br /> 支持最小值为：1
+        /// 页码。传入值为 1 代表第一页，传入值为 2 代表第二页，依此类推。默认返回的数据是从第一页开始
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100<br /> 支持最大值为：100<br /> 支持最小值为：1
+        /// 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

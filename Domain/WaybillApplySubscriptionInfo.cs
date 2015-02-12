@@ -24,7 +24,7 @@ namespace Top.Api.Domain
         public string CpCode { get; set; }
 
         /// <summary>
-        /// CP类型
+        /// 1是直营，2是加盟
         /// </summary>
         [XmlElement("cp_type")]
         public long CpType { get; set; }

@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<long> ConsignAreaId { get; set; }
 
         /// <summary>
-        /// 运费模板的名称，长度不能超过50个字节<br /> 支持最大长度为：50<br /> 支持的最大列表长度为：50
+        /// 运费模板的名称，长度不能超过50个字节
         /// </summary>
         public string Name { get; set; }
 

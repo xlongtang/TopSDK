@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 每次批量消费消息的条数<br /> 支持最大值为：200<br /> 支持最小值为：10
+        /// 每次批量消费消息的条数
         /// </summary>
         public Nullable<long> Quantity { get; set; }
 

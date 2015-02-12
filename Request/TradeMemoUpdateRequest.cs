@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TradeMemoUpdateRequest : ITopRequest<TradeMemoUpdateResponse>
     {
         /// <summary>
-        /// 卖家交易备注旗帜，可选值为：0(灰色), 1(红色), 2(黄色), 3(绿色), 4(蓝色), 5(粉红色)，默认值为0<br /> 支持最大值为：5<br /> 支持最小值为：0
+        /// 卖家交易备注旗帜，可选值为：0(灰色), 1(红色), 2(黄色), 3(绿色), 4(蓝色), 5(粉红色)，默认值为0
         /// </summary>
         public Nullable<long> Flag { get; set; }
 

@@ -21,17 +21,17 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 页码。（大于0的整数。默认为1）<br /> 支持最大值为：2147483647<br /> 支持最小值为：-21474836478
+        /// 页码。（大于0的整数。默认为1）
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数。（每页条数不超过50条）<br /> 支持最大值为：2147483647<br /> 支持最小值为：-21474836478
+        /// 每页条数。（每页条数不超过50条）
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 
         /// <summary>
-        /// 采购单编号或分销流水号，若其它参数没传，则此参数必传。<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：-9223372036854775808
+        /// 采购单编号或分销流水号，若其它参数没传，则此参数必传。
         /// </summary>
         public Nullable<long> PurchaseOrderId { get; set; }
 

@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<DateTime> EndDate { get; set; }
 
         /// <summary>
-        /// 客服人员id：cntaobao+淘宝nick，例如cntaobaotest<br /> 支持最大长度为：1900<br /> 支持的最大列表长度为：1900
+        /// 客服人员id：cntaobao+淘宝nick，例如cntaobaotest
         /// </summary>
         public string ServiceStaffId { get; set; }
 

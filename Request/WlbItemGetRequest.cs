@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WlbItemGetRequest : ITopRequest<WlbItemGetResponse>
     {
         /// <summary>
-        /// 商品ID<br /> 支持的最大列表长度为：20
+        /// 商品ID
         /// </summary>
         public Nullable<long> ItemId { get; set; }
 

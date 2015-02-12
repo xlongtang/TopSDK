@@ -16,17 +16,17 @@ namespace Top.Api.Request
         public string AuctionPoint { get; set; }
 
         /// <summary>
-        /// 门票商品状态（onsale：上架，instock：仓库）<br /> 支持最大长度为：10<br /> 支持的最大列表长度为：10
+        /// 门票商品状态（onsale：上架，instock：仓库）
         /// </summary>
         public string AuctionStatus { get; set; }
 
         /// <summary>
-        /// 门票商品所在地-城市<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 门票商品所在地-城市
         /// </summary>
         public string City { get; set; }
 
         /// <summary>
-        /// 门票宝贝描述<br /> 支持最大长度为：25000<br /> 支持的最大列表长度为：25000
+        /// 门票宝贝描述
         /// </summary>
         public string Description { get; set; }
 
@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public Nullable<bool> EtcAssociationStatus { get; set; }
 
         /// <summary>
-        /// 门票商品电子凭证的自动退款比例-在门票商品为电子凭证时必选<br /> 支持最大值为：100<br /> 支持最小值为：0
+        /// 门票商品电子凭证的自动退款比例-在门票商品为电子凭证时必选
         /// </summary>
         public Nullable<long> EtcAutoRefund { get; set; }
 
@@ -56,7 +56,7 @@ namespace Top.Api.Request
         public string EtcNetworkId { get; set; }
 
         /// <summary>
-        /// 门票商品电子凭证的过期退款比例-在门票商品为电子凭证时必选<br /> 支持最大值为：100<br /> 支持最小值为：0
+        /// 门票商品电子凭证的过期退款比例-在门票商品为电子凭证时必选
         /// </summary>
         public Nullable<long> EtcOverduePay { get; set; }
 
@@ -101,7 +101,7 @@ namespace Top.Api.Request
         public Nullable<long> ItemId { get; set; }
 
         /// <summary>
-        /// 门票商品的上架时间（精确到分，格式为：yyyy-MM-dd HH:mm）<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 门票商品的上架时间（精确到分，格式为：yyyy-MM-dd HH:mm）
         /// </summary>
         public string ListTime { get; set; }
 
@@ -121,7 +121,7 @@ namespace Top.Api.Request
         public Nullable<bool> PromotedStatus { get; set; }
 
         /// <summary>
-        /// 门票商品所在地-省份<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 门票商品所在地-省份
         /// </summary>
         public string Prov { get; set; }
 
@@ -146,7 +146,7 @@ namespace Top.Api.Request
         public Nullable<bool> SubStockAtBuy { get; set; }
 
         /// <summary>
-        /// 门票商品标题<br /> 支持最大长度为：60<br /> 支持的最大列表长度为：60
+        /// 门票商品标题
         /// </summary>
         public string Title { get; set; }
 

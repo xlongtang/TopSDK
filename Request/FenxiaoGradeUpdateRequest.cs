@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> GradeId { get; set; }
 
         /// <summary>
-        /// 等级名称，等级名称不可重复<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 等级名称，等级名称不可重复
         /// </summary>
         public string Name { get; set; }
 

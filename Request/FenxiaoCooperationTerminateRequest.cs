@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<long> EndRemainDays { get; set; }
 
         /// <summary>
-        /// 终止说明（5-2000字）<br /> 支持最大长度为：2000<br /> 支持的最大列表长度为：2000
+        /// 终止说明（5-2000字）
         /// </summary>
         public string EndRemark { get; set; }
 

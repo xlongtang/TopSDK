@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WlbItemSynchronizeRequest : ITopRequest<WlbItemSynchronizeResponse>
     {
         /// <summary>
-        /// 外部实体ID<br /> 支持的最大列表长度为：64
+        /// 外部实体ID
         /// </summary>
         public Nullable<long> ExtEntityId { get; set; }
 
@@ -21,12 +21,12 @@ namespace Top.Api.Request
         public string ExtEntityType { get; set; }
 
         /// <summary>
-        /// 商品ID<br /> 支持的最大列表长度为：20
+        /// 商品ID
         /// </summary>
         public Nullable<long> ItemId { get; set; }
 
         /// <summary>
-        /// 商品所有人淘宝nick<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
+        /// 商品所有人淘宝nick
         /// </summary>
         public string UserNick { get; set; }
 

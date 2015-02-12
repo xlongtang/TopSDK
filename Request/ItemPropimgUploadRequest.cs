@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 属性图片内容。类型:JPG,GIF;最大长度:500K;图片大小不超过:1M<br /> 支持的文件类型为：gif,jpg,jpeg,png,bmp<br /> 支持的最大列表长度为：1048576
+        /// 属性图片内容。类型:JPG,GIF;最大长度:500K;图片大小不超过:1M
         /// </summary>
         public FileItem Image { get; set; }
 
         /// <summary>
-        /// 商品数字ID，必选<br /> 支持最小值为：0
+        /// 商品数字ID，必选
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

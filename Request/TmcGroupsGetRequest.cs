@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public string GroupNames { get; set; }
 
         /// <summary>
-        /// 页码<br /> 支持最小值为：1
+        /// 页码
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页返回多少个分组<br /> 支持最大值为：100<br /> 支持最小值为：1
+        /// 每页返回多少个分组
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

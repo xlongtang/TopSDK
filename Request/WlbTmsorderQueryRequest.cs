@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class WlbTmsorderQueryRequest : ITopRequest<WlbTmsorderQueryResponse>
     {
         /// <summary>
-        /// 物流订单编号<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
+        /// 物流订单编号
         /// </summary>
         public string OrderCode { get; set; }
 

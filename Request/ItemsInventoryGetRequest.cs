@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class ItemsInventoryGetRequest : ITopRequest<ItemsInventoryGetResponse>
     {
         /// <summary>
-        /// 分类字段。可选值:<br> regular_shelved(定时上架)<br> never_on_shelf(从未上架)<br> off_shelf(我下架的)<br> for_shelved(等待所有上架)<br>  sold_out(全部卖完)<br> violation_off_shelf(违规下架的)<br> 默认查询for_shelved(等待所有上架)这个状态的商品<br> <font color='red'>注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)</font>
+        /// 分类字段。可选值:<br> regular_shelved(定时上架)<br> never_on_shelf(从未上架)<br> off_shelf(我下架的)<br> <font color='red'>for_shelved(等待所有上架)<br> sold_out(全部卖完)<br> violation_off_shelf(违规下架的)<br> 默认查询for_shelved(等待所有上架)这个状态的商品<br></font> 注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)
         /// </summary>
         public string Banner { get; set; }
 
         /// <summary>
-        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到<br /> 支持最小值为：0
+        /// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
         /// </summary>
         public Nullable<long> Cid { get; set; }
 
@@ -56,7 +56,7 @@ namespace Top.Api.Request
         public string OrderBy { get; set; }
 
         /// <summary>
-        /// 页码。取值范围:大于零小于等于101的整数;默认值为1，即返回第一页数据。当页码超过101页时系统就会报错，故请大家在用此接口获取数据时尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品。<br /> 支持最大值为：101
+        /// 页码。取值范围:大于零小于等于101的整数;默认值为1，即返回第一页数据。当页码超过101页时系统就会报错，故请大家在用此接口获取数据时尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品。
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 

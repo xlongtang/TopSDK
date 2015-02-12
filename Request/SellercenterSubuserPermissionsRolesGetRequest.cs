@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class SellercenterSubuserPermissionsRolesGetRequest : ITopRequest<SellercenterSubuserPermissionsRolesGetResponse>
     {
         /// <summary>
-        /// 子账号昵称(子账号标识)<br /> 支持最大长度为：100<br /> 支持的最大列表长度为：100
+        /// 子账号昵称(子账号标识)
         /// </summary>
         public string Nick { get; set; }
 

@@ -11,12 +11,22 @@ namespace Top.Api.Request
     public class TmcMessageProduceRequest : ITopRequest<TmcMessageProduceResponse>
     {
         /// <summary>
-        /// 消息内容的JSON表述，必须按照topic的定义来填充<br /> 支持最大长度为：2000<br /> 支持的最大列表长度为：2000
+        /// 消息内容的JSON表述，必须按照topic的定义来填充
         /// </summary>
         public string Content { get; set; }
 
         /// <summary>
-        /// 发布消息关联的主题<br /> 支持最大长度为：256<br /> 支持的最大列表长度为：256
+        /// 消息的扩增属性，用json格式表示
+        /// </summary>
+        public string ExContent { get; set; }
+
+        /// <summary>
+        /// 直发消息需要传入目标appkey
+        /// </summary>
+        public string TargetAppkey { get; set; }
+
+        /// <summary>
+        /// 消息类型
         /// </summary>
         public string Topic { get; set; }
 
@@ -33,6 +43,8 @@ namespace Top.Api.Request
         {
             TopDictionary parameters = new TopDictionary();
             parameters.Add("content", this.Content);
+            parameters.Add("ex_content", this.ExContent);
+            parameters.Add("target_appkey", this.TargetAppkey);
             parameters.Add("topic", this.Topic);
             parameters.AddAll(this.otherParameters);
             return parameters;
@@ -42,6 +54,8 @@ namespace Top.Api.Request
         {
             RequestValidator.ValidateRequired("content", this.Content);
             RequestValidator.ValidateMaxLength("content", this.Content, 2000);
+            RequestValidator.ValidateMaxLength("ex_content", this.ExContent, 500);
+            RequestValidator.ValidateMaxLength("target_appkey", this.TargetAppkey, 256);
             RequestValidator.ValidateRequired("topic", this.Topic);
             RequestValidator.ValidateMaxLength("topic", this.Topic, 256);
         }

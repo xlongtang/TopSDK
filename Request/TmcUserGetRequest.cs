@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 用户昵称<br /> 支持最大长度为：100<br /> 支持的最大列表长度为：100
+        /// 用户昵称
         /// </summary>
         public string Nick { get; set; }
 

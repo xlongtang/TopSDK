@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class SellercenterRolemembersGetRequest : ITopRequest<SellercenterRolemembersGetResponse>
     {
         /// <summary>
-        /// 角色id<br /> 支持的最大列表长度为：100
+        /// 角色id
         /// </summary>
         public Nullable<long> RoleId { get; set; }
 

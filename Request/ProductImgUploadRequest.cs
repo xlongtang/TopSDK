@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Id { get; set; }
 
         /// <summary>
-        /// 图片内容.图片最大为500K,只支持JPG,GIF格式.<br /> 支持的文件类型为：gif,jpg,png,jpeg<br /> 支持的最大列表长度为：1048576
+        /// 图片内容.图片最大为500K,只支持JPG,GIF格式.
         /// </summary>
         public FileItem Image { get; set; }
 

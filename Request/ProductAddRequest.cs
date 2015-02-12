@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ProductAddRequest : ITopUploadRequest<ProductAddResponse>
     {
         /// <summary>
-        /// 非关键属性结构:pid:vid;pid:vid.<br> 非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性; <br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font><br /> 支持最大长度为：512<br /> 支持的最大列表长度为：512
+        /// 非关键属性结构:pid:vid;pid:vid.<br> 非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性; <br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font>
         /// </summary>
         public string Binds { get; set; }
 
@@ -31,12 +31,12 @@ namespace Top.Api.Request
         public string Desc { get; set; }
 
         /// <summary>
-        /// 存放产品扩展信息，由List(ProductExtraInfo)转化成jsonArray存入.<br /> 支持最大长度为：25000<br /> 支持的最大列表长度为：25000
+        /// 存放产品扩展信息，由List(ProductExtraInfo)转化成jsonArray存入.
         /// </summary>
         public string ExtraInfo { get; set; }
 
         /// <summary>
-        /// 产品主图片.最大1M,目前仅支持GIF,JPG.<br /> 支持的文件类型为：gif,jpg,png,jpeg<br /> 支持的最大列表长度为：1048576
+        /// 产品主图片.最大1M,目前仅支持GIF,JPG.
         /// </summary>
         public FileItem Image { get; set; }
 
@@ -110,6 +110,11 @@ namespace Top.Api.Request
         /// </summary>
         public Nullable<long> TemplateId { get; set; }
 
+        /// <summary>
+        /// 加入垂直市场，目前只支持以鞋城卖家身份加入名鞋馆(暂时此字段还不起作用，不对外开放)
+        /// </summary>
+        public Nullable<long> VerticalMarket { get; set; }
+
         private IDictionary<string, string> otherParameters;
 
         #region ITopRequest Members
@@ -141,6 +146,7 @@ namespace Top.Api.Request
             parameters.Add("sell_pt", this.SellPt);
             parameters.Add("suite_items_str", this.SuiteItemsStr);
             parameters.Add("template_id", this.TemplateId);
+            parameters.Add("vertical_market", this.VerticalMarket);
             parameters.AddAll(this.otherParameters);
             return parameters;
         }

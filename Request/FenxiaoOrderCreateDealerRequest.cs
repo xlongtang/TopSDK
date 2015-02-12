@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public string Addr { get; set; }
 
         /// <summary>
-        /// 买家姓名<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 买家姓名
         /// </summary>
         public string BuyerName { get; set; }
 
@@ -41,7 +41,7 @@ namespace Top.Api.Request
         public string LogisticType { get; set; }
 
         /// <summary>
-        /// 留言<br /> 支持最大长度为：200<br /> 支持的最大列表长度为：200
+        /// 留言
         /// </summary>
         public string Message { get; set; }
 

@@ -82,6 +82,12 @@ namespace Top.Api.Domain
         public string Title { get; set; }
 
         /// <summary>
+        /// 支持家装类物流的类型
+        /// </summary>
+        [XmlElement("tmser_spu_code")]
+        public string TmserSpuCode { get; set; }
+
+        /// <summary>
         /// 服务子订单总费用
         /// </summary>
         [XmlElement("total_fee")]

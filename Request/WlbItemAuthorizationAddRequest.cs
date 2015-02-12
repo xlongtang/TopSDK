@@ -36,7 +36,7 @@ namespace Top.Api.Request
         public string ItemIdList { get; set; }
 
         /// <summary>
-        /// 规则名称<br /> 支持最大长度为：255<br /> 支持的最大列表长度为：255
+        /// 规则名称
         /// </summary>
         public string Name { get; set; }
 

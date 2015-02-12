@@ -10,6 +10,18 @@ namespace Top.Api.Domain
     public class WaybillApplyUpdateInfo : TopObject
     {
         /// <summary>
+        /// 收货网点信息
+        /// </summary>
+        [XmlElement("consignee_branch_code")]
+        public string ConsigneeBranchCode { get; set; }
+
+        /// <summary>
+        /// 收货网点编码
+        /// </summary>
+        [XmlElement("consignee_branch_name")]
+        public string ConsigneeBranchName { get; set; }
+
+        /// <summary>
         /// --
         /// </summary>
         [XmlElement("desc")]
@@ -20,6 +32,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("result")]
         public long Result { get; set; }
+
+        /// <summary>
+        /// 挑拣规则（大头笔信息）
+        /// </summary>
+        [XmlElement("short_address")]
+        public string ShortAddress { get; set; }
 
         /// <summary>
         /// --

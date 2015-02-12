@@ -16,7 +16,7 @@ namespace Top.Api.Domain
         public string ServiceTag { get; set; }
 
         /// <summary>
-        /// 服务类型=编码  平邮=POST  快递=FAST  EMS=EMS  消费者选快递时为FAST
+        /// 消费者选快递请直接判断service_tag是否包含companyCode。而不要判断service_type
         /// </summary>
         [XmlElement("service_type")]
         public string ServiceType { get; set; }

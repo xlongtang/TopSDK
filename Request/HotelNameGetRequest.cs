@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class HotelNameGetRequest : ITopRequest<HotelNameGetResponse>
     {
         /// <summary>
-        /// 城市编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0<br /> 支持的最大列表长度为：6
+        /// 城市编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0
         /// </summary>
         public Nullable<long> City { get; set; }
 
@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string Country { get; set; }
 
         /// <summary>
-        /// 区域（县级市）编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0<br /> 支持的最大列表长度为：6
+        /// 区域（县级市）编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0
         /// </summary>
         public Nullable<long> District { get; set; }
 
@@ -31,12 +31,12 @@ namespace Top.Api.Request
         public Nullable<bool> Domestic { get; set; }
 
         /// <summary>
-        /// 酒店全部名称/别名。不能超过60字节<br /> 支持最大长度为：60<br /> 支持的最大列表长度为：60
+        /// 酒店全部名称/别名。不能超过60字节
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 省份编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0<br /> 支持的最大列表长度为：6
+        /// 省份编码。参见：http://kezhan.trip.taobao.com/area.html。  domestic为true时，province,city,district不能同时为空或为0
         /// </summary>
         public Nullable<long> Province { get; set; }
 

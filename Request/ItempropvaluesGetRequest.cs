@@ -21,6 +21,11 @@ namespace Top.Api.Request
         public Nullable<long> Cid { get; set; }
 
         /// <summary>
+        /// 假如传2005-01-01 00:00:00，则取所有的属性和子属性(状态为删除的属性值不返回prop_name)
+        /// </summary>
+        public Nullable<DateTime> Datetime { get; set; }
+
+        /// <summary>
         /// 需要返回的字段。目前支持有：cid,pid,prop_name,vid,name,name_alias,status,sort_order
         /// </summary>
         public string Fields { get; set; }
@@ -31,7 +36,7 @@ namespace Top.Api.Request
         public string Pvs { get; set; }
 
         /// <summary>
-        /// 获取类目的类型：1代表集市、2代表天猫<br /> 支持最大值为：2<br /> 支持最小值为：1
+        /// 获取类目的类型：1代表集市、2代表天猫
         /// </summary>
         public Nullable<long> Type { get; set; }
 
@@ -49,6 +54,7 @@ namespace Top.Api.Request
             TopDictionary parameters = new TopDictionary();
             parameters.Add("attr_keys", this.AttrKeys);
             parameters.Add("cid", this.Cid);
+            parameters.Add("datetime", this.Datetime);
             parameters.Add("fields", this.Fields);
             parameters.Add("pvs", this.Pvs);
             parameters.Add("type", this.Type);

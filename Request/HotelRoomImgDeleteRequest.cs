@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> Gid { get; set; }
 
         /// <summary>
-        /// 图片序号，可选值：1，2，3，4，5。  如果原图片个数小于等于1，则报错，不能删除图片。  如果原图片个数小于待删除的图片序号，则报错，图片序号错误。<br /> 支持的最大列表长度为：1
+        /// 图片序号，可选值：1，2，3，4，5。  如果原图片个数小于等于1，则报错，不能删除图片。  如果原图片个数小于待删除的图片序号，则报错，图片序号错误。
         /// </summary>
         public Nullable<long> Position { get; set; }
 

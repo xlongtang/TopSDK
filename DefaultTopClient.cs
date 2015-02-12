@@ -24,7 +24,7 @@ namespace Top.Api
         public const string PARTNER_ID = "partner_id";
         public const string SESSION = "session";
         public const string FORMAT_XML = "xml";
-        public const string SDK_VERSION = "top-sdk-net-20140901"; // SDK自动生成会替换成真实的版本
+        public const string SDK_VERSION = "top-sdk-net-20150212"; // SDK自动生成会替换成真实的版本
 
         private string serverUrl;
         private string appKey;

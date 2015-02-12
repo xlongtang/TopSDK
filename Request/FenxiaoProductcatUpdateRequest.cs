@@ -11,17 +11,17 @@ namespace Top.Api.Request
     public class FenxiaoProductcatUpdateRequest : ITopRequest<FenxiaoProductcatUpdateResponse>
     {
         /// <summary>
-        /// 代销默认采购价比例，注意：100.00%，则输入为10000<br /> 支持最大值为：99999<br /> 支持最小值为：100
+        /// 代销默认采购价比例，注意：100.00%，则输入为10000
         /// </summary>
         public Nullable<long> AgentCostPercent { get; set; }
 
         /// <summary>
-        /// 经销默认采购价比例，注意：100.00%，则输入为10000<br /> 支持最大值为：99999<br /> 支持最小值为：100
+        /// 经销默认采购价比例，注意：100.00%，则输入为10000
         /// </summary>
         public Nullable<long> DealerCostPercent { get; set; }
 
         /// <summary>
-        /// 产品线名称<br /> 支持最大长度为：10<br /> 支持的最大列表长度为：10
+        /// 产品线名称
         /// </summary>
         public string Name { get; set; }
 
@@ -31,12 +31,12 @@ namespace Top.Api.Request
         public Nullable<long> ProductLineId { get; set; }
 
         /// <summary>
-        /// 最高零售价比例，注意：100.00%，则输入为10000<br /> 支持最大值为：99999<br /> 支持最小值为：100
+        /// 最高零售价比例，注意：100.00%，则输入为10000
         /// </summary>
         public Nullable<long> RetailHighPercent { get; set; }
 
         /// <summary>
-        /// 最低零售价比例，注意：100.00%，则输入为10000<br /> 支持最大值为：99999<br /> 支持最小值为：100
+        /// 最低零售价比例，注意：100.00%，则输入为10000
         /// </summary>
         public Nullable<long> RetailLowPercent { get; set; }
 

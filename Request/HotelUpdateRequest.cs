@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class HotelUpdateRequest : ITopUploadRequest<HotelUpdateResponse>
     {
         /// <summary>
-        /// 酒店地址。长度不能超过120<br /> 支持最大长度为：120<br /> 支持的最大列表长度为：120
+        /// 酒店地址。长度不能超过120
         /// </summary>
         public string Address { get; set; }
 
         /// <summary>
-        /// 城市编码。参见：http://kezhan.trip.taobao.com/area.html，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取<br /> 支持最大值为：999999<br /> 支持最小值为：0<br /> 支持的最大列表长度为：6
+        /// 城市编码。参见：http://kezhan.trip.taobao.com/area.html，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取
         /// </summary>
         public Nullable<long> City { get; set; }
 
@@ -26,17 +26,17 @@ namespace Top.Api.Request
         public string Country { get; set; }
 
         /// <summary>
-        /// 装修时间。长度不能超过4。<br /> 支持最大长度为：4<br /> 支持的最大列表长度为：4
+        /// 装修时间。长度不能超过4。
         /// </summary>
         public string DecorateTime { get; set; }
 
         /// <summary>
-        /// 酒店介绍。不超过25000个汉字<br /> 支持最大长度为：50000<br /> 支持的最大列表长度为：50000
+        /// 酒店介绍。不超过25000个汉字
         /// </summary>
         public string Desc { get; set; }
 
         /// <summary>
-        /// 区域（县级市）编码。参见：http://kezhan.trip.taobao.com/area.html<br /> 支持最大值为：999999<br /> 支持最小值为：0<br /> 支持的最大列表长度为：6
+        /// 区域（县级市）编码。参见：http://kezhan.trip.taobao.com/area.html
         /// </summary>
         public Nullable<long> District { get; set; }
 
@@ -51,37 +51,37 @@ namespace Top.Api.Request
         public Nullable<long> Hid { get; set; }
 
         /// <summary>
-        /// 酒店级别。可选值：A,B,C,D,E,F。代表客栈公寓、经济连锁、二星级/以下、三星级/舒适、四星级/高档、五星级/豪华<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
+        /// 酒店级别。可选值：A,B,C,D,E,F。代表客栈公寓、经济连锁、二星级/以下、三星级/舒适、四星级/高档、五星级/豪华
         /// </summary>
         public string Level { get; set; }
 
         /// <summary>
-        /// 酒店名称。不能超过60字节<br /> 支持最大长度为：60<br /> 支持的最大列表长度为：60
+        /// 酒店名称。不能超过60字节
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 开业时间。长度不能超过4。<br /> 支持最大长度为：4<br /> 支持的最大列表长度为：4
+        /// 开业时间。长度不能超过4。
         /// </summary>
         public string OpeningTime { get; set; }
 
         /// <summary>
-        /// 酒店定位。可选值：T,B。代表旅游度假、商务出行<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
+        /// 酒店定位。可选值：T,B。代表旅游度假、商务出行
         /// </summary>
         public string Orientation { get; set; }
 
         /// <summary>
-        /// 酒店图片。类型:JPG,GIF;最大长度:500K。支持的文件类型：gif,jpg,jpeg,png。  图片没有传，则代表不更新图片，使用原来的图片<br /> 支持的文件类型为：jpg,png,gif<br /> 支持的最大列表长度为：512000
+        /// 酒店图片。类型:JPG,GIF;最大长度:500K。支持的文件类型：gif,jpg,jpeg,png。  图片没有传，则代表不更新图片，使用原来的图片
         /// </summary>
         public FileItem Pic { get; set; }
 
         /// <summary>
-        /// 省份编码。参见：http://kezhan.trip.taobao.com/area.html，domestic为false时默认为0<br /> 支持最大值为：999999<br /> 支持最小值为：0<br /> 支持的最大列表长度为：6
+        /// 省份编码。参见：http://kezhan.trip.taobao.com/area.html，domestic为false时默认为0
         /// </summary>
         public Nullable<long> Province { get; set; }
 
         /// <summary>
-        /// 房间数。长度不能超过4。<br /> 支持最大值为：9999<br /> 支持最小值为：0<br /> 支持的最大列表长度为：4
+        /// 房间数。长度不能超过4。
         /// </summary>
         public Nullable<long> Rooms { get; set; }
 
@@ -91,12 +91,12 @@ namespace Top.Api.Request
         public string Service { get; set; }
 
         /// <summary>
-        /// 楼层数。长度不能超过4。<br /> 支持最大值为：9999<br /> 支持最小值为：0<br /> 支持的最大列表长度为：4
+        /// 楼层数。长度不能超过4。
         /// </summary>
         public Nullable<long> Storeys { get; set; }
 
         /// <summary>
-        /// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+        /// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
         /// </summary>
         public string Tel { get; set; }
 

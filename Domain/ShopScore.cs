@@ -13,18 +13,18 @@ namespace Top.Api.Domain
         /// 发货速度评分
         /// </summary>
         [XmlElement("delivery_score")]
-        public string DeliveryScore { get; set; }
+        public long DeliveryScore { get; set; }
 
         /// <summary>
         /// 商品描述评分
         /// </summary>
         [XmlElement("item_score")]
-        public string ItemScore { get; set; }
+        public long ItemScore { get; set; }
 
         /// <summary>
         /// 服务态度评分
         /// </summary>
         [XmlElement("service_score")]
-        public string ServiceScore { get; set; }
+        public long ServiceScore { get; set; }
     }
 }

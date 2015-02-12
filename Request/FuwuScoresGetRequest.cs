@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<DateTime> Date { get; set; }
 
         /// <summary>
-        /// 每页获取条数。默认值40，最小值1，最大值100。<br /> 支持最大值为：100<br /> 支持最小值为：1
+        /// 每页获取条数。默认值40，最小值1，最大值100。
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 

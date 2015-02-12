@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class TmcMessagesConfirmRequest : ITopRequest<TmcMessagesConfirmResponse>
     {
         /// <summary>
-        /// 处理失败的消息ID列表
+        /// 处理失败的消息ID列表--已废弃，无需传此字段
         /// </summary>
         public string FMessageIds { get; set; }
 

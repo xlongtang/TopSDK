@@ -26,6 +26,21 @@ namespace Top.Api.Request
         public string NumIid { get; set; }
 
         /// <summary>
+        /// 1
+        /// </summary>
+        public Nullable<long> PageNo { get; set; }
+
+        /// <summary>
+        /// 20
+        /// </summary>
+        public Nullable<long> PageSize { get; set; }
+
+        /// <summary>
+        /// 淘宝活动ID
+        /// </summary>
+        public Nullable<long> PromId { get; set; }
+
+        /// <summary>
         /// 优惠策略状态。可选值：ACTIVE(有效)，UNACTIVE(无效)，若不传或者传入其他值，则默认查询全部
         /// </summary>
         public string Status { get; set; }
@@ -50,6 +65,9 @@ namespace Top.Api.Request
             parameters.Add("fields", this.Fields);
             parameters.Add("is_new_tag", this.IsNewTag);
             parameters.Add("num_iid", this.NumIid);
+            parameters.Add("page_no", this.PageNo);
+            parameters.Add("page_size", this.PageSize);
+            parameters.Add("prom_id", this.PromId);
             parameters.Add("status", this.Status);
             parameters.Add("tag_id", this.TagId);
             parameters.AddAll(this.otherParameters);

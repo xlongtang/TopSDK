@@ -23,10 +23,28 @@ namespace Top.Api.Domain
         public string BranchCode { get; set; }
 
         /// <summary>
+        /// 网点名称
+        /// </summary>
+        [XmlElement("branch_name")]
+        public string BranchName { get; set; }
+
+        /// <summary>
+        /// 取消的面对总数
+        /// </summary>
+        [XmlElement("cancel_quantity")]
+        public long CancelQuantity { get; set; }
+
+        /// <summary>
         /// 物流服务商ID
         /// </summary>
         [XmlElement("cp_code")]
         public string CpCode { get; set; }
+
+        /// <summary>
+        /// 已经打印的面单总数
+        /// </summary>
+        [XmlElement("print_quantity")]
+        public long PrintQuantity { get; set; }
 
         /// <summary>
         /// 可用单数

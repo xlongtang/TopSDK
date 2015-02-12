@@ -22,7 +22,7 @@ namespace Top.Api.Domain
         public string AddressFormat { get; set; }
 
         /// <summary>
-        /// 三级地址
+        /// 区名称（三级地址）
         /// </summary>
         [XmlElement("area")]
         public string Area { get; set; }
@@ -34,7 +34,7 @@ namespace Top.Api.Domain
         public long AreaCode { get; set; }
 
         /// <summary>
-        /// 二级地址
+        /// 市名称（二级地址）
         /// </summary>
         [XmlElement("city")]
         public string City { get; set; }
@@ -52,7 +52,7 @@ namespace Top.Api.Domain
         public long DivisionId { get; set; }
 
         /// <summary>
-        /// 一级地址
+        /// 省名称（一级地址）
         /// </summary>
         [XmlElement("province")]
         public string Province { get; set; }
@@ -64,7 +64,7 @@ namespace Top.Api.Domain
         public long ProvinceCode { get; set; }
 
         /// <summary>
-        /// 四级地址
+        /// 街道\镇名称（四级地址）
         /// </summary>
         [XmlElement("town")]
         public string Town { get; set; }

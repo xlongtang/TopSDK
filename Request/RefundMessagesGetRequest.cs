@@ -16,12 +16,12 @@ namespace Top.Api.Request
         public string Fields { get; set; }
 
         /// <summary>
-        /// 页码。取值范围:大于零的整数; 默认值:1<br /> 支持最小值为：1
+        /// 页码
         /// </summary>
         public Nullable<long> PageNo { get; set; }
 
         /// <summary>
-        /// 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100<br /> 支持最大值为：100<br /> 支持最小值为：1
+        /// 每页条数
         /// </summary>
         public Nullable<long> PageSize { get; set; }
 
@@ -29,6 +29,11 @@ namespace Top.Api.Request
         /// 退款单号
         /// </summary>
         public Nullable<long> RefundId { get; set; }
+
+        /// <summary>
+        /// 退款阶段，可选值：onsale（售中），aftersale（售后），天猫退款为必传。
+        /// </summary>
+        public string RefundPhase { get; set; }
 
         private IDictionary<string, string> otherParameters;
 
@@ -46,6 +51,7 @@ namespace Top.Api.Request
             parameters.Add("page_no", this.PageNo);
             parameters.Add("page_size", this.PageSize);
             parameters.Add("refund_id", this.RefundId);
+            parameters.Add("refund_phase", this.RefundPhase);
             parameters.AddAll(this.otherParameters);
             return parameters;
         }
@@ -53,10 +59,12 @@ namespace Top.Api.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("fields", this.Fields);
+            RequestValidator.ValidateMaxListSize("fields", this.Fields, 100);
             RequestValidator.ValidateMinValue("page_no", this.PageNo, 1);
             RequestValidator.ValidateMaxValue("page_size", this.PageSize, 100);
             RequestValidator.ValidateMinValue("page_size", this.PageSize, 1);
             RequestValidator.ValidateRequired("refund_id", this.RefundId);
+            RequestValidator.ValidateMinValue("refund_id", this.RefundId, 1);
         }
 
         #endregion

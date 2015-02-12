@@ -46,6 +46,7 @@ namespace Top.Api.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("content", this.Content);
+            RequestValidator.ValidateRequired("image", this.Image);
             RequestValidator.ValidateRequired("refund_id", this.RefundId);
         }
 

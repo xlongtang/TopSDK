@@ -16,17 +16,17 @@ namespace Top.Api.Request
         public Nullable<long> Oid { get; set; }
 
         /// <summary>
-        /// 操作类型，1：确认预订，2：取消订单<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
+        /// 操作类型，1：确认预订，2：取消订单
         /// </summary>
         public string OperType { get; set; }
 
         /// <summary>
-        /// 取消订单时的取消原因备注信息<br /> 支持最大长度为：500<br /> 支持的最大列表长度为：500
+        /// 取消订单时的取消原因备注信息
         /// </summary>
         public string ReasonText { get; set; }
 
         /// <summary>
-        /// 取消订单时的取消原因，可选值：1,2,3,4；  1：无房，2：价格变动，3：买家原因，4：其它原因<br /> 支持最大长度为：1<br /> 支持的最大列表长度为：1
+        /// 取消订单时的取消原因，可选值：1,2,3,4；  1：无房，2：价格变动，3：买家原因，4：其它原因
         /// </summary>
         public string ReasonType { get; set; }
 

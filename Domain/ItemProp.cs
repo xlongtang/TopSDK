@@ -72,6 +72,12 @@ namespace Top.Api.Domain
         public bool IsSaleProp { get; set; }
 
         /// <summary>
+        /// 是否度量衡属性项
+        /// </summary>
+        [XmlElement("is_taosir")]
+        public bool IsTaosir { get; set; }
+
+        /// <summary>
         /// 属性修改时间（增量类目专用）
         /// </summary>
         [XmlElement("modified_time")]
@@ -143,6 +149,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 度量衡相关信息
+        /// </summary>
+        [XmlElement("taosir_do")]
+        public ItemTaosirDO TaosirDo { get; set; }
 
         /// <summary>
         /// 属性值类型。可选值：  multiCheck(枚举多选)  optional(枚举单选)  multiCheckText(枚举可输入多选)  optionalText(枚举可输入单选)  text(非枚举可输入)

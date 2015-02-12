@@ -16,7 +16,7 @@ namespace Top.Api.Request
         public Nullable<long> CategoryId { get; set; }
 
         /// <summary>
-        /// 图片分类的新名字，最大长度20字符，不能为空<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20
+        /// 图片分类的新名字，最大长度20字符，不能为空
         /// </summary>
         public string CategoryName { get; set; }
 

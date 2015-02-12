@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class RefundGetRequest : ITopRequest<RefundGetResponse>
     {
         /// <summary>
-        /// 需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout
+        /// 需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku
         /// </summary>
         public string Fields { get; set; }
 
         /// <summary>
-        /// 退款单号<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：1
+        /// 退款单号
         /// </summary>
         public Nullable<long> RefundId { get; set; }
 
@@ -41,6 +41,7 @@ namespace Top.Api.Request
         public void Validate()
         {
             RequestValidator.ValidateRequired("fields", this.Fields);
+            RequestValidator.ValidateMaxListSize("fields", this.Fields, 100);
             RequestValidator.ValidateRequired("refund_id", this.RefundId);
             RequestValidator.ValidateMaxValue("refund_id", this.RefundId, 9223372036854775807);
             RequestValidator.ValidateMinValue("refund_id", this.RefundId, 1);

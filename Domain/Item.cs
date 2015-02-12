@@ -23,7 +23,7 @@ namespace Top.Api.Domain
         public string ApproveStatus { get; set; }
 
         /// <summary>
-        /// 天猫订单抽佣比例，为5的倍数，最低0.5%。跟淘客佣金没有关系。
+        /// 商品的积分返点比例。如:5,表示:返点比例0.5%
         /// </summary>
         [XmlElement("auction_point")]
         public long AuctionPoint { get; set; }
@@ -342,6 +342,12 @@ namespace Top.Api.Domain
         public bool OneStation { get; set; }
 
         /// <summary>
+        /// open_iid
+        /// </summary>
+        [XmlElement("open_iid")]
+        public string OpenIid { get; set; }
+
+        /// <summary>
         /// 商家外部编码(可与商家外部系统对接)。需要授权才能获取。
         /// </summary>
         [XmlElement("outer_id")]
@@ -421,6 +427,12 @@ namespace Top.Api.Domain
         public string PropsName { get; set; }
 
         /// <summary>
+        /// 商品资质的信息，用URLEncoder做过转换，使用时，需要URLDecoder转换回来，默认字符集为：UTF-8
+        /// </summary>
+        [XmlElement("qualification")]
+        public string Qualification { get; set; }
+
+        /// <summary>
         /// 商品所属卖家的信用等级数，1表示1心，2表示2心……，只有调用商品搜索:taobao.items.get和taobao.items.search的时候才能返回
         /// </summary>
         [XmlElement("score")]
@@ -455,6 +467,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("seller_cids")]
         public string SellerCids { get; set; }
+
+        /// <summary>
+        /// 店铺类型，B：天猫店铺，C：淘宝店铺
+        /// </summary>
+        [XmlElement("shop_type")]
+        public string ShopType { get; set; }
 
         /// <summary>
         /// <a href="http://open.taobao.com/dev/index.php/Sku">Sku</a>列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段

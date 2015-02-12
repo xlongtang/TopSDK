@@ -11,7 +11,7 @@ namespace Top.Api.Request
     public class ItemUpdateDelistingRequest : ITopRequest<ItemUpdateDelistingResponse>
     {
         /// <summary>
-        /// 商品数字ID，该参数必须<br /> 支持最小值为：0
+        /// 商品数字ID，该参数必须
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

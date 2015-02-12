@@ -11,12 +11,12 @@ namespace Top.Api.Request
     public class HotelImageUploadRequest : ITopUploadRequest<HotelImageUploadResponse>
     {
         /// <summary>
-        /// 酒店id<br /> 支持的最大列表长度为：20
+        /// 酒店id
         /// </summary>
         public Nullable<long> Hid { get; set; }
 
         /// <summary>
-        /// 上传的图片<br /> 支持的文件类型为：jpg,png,gif<br /> 支持的最大列表长度为：512000
+        /// 上传的图片
         /// </summary>
         public FileItem Pic { get; set; }
 

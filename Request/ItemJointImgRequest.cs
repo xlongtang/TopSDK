@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public Nullable<bool> IsMajor { get; set; }
 
         /// <summary>
-        /// 商品数字ID，必选<br /> 支持最小值为：0
+        /// 商品数字ID，必选
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 

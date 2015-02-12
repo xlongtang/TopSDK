@@ -1,4 +1,5 @@
 using System;
+using Top.Api.Domain;
 using System.Collections.Generic;
 using Top.Api.Response;
 using Top.Api.Util;
@@ -21,7 +22,7 @@ namespace Top.Api.Request
         public string ShippingAddress { get; set; }
 
         /// <summary>
-        /// order_channels_type 订单来源：订单产生的电商平台 淘宝(TB)、天猫(TM)、京东(JD)、当当(DD)、拍拍(PP)、易讯(YX)、ebay(EBAY)、QQ网购(QQ)、亚马逊(AMAZON)、苏宁(SN)、国美(GM)、唯品会(WPH)、聚美(JM)、乐蜂(LF)、蘑菇街(MGJ)、聚尚(JS)、拍鞋(PX)、银泰(YT)、1号店(YHD)、凡客(VANCL)、邮乐(YL)、优购(YG)、阿里巴巴(1688)、其他(OTHERS)
+        /// 订单数据
         /// </summary>
         public string TradeOrderInfoCols { get; set; }
 

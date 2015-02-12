@@ -11,6 +11,11 @@ namespace Top.Api.Request
     public class ItemSkuAddRequest : ITopRequest<ItemSkuAddResponse>
     {
         /// <summary>
+        /// 忽略警告提示.
+        /// </summary>
+        public string Ignorewarning { get; set; }
+
+        /// <summary>
         /// sku所属商品的价格。当用户新增sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够添加成功
         /// </summary>
         public string ItemPrice { get; set; }
@@ -21,7 +26,7 @@ namespace Top.Api.Request
         public string Lang { get; set; }
 
         /// <summary>
-        /// Sku所属商品数字id，可通过 taobao.item.get 获取。必选<br /> 支持最小值为：0
+        /// Sku所属商品数字id，可通过 taobao.item.get 获取。必选
         /// </summary>
         public Nullable<long> NumIid { get; set; }
 
@@ -41,9 +46,24 @@ namespace Top.Api.Request
         public string Properties { get; set; }
 
         /// <summary>
-        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数<br /> 支持最小值为：0
+        /// Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数
         /// </summary>
         public Nullable<long> Quantity { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的高度，单位为cm，部分类目必选。天猫商家专用。  可选值为："0-15", "15-25", "25-50", "50-60", "60-80", "80-120", "120-160", "160-200"。  数据和SKU一一对应，用,分隔，如：15-25,25-50,25-50
+        /// </summary>
+        public string SkuHdHeight { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的灯头数量，正整数，大于等于3，部分类目必选。天猫商家专用。  数据和SKU一一对应，用,分隔，如：3,5,7
+        /// </summary>
+        public string SkuHdLampQuantity { get; set; }
+
+        /// <summary>
+        /// 家装建材类目，商品SKU的长度，正整数，单位为cm，部分类目必选。天猫商家专用。  数据和SKU一一对应，用,分隔，如：20,30,30
+        /// </summary>
+        public string SkuHdLength { get; set; }
 
         /// <summary>
         /// 产品的规格信息
@@ -62,6 +82,7 @@ namespace Top.Api.Request
         public IDictionary<string, string> GetParameters()
         {
             TopDictionary parameters = new TopDictionary();
+            parameters.Add("ignorewarning", this.Ignorewarning);
             parameters.Add("item_price", this.ItemPrice);
             parameters.Add("lang", this.Lang);
             parameters.Add("num_iid", this.NumIid);
@@ -69,6 +90,9 @@ namespace Top.Api.Request
             parameters.Add("price", this.Price);
             parameters.Add("properties", this.Properties);
             parameters.Add("quantity", this.Quantity);
+            parameters.Add("sku_hd_height", this.SkuHdHeight);
+            parameters.Add("sku_hd_lamp_quantity", this.SkuHdLampQuantity);
+            parameters.Add("sku_hd_length", this.SkuHdLength);
             parameters.Add("spec_id", this.SpecId);
             parameters.AddAll(this.otherParameters);
             return parameters;

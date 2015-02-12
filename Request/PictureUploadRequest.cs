@@ -26,9 +26,14 @@ namespace Top.Api.Request
         public FileItem Img { get; set; }
 
         /// <summary>
-        /// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类<br /> 支持最大值为：9223372036854775807<br /> 支持最小值为：0
+        /// 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类
         /// </summary>
         public Nullable<long> PictureCategoryId { get; set; }
+
+        /// <summary>
+        /// 如果此参数大于0，而且在后台能查到对应的图片，则此次上传为原图替换
+        /// </summary>
+        public Nullable<long> PictureId { get; set; }
 
         /// <summary>
         /// 图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加"(1)";标题末尾已经有"(数字)"了，则数字加1
@@ -50,6 +55,7 @@ namespace Top.Api.Request
             parameters.Add("client_type", this.ClientType);
             parameters.Add("image_input_title", this.ImageInputTitle);
             parameters.Add("picture_category_id", this.PictureCategoryId);
+            parameters.Add("picture_id", this.PictureId);
             parameters.Add("title", this.Title);
             parameters.AddAll(this.otherParameters);
             return parameters;
@@ -62,6 +68,8 @@ namespace Top.Api.Request
             RequestValidator.ValidateRequired("picture_category_id", this.PictureCategoryId);
             RequestValidator.ValidateMaxValue("picture_category_id", this.PictureCategoryId, 9223372036854775807);
             RequestValidator.ValidateMinValue("picture_category_id", this.PictureCategoryId, 0);
+            RequestValidator.ValidateMaxValue("picture_id", this.PictureId, 9223372036854775807);
+            RequestValidator.ValidateMinValue("picture_id", this.PictureId, 0);
         }
 
         #endregion

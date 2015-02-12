@@ -227,6 +227,66 @@ namespace Top.Api.Domain
         public bool HasYfx { get; set; }
 
         /// <summary>
+        /// 出生日期
+        /// </summary>
+        [XmlElement("hk_birthday")]
+        public string HkBirthday { get; set; }
+
+        /// <summary>
+        /// 证件号码
+        /// </summary>
+        [XmlElement("hk_card_code")]
+        public string HkCardCode { get; set; }
+
+        /// <summary>
+        /// 证件类型  001代表港澳通行证类型、  002代表入台证  003代表护照
+        /// </summary>
+        [XmlElement("hk_card_type")]
+        public string HkCardType { get; set; }
+
+        /// <summary>
+        /// 中文名
+        /// </summary>
+        [XmlElement("hk_china_name")]
+        public string HkChinaName { get; set; }
+
+        /// <summary>
+        /// 拼音名
+        /// </summary>
+        [XmlElement("hk_en_name")]
+        public string HkEnName { get; set; }
+
+        /// <summary>
+        /// 航班飞行时间
+        /// </summary>
+        [XmlElement("hk_flight_date")]
+        public string HkFlightDate { get; set; }
+
+        /// <summary>
+        /// 航班号
+        /// </summary>
+        [XmlElement("hk_flight_no")]
+        public string HkFlightNo { get; set; }
+
+        /// <summary>
+        /// 性别  M: 男性，F: 女性
+        /// </summary>
+        [XmlElement("hk_gender")]
+        public string HkGender { get; set; }
+
+        /// <summary>
+        /// 提货地点
+        /// </summary>
+        [XmlElement("hk_pickup")]
+        public string HkPickup { get; set; }
+
+        /// <summary>
+        /// 提货地点id
+        /// </summary>
+        [XmlElement("hk_pickup_id")]
+        public string HkPickupId { get; set; }
+
+        /// <summary>
         /// 商品字符串编号(注意：iid近期即将废弃，请用num_iid参数)
         /// </summary>
         [XmlElement("iid")]
@@ -639,6 +699,12 @@ namespace Top.Api.Domain
         public string TotalFee { get; set; }
 
         /// <summary>
+        /// 交易扩展表信息
+        /// </summary>
+        [XmlElement("trade_ext")]
+        public TradeExt TradeExt { get; set; }
+
+        /// <summary>
         /// 交易内部来源。  WAP(手机);HITAO(嗨淘);TOP(TOP平台);TAOBAO(普通淘宝);JHS(聚划算)  一笔订单可能同时有以上多个标记，则以逗号分隔
         /// </summary>
         [XmlElement("trade_from")]
@@ -657,7 +723,7 @@ namespace Top.Api.Domain
         public string TradeSource { get; set; }
 
         /// <summary>
-        /// 交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据  可选值  fixed(一口价)  auction(拍卖)  guarantee_trade(一口价、拍卖)  auto_delivery(自动发货)  independent_simple_trade(旺店入门版交易)  independent_shop_trade(旺店标准版交易)  ec(直冲)  cod(货到付款)  fenxiao(分销)  game_equipment(游戏装备)  shopex_trade(ShopEX交易)  netcn_trade(万网交易)  external_trade(统一外部交易) step (万人团) nopaid(无付款订单) pre_auth_type(预授权0元购机交易)
+        /// 交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据   可选值   fixed(一口价)   auction(拍卖)   guarantee_trade(一口价、拍卖)   auto_delivery(自动发货)   independent_simple_trade(旺店入门版交易)   independent_shop_trade(旺店标准版交易)   ec(直冲)   cod(货到付款)   fenxiao(分销)   game_equipment(游戏装备)   shopex_trade(ShopEX交易)   netcn_trade(万网交易)   external_trade(统一外部交易)  o2o_offlinetrade（O2O交易）  step (万人团)  nopaid(无付款订单)  pre_auth_type(预授权0元购机交易)
         /// </summary>
         [XmlElement("type")]
         public string Type { get; set; }

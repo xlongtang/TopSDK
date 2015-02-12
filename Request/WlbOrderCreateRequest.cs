@@ -21,7 +21,7 @@ namespace Top.Api.Request
         public string Attributes { get; set; }
 
         /// <summary>
-        /// 买家呢称<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
+        /// 买家呢称
         /// </summary>
         public string BuyerNick { get; set; }
 
@@ -71,7 +71,7 @@ namespace Top.Api.Request
         public string OrderType { get; set; }
 
         /// <summary>
-        /// 外部订单业务ID，该编号在isv中是唯一编号， 用来控制并发，去重用<br /> 支持最大长度为：128<br /> 支持的最大列表长度为：128
+        /// 外部订单业务ID，该编号在isv中是唯一编号， 用来控制并发，去重用
         /// </summary>
         public string OutBizCode { get; set; }
 
@@ -96,7 +96,7 @@ namespace Top.Api.Request
         public string ReceiverInfo { get; set; }
 
         /// <summary>
-        /// 备注<br /> 支持最大长度为：4000<br /> 支持的最大列表长度为：4000
+        /// 备注
         /// </summary>
         public string Remark { get; set; }
 
@@ -126,7 +126,7 @@ namespace Top.Api.Request
         public Nullable<long> ServiceFee { get; set; }
 
         /// <summary>
-        /// 仓库编码<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
+        /// 仓库编码
         /// </summary>
         public string StoreCode { get; set; }
 
@@ -141,7 +141,7 @@ namespace Top.Api.Request
         public string TmsOrderCode { get; set; }
 
         /// <summary>
-        /// 物流公司编码<br /> 支持最大长度为：64<br /> 支持的最大列表长度为：64
+        /// 物流公司编码
         /// </summary>
         public string TmsServiceCode { get; set; }
 

@@ -16,7 +16,7 @@ namespace Top.Api.Domain
         public string Address { get; set; }
 
         /// <summary>
-        /// 退款先行垫付默认的未申请状态 0;  退款先行垫付申请中  1;  退款先行垫付，垫付完成 2;  退款先行垫付，卖家拒绝收货 3;  退款先行垫付，垫付关闭 4;  退款先行垫付，垫付分账成功 5;
+        /// 退款先行垫付默认的未申请状态 0;退款先行垫付申请中  1;退款先行垫付，垫付完成 2;退款先行垫付，卖家拒绝收货 3;退款先行垫付，垫付关闭 4;退款先行垫付，垫付分账成功 5;
         /// </summary>
         [XmlElement("advance_status")]
         public long AdvanceStatus { get; set; }
@@ -26,6 +26,12 @@ namespace Top.Api.Domain
         /// </summary>
         [XmlElement("alipay_no")]
         public string AlipayNo { get; set; }
+
+        /// <summary>
+        /// 退款扩展属性
+        /// </summary>
+        [XmlElement("attribute")]
+        public string Attribute { get; set; }
 
         /// <summary>
         /// 买家昵称
@@ -46,7 +52,7 @@ namespace Top.Api.Domain
         public string Created { get; set; }
 
         /// <summary>
-        /// 不需客服介入1;  需要客服介入2;  客服已经介入3;  客服初审完成 4;  客服主管复审失败5;  客服处理完成6;
+        /// 不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成 4;客服主管复审失败5;客服处理完成6;
         /// </summary>
         [XmlElement("cs_status")]
         public long CsStatus { get; set; }
@@ -64,7 +70,7 @@ namespace Top.Api.Domain
         public string GoodReturnTime { get; set; }
 
         /// <summary>
-        /// 货物状态。可选值  BUYER_NOT_RECEIVED (买家未收到货)   BUYER_RECEIVED (买家已收到货)   BUYER_RETURNED_GOODS (买家已退货)
+        /// 货物状态。可选值BUYER_NOT_RECEIVED (买家未收到货) BUYER_RECEIVED (买家已收到货) BUYER_RETURNED_GOODS (买家已退货)
         /// </summary>
         [XmlElement("good_status")]
         public string GoodStatus { get; set; }
@@ -106,10 +112,22 @@ namespace Top.Api.Domain
         public long Oid { get; set; }
 
         /// <summary>
-        /// 退款对应的订单交易状态。  可选值  TRADE_NO_CREATE_PAY(没有创建支付宝交易)   WAIT_BUYER_PAY(等待买家付款)   WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)   WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)   TRADE_BUYER_SIGNED(买家已签收,货到付款专用)   TRADE_FINISHED(交易成功)   TRADE_CLOSED(交易关闭)   TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭)   ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY)   ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO)   取自"http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81"
+        /// 退款约束，可选值：cannot_refuse（不允许操作），refund_onweb（需要到网页版操作）
+        /// </summary>
+        [XmlElement("operation_contraint")]
+        public string OperationContraint { get; set; }
+
+        /// <summary>
+        /// 退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自"http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81"
         /// </summary>
         [XmlElement("order_status")]
         public string OrderStatus { get; set; }
+
+        /// <summary>
+        /// 商品外部商家编码
+        /// </summary>
+        [XmlElement("outer_id")]
+        public string OuterId { get; set; }
 
         /// <summary>
         /// 支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -142,10 +160,22 @@ namespace Top.Api.Domain
         public long RefundId { get; set; }
 
         /// <summary>
+        /// 退款阶段，可选值：onsale/aftersale
+        /// </summary>
+        [XmlElement("refund_phase")]
+        public string RefundPhase { get; set; }
+
+        /// <summary>
         /// 退款超时结构RefundRemindTimeout
         /// </summary>
         [XmlElement("refund_remind_timeout")]
         public RefundRemindTimeout RefundRemindTimeout { get; set; }
+
+        /// <summary>
+        /// 退款版本号（时间戳）
+        /// </summary>
+        [XmlElement("refund_version")]
+        public long RefundVersion { get; set; }
 
         /// <summary>
         /// 卖家昵称
@@ -166,6 +196,12 @@ namespace Top.Api.Domain
         public string Sid { get; set; }
 
         /// <summary>
+        /// 商品SKU信息
+        /// </summary>
+        [XmlElement("sku")]
+        public string Sku { get; set; }
+
+        /// <summary>
         /// 分账给卖家的钱
         /// </summary>
         [XmlElement("split_seller_fee")]
@@ -178,7 +214,7 @@ namespace Top.Api.Domain
         public string SplitTaobaoFee { get; set; }
 
         /// <summary>
-        /// 退款状态。  可选值  WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)   WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)   WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)   SELLER_REFUSE_BUYER(卖家拒绝退款)   CLOSED(退款关闭)   SUCCESS(退款成功)
+        /// 退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)
         /// </summary>
         [XmlElement("status")]
         public string Status { get; set; }
