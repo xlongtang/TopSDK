@@ -193,7 +193,7 @@ namespace Top.Api.Util
                     string[] oneParam = pair.Split(new char[] { '=' }, 2);
                     if (oneParam != null && oneParam.Length == 2)
                     {
-                        result.Add(oneParam[0], oneParam[1]);
+                        result.Add(oneParam[0], System.Web.HttpUtility.UrlDecode(oneParam[1])); 
                     }
                 }
             }
